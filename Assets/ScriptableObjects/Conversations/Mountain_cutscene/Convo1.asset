@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07fd9bf9ca7674ccf9fbb58cbe9468e4, type: 3}
+  m_Name: Convo1
+  m_EditorClassIdentifier: 
+  allLines:
+  - speaker: {fileID: 11400000, guid: a55f6ed6619cd43e5bd2b3235a09dcab, type: 2}
+    dialogue: Grandma, it's me, Hikaru. Kizuna is here too.
+  - speaker: {fileID: 11400000, guid: 4e1e5cc4d0d394dbbbb193261c90a472, type: 2}
+    dialogue: ...
+  - speaker: {fileID: 11400000, guid: a55f6ed6619cd43e5bd2b3235a09dcab, type: 2}
+    dialogue: How are you doing on the other side?
+  - speaker: {fileID: 11400000, guid: a55f6ed6619cd43e5bd2b3235a09dcab, type: 2}
+    dialogue: 'Hahaha, don''t worry about me. I''ve grown much taller now. '
+  - speaker: {fileID: 11400000, guid: a55f6ed6619cd43e5bd2b3235a09dcab, type: 2}
+    dialogue: I can help with grandpa with field works too...
+  - speaker: {fileID: 11400000, guid: a55f6ed6619cd43e5bd2b3235a09dcab, type: 2}
+    dialogue: But grandma...
+  - speaker: {fileID: 11400000, guid: a55f6ed6619cd43e5bd2b3235a09dcab, type: 2}
+    dialogue: It hasn't been raining for a whole year.
+  - speaker: {fileID: 11400000, guid: a55f6ed6619cd43e5bd2b3235a09dcab, type: 2}
+    dialogue: And nothing can grow from the fields...
+  - speaker: {fileID: 11400000, guid: 4e1e5cc4d0d394dbbbb193261c90a472, type: 2}
+    dialogue: (Hikaru...)
+  - speaker: {fileID: 11400000, guid: a55f6ed6619cd43e5bd2b3235a09dcab, type: 2}
+    dialogue: They say that if there's still no harvest this year, I'd be taken to
+      be the landlord's slave...
+  - speaker: {fileID: 11400000, guid: a55f6ed6619cd43e5bd2b3235a09dcab, type: 2}
+    dialogue: Please, grandma, if you can hear me. Bless us rain.
+  - speaker: {fileID: 11400000, guid: a55f6ed6619cd43e5bd2b3235a09dcab, type: 2}
+    dialogue: Please, grandma...I don't want to be his slave...who's gonna look after
+      grandpa and Kizuna?
+  - speaker: {fileID: 11400000, guid: 4e1e5cc4d0d394dbbbb193261c90a472, type: 2}
+    dialogue: (Hikaru...if only there's anything I can do...)
+  - speaker: {fileID: 11400000, guid: a55f6ed6619cd43e5bd2b3235a09dcab, type: 2}
+    dialogue: ...
+  - speaker: {fileID: 11400000, guid: 86bf7fc2c5d21495db6e6e9227981823, type: 2}
+    dialogue: Hikaru wipes out his tears.
+  - speaker: {fileID: 11400000, guid: a55f6ed6619cd43e5bd2b3235a09dcab, type: 2}
+    dialogue: Haha, don't worry, Kizuna. I'm a man now. I won't cry.
+  - speaker: {fileID: 11400000, guid: a55f6ed6619cd43e5bd2b3235a09dcab, type: 2}
+    dialogue: Let's go. Grandpa's still waiting for us!
+  - speaker: {fileID: 11400000, guid: 4e1e5cc4d0d394dbbbb193261c90a472, type: 2}
+    dialogue: ...

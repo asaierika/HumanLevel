@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fb95306952743789c2fd1bd5b2c344, type: 3}
+  m_Name: Hikaru
+  m_EditorClassIdentifier: 
+  speakerName: Hikaru
+  speakerSprite: {fileID: 1394343754, guid: cdbbaf1bf6920464fa33dcd33d4514a8, type: 3}

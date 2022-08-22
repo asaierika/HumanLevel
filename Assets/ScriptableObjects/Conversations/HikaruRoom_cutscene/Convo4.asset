@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07fd9bf9ca7674ccf9fbb58cbe9468e4, type: 3}
+  m_Name: Convo4
+  m_EditorClassIdentifier: 
+  allLines:
+  - speaker: {fileID: 11400000, guid: cc9e27aaf6abc47b08b7321e23cfc560, type: 2}
+    dialogue: Listen closely. I don't have much time.
+  - speaker: {fileID: 11400000, guid: cc9e27aaf6abc47b08b7321e23cfc560, type: 2}
+    dialogue: You're the only one who can save Hikaru now.
+  - speaker: {fileID: 11400000, guid: 4e1e5cc4d0d394dbbbb193261c90a472, type: 2}
+    dialogue: Save? How? Please tell me. I'd do anyting.
+  - speaker: {fileID: 11400000, guid: cc9e27aaf6abc47b08b7321e23cfc560, type: 2}
+    dialogue: To bring back the rain, you must appease God Inari.
+  - speaker: {fileID: 11400000, guid: cc9e27aaf6abc47b08b7321e23cfc560, type: 2}
+    dialogue: To do so, you need  to collect three offerings.
+  - speaker: {fileID: 11400000, guid: cc9e27aaf6abc47b08b7321e23cfc560, type: 2}
+    dialogue: One in the Human Realm, and the other two in the Demi-human realm.
+  - speaker: {fileID: 11400000, guid: 4e1e5cc4d0d394dbbbb193261c90a472, type: 2}
+    dialogue: Offering? Demi-human Realm? Grandma, I'm confused.
+  - speaker: {fileID: 11400000, guid: cc9e27aaf6abc47b08b7321e23cfc560, type: 2}
+    dialogue: Look. You must take the first offering from Landlord Nishijima's castle.
+  - speaker: {fileID: 11400000, guid: cc9e27aaf6abc47b08b7321e23cfc560, type: 2}
+    dialogue: Then you must go to the Grand Shrine and enter the Demi-human Realm
+      from there to take the rest two.
+  - speaker: {fileID: 11400000, guid: 4e1e5cc4d0d394dbbbb193261c90a472, type: 2}
+    dialogue: But how do I do that?
+  - speaker: {fileID: 11400000, guid: cc9e27aaf6abc47b08b7321e23cfc560, type: 2}
+    dialogue: You'll find out there.
+  - speaker: {fileID: 11400000, guid: cc9e27aaf6abc47b08b7321e23cfc560, type: 2}
+    dialogue: Put on my clothes. It'll give you the power to transform to human,
+      but only for limited time.
+  - speaker: {fileID: 11400000, guid: cc9e27aaf6abc47b08b7321e23cfc560, type: 2}
+    dialogue: This is the only thing I can do for you...
+  - speaker: {fileID: 11400000, guid: 4e1e5cc4d0d394dbbbb193261c90a472, type: 2}
+    dialogue: I...I got it, grandma.
+  - speaker: {fileID: 11400000, guid: cc9e27aaf6abc47b08b7321e23cfc560, type: 2}
+    dialogue: I watched you and Hikaru grew up toghether. How I wish I could spend
+      more time with you...
+  - speaker: {fileID: 11400000, guid: cc9e27aaf6abc47b08b7321e23cfc560, type: 2}
+    dialogue: This is my last wish...
+  - speaker: {fileID: 11400000, guid: 4e1e5cc4d0d394dbbbb193261c90a472, type: 2}
+    dialogue: Hikaru is my friend. I'll save him. I swear on my life.
+  - speaker: {fileID: 11400000, guid: cc9e27aaf6abc47b08b7321e23cfc560, type: 2}
+    dialogue: Brave child...
