@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class FishSeller : Interactable
 {
     public static bool sawCat, givenFish;

@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - DialogueManager
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - 
   - 
   - 
-  - Blocking
-  - Character
+  - 
+  - 
   - 
   - 
   - 
@@ -42,11 +44,17 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Background
-    uniqueID: 2784075321
+    uniqueID: 2682433657
     locked: 0
-  - name: Character
-    uniqueID: 2322675607
+  - name: Static Architectures
+    uniqueID: 3491129963
+    locked: 0
+  - name: GameObjects
+    uniqueID: 3084572713
+    locked: 0
+  - name: Mini Popup
+    uniqueID: 3045848003
     locked: 0
   - name: UI
-    uniqueID: 1028919099
+    uniqueID: 4251077933
     locked: 0

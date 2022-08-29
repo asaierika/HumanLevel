@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class Cat2 : Interactable
 {
     public Conversation convo1, convo2, convo3;
