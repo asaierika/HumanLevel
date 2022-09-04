@@ -52,9 +52,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (currIndex >= currentConvo.allLines.Length)
         {
-            instance.dialogBox.transform.localScale = Vector3.zero;           
-            inDialogue = false;
-            GameEvents.instance.CloseUI();
+            instance.dialogBox.transform.localScale = Vector3.zero;    
+            StartCoroutine(EndDialogue());       
         }
         else
         {
@@ -63,6 +62,18 @@ public class DialogueManager : MonoBehaviour
             speakerSprite.sprite = currentConvo.allLines[currIndex].speaker.speakerSprite;
             currIndex++;
         }
+    }
+
+    // For some reason, need to wait for some time 
+    // before setting inDialogue to false and call 
+    // CloseUI, otherwise a new dialogue would be 
+    // triggered as the player stands in the trigger
+    // zone of the interactable and presses 'z'. 
+    IEnumerator EndDialogue() {
+        yield return new WaitForSeconds(0.1f);
+        Debug.Log("isDialogue = false");
+        inDialogue = false;
+        GameEvents.instance.CloseUI();
     }
 
 }

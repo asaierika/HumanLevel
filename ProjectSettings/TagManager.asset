@@ -49,7 +49,7 @@ TagManager:
   - name: Static Architectures
     uniqueID: 3491129963
     locked: 0
-  - name: GameObjects
+  - name: GameObject
     uniqueID: 3084572713
     locked: 0
   - name: Mini Popup

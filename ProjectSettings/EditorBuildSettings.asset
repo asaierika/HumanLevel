@@ -17,4 +17,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Holy Wood.unity
     guid: 526d60ff1c9954ce981e70d551df2083
+  - enabled: 1
+    path: Assets/Scenes/Moutain_cutscene.unity
+    guid: 1dac531ebc09548c596ced8cfb31dc15
+  - enabled: 0
+    path: Assets/Scenes/Test.unity
+    guid: 121d86f3548974d2389ded15661dc571
+  - enabled: 1
+    path: Assets/Scenes/Street_cutscene1.unity
+    guid: 5bd6beaa8ab3543588affcef1562ca98
+  - enabled: 1
+    path: Assets/Scenes/Street.unity
+    guid: 7416d3fddb2984e5ca6d7c86afb8897e
+  - enabled: 1
+    path: Assets/Scenes/Castle_1stHall.unity
+    guid: 5a0da1f3a98d346bc9609d07e57747fe
+  - enabled: 1
+    path: Assets/Scenes/Castle_cutscene1.unity
+    guid: e0fb29bd89ab2407aa5ecd0a3171833d
+  - enabled: 1
+    path: Assets/Scenes/Castle_cutscene2.unity
+    guid: 8cb05c03afe4b4f6ab8718120c46d275
+  - enabled: 1
+    path: Assets/Scenes/Chamber.unity
+    guid: cde05d326cd354a1881f7f004e32b8f8
+  - enabled: 1
+    path: Assets/Scenes/HikaruRoom_cutscene.unity
+    guid: 4c2e5df678e4d4d6498bf9d362b7d4e7
   m_configObjects: {}
