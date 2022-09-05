@@ -7,16 +7,21 @@ public class Kizuna : MonoBehaviour
 {
     public float moveSpeed = 1f;
     public VectorValue startingPosition;
-    private Rigidbody2D rb;
-    private Animator animator;
+    public Rigidbody2D rb;
+    public Animator animator;
 
     private void Start()
     {
         if (GameManager.instance.foxInitialised)
         transform.position = startingPosition.initialValue;
         
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        if (rb == null) {
+            rb = GetComponent<Rigidbody2D>();
+        }
+
+        if (animator == null) {
+            animator = GetComponent<Animator>();
+        }
 
         GameEvents.instance.onOpenUI += FreezeMovement;
         GameEvents.instance.onCloseUI += RestoreMovement;        
@@ -32,17 +37,21 @@ public class Kizuna : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
+  
         if (x != 0 || y != 0)
         {
             TryMove(new Vector2(x, y));
-            animator.SetFloat("moveX", x);
-            animator.SetFloat("moveY", y);
-            animator.SetBool("moving", true);
+            // The condition clause should eventually be removed
+            // as all PCs should have an animator
+            if (animator != null) {
+                animator.SetFloat("moveX", x);
+                animator.SetFloat("moveY", y);
+                animator.SetBool("moving", true);
+            }
+        } else {
+            if (animator != null) animator.SetBool("moving", false);
         }
-        else
-        {
-            animator.SetBool("moving", false);
-        }
+        
     }
 
     private void TryMove(Vector2 direction)
@@ -52,6 +61,7 @@ public class Kizuna : MonoBehaviour
 
     public void FreezeMovement() {
         GameManager.instance.foxFrozen = true;
+        if (animator != null) animator.SetBool("moving", false);
     }
 
     public void RestoreMovement() {

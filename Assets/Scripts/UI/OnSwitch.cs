@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class OnSwitch : MonoBehaviour
 {
-    public void SwitchState() {
-        Debug.Log("Change gameObject active state");
+    public bool isActiveInSpirit;
+
+    public void SwitchToSpiritState() {
+        gameObject.SetActive(isActiveInSpirit);
+    }
+
+    public void SwitchToDemiHumanState() {
+        gameObject.SetActive(!isActiveInSpirit);
+    }
+
+    public void GenericSwitchState() {
         gameObject.SetActive(!gameObject.activeInHierarchy);
     }
 }
