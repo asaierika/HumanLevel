@@ -28,9 +28,9 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        //Debug.Log(inDialogue);
+        if (Input.GetKeyDown(KeyCode.Z) && inDialogue)
         {
-            if (inDialogue)
             instance.ReadNext();
         }
     }
@@ -38,24 +38,29 @@ public class DialogueManager : MonoBehaviour
     public static void StartConversation(Conversation convo)
     {
         GameEvents.instance.OpenUI();
-        inDialogue = true;
+        
         instance.dialogBox.transform.localScale = Vector3.one;
         instance.currIndex = 0;
         instance.currentConvo = convo;
         instance.speakerName.text = "";
         instance.dialogue.text = "";
 
-        instance.ReadNext();       
+        instance.ReadNext();     
+        //inDialogue = true;  
     }
 
     public void ReadNext()
     {
+        if (currIndex == 0)
+        {
+            StartCoroutine(StartDialogue());
+        }
         if (currIndex >= currentConvo.allLines.Length)
         {
             instance.dialogBox.transform.localScale = Vector3.zero;    
             StartCoroutine(EndDialogue());       
         }
-        else
+        else 
         {
             speakerName.text = currentConvo.allLines[currIndex].speaker.speakerName;
             dialogue.text = currentConvo.allLines[currIndex].dialogue;
@@ -71,9 +76,12 @@ public class DialogueManager : MonoBehaviour
     // zone of the interactable and presses 'z'. 
     IEnumerator EndDialogue() {
         yield return new WaitForSeconds(0.1f);
-        Debug.Log("isDialogue = false");
         inDialogue = false;
         GameEvents.instance.CloseUI();
     }
 
+    IEnumerator StartDialogue() {
+        yield return new WaitForSeconds(0.1f);
+        inDialogue = true;
+    }
 }

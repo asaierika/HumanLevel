@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07fd9bf9ca7674ccf9fbb58cbe9468e4, type: 3}
+  m_Name: Rabbit1
+  m_EditorClassIdentifier: 
+  allLines:
+  - speaker: {fileID: 11400000, guid: 82599341f3fb340ddb49e6307714d021, type: 2}
+    dialogue: 'Sorry to disturb. '
+  - speaker: {fileID: 11400000, guid: 64f060affea614965aae467eb57950be, type: 2}
+    dialogue: '!'
+  - speaker: {fileID: 11400000, guid: 82599341f3fb340ddb49e6307714d021, type: 2}
+    dialogue: (She looks scared.) Don't worry, I'm here for information.
+  - speaker: {fileID: 11400000, guid: 82599341f3fb340ddb49e6307714d021, type: 2}
+    dialogue: Do you know any broker who has information about the sacred treasures?
+  - speaker: {fileID: 11400000, guid: 64f060affea614965aae467eb57950be, type: 2}
+    dialogue: Hmmm...Nanami is not sure. But Nanami knows Kenji, and Kenji knows
+      all sorts of people in the village.
+  - speaker: {fileID: 11400000, guid: 64f060affea614965aae467eb57950be, type: 2}
+    dialogue: he usually fishes by the canal in the afternoon...
+  - speaker: {fileID: 11400000, guid: 82599341f3fb340ddb49e6307714d021, type: 2}
+    dialogue: Alright, thank you, Nanami!

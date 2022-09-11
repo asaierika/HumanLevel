@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Kizuna : MonoBehaviour
+public class KizunaMovement : MonoBehaviour
 {
     public float moveSpeed = 1f;
     public VectorValue startingPosition;

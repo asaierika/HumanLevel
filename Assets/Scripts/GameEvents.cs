@@ -31,4 +31,24 @@ public class GameEvents : MonoBehaviour
             onCloseUI();
         }
     }
+
+    public event Action onEnterSpiritMode;
+
+    public void EnterSpiritMode()
+    {
+        if (onEnterSpiritMode != null) 
+        {
+            EnterSpiritMode();
+        }
+    }
+
+    public event Action onExitSpiritMode;
+
+    public void ExitSpiritMode()
+    {
+        if (onExitSpiritMode != null) 
+        {
+            ExitSpiritMode();
+        }
+    }
 }
