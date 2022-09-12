@@ -5,21 +5,25 @@ using UnityEngine.Events;
 
 public class EventListener : MonoBehaviour
 {
-    public GameEvent gameEvent;
+    // Permit a many to many relationship between events ad response
+    // One event can trigger multiple response while multiple events can trigger 
+    // the same response.
+    public GameEvent[] gameEvents;
     public UnityEvent response;
 
     void OnEnable() {
-        Debug.Log(gameObject.name + " added");
-        gameEvent.AddListener(this);
+        foreach (GameEvent gameEvent in gameEvents) {
+            gameEvent.AddListener(this);
+        }
     }
 
     void OnDisable() {
-        Debug.Log(gameObject.name + " added");
-        gameEvent.RemoveListener(this);
+        foreach (GameEvent gameEvent in gameEvents) {
+            gameEvent.RemoveListener(this);
+        }
     }
 
     public void OnEventTriggered() {
-        Debug.Log("OnEventTriggered");
         response.Invoke();
     }
 }

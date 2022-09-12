@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class KizunaMovement : MonoBehaviour
+public class SpiritMovement : MonoBehaviour
 {
     public float moveSpeed = 1f;
     public VectorValue startingPosition;
@@ -31,7 +31,7 @@ public class KizunaMovement : MonoBehaviour
     {    
         if (GameManager.instance.foxFrozen)
         {
-            return;
+            //return;
         }
         
         float x = Input.GetAxisRaw("Horizontal");
@@ -68,3 +68,4 @@ public class KizunaMovement : MonoBehaviour
         GameManager.instance.foxFrozen = false;
     }
 }
+

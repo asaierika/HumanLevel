@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 6988686576275799339}
   - component: {fileID: 1038100804889468201}
   - component: {fileID: 4439606797273825434}
+  - component: {fileID: 1627761138}
+  - component: {fileID: 1627761139}
+  - component: {fileID: 1627761140}
   m_Layer: 0
   m_Name: Hikaru_p
   m_TagString: Player
@@ -29,8 +32,8 @@ Transform:
   m_GameObject: {fileID: 5220255599535183672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.564, y: 0.3192, z: 0}
-  m_LocalScale: {x: 0.2573636, y: 0.2573636, z: 0.2573636}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -147,3 +150,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 2
+--- !u!114 &1627761138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220255599535183672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 186cba0f4f9ee4de7b48702c51773fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1627761139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220255599535183672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bfeb2c2eb1a4b8aa15cfcbbdb4af84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1627761140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220255599535183672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4d57a56d66f4d2cb9fda1d023f7468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 514970bec93f44367b567c6c45c8ccfb, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1627761139}
+        m_TargetAssemblyTypeName: ComponentController, Assembly-CSharp
+        m_MethodName: MovementAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

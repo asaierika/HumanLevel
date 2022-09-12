@@ -18,8 +18,10 @@ public class Interactable : MonoBehaviour
 
         // when the player is in the range of the interactable object and
         // at the same time the player press "Z", Interact() is called
-        if (Input.GetKeyDown(KeyCode.Z) && playerInRange)
+        if (Input.GetKeyDown(KeyCode.Z) && playerInRange) {
+            Debug.Log("Interact");
             Interact();
+        }
     }
 
     public virtual void Interact()
@@ -36,6 +38,24 @@ public class Interactable : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
+        {
+            playerInRange = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collision with " + collision.gameObject.name);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Player in range");
+            playerInRange = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
             playerInRange = false;
         }

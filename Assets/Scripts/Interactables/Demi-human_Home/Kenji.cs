@@ -9,7 +9,8 @@ public class Kenji : Interactable
     public Sprite kenjiStanding;
 
     public static bool talked1, talked2;
-    public Conversation convo1, convo2, convo3, convo4;
+    public Conversation convo1, convo2, convo3, convo4, convo5;
+    public Item phoenixFish;
 
     void Start() {
         spriteR = gameObject.GetComponent<SpriteRenderer>();
@@ -45,6 +46,12 @@ public class Kenji : Interactable
             return;
         }
 
-        DialogueManager.StartConversation(convo4);
+        if (!Inventory.instance.Contains(phoenixFish))
+        {
+            DialogueManager.StartConversation(convo4);
+            return;
+        }
+
+        DialogueManager.StartConversation(convo5);
     }
 }
