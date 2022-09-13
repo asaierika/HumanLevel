@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhoenixFish : Interactable
+public class PhoenixFish : InteractableFollower
 {
     public GameObject phoenixFish;
 
@@ -14,14 +14,32 @@ public class PhoenixFish : Interactable
 
     void Start() 
     {
+        Initialize();
         spriteR = gameObject.GetComponent<SpriteRenderer>();
 
         GameEvents.instance.onEnterSpiritMode += Show;
         GameEvents.instance.onExitSpiritMode -= Hide;
     }
+
     void Update()
     {
+        Trace();
         TryInteract();
+    }
+
+    void FixedUpdate() {
+        if (spriteR.enabled)
+        {
+        Move();
+        Change();
+        }
+    }
+
+    protected void Change() {
+        if (transform.position.x >= player.position.x)
+        transform.localScale = new Vector3(1, 1, 1);
+        else 
+        transform.localScale = new Vector3(-1, 1, 1);    
     }
 
     public override void Interact()
