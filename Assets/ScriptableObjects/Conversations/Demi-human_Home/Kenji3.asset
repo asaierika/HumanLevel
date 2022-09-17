@@ -27,3 +27,7 @@ MonoBehaviour:
       we can't with them?
   - speaker: {fileID: 11400000, guid: 86bf7fc2c5d21495db6e6e9227981823, type: 2}
     dialogue: Press 'R' to ring the bells.
+  - speaker: {fileID: 11400000, guid: 6f45238e7f3ff4046a97a9daa81c0cef, type: 2}
+    dialogue: '...Right, I can lend this fishing rod to you for now. '
+  - speaker: {fileID: 11400000, guid: 86bf7fc2c5d21495db6e6e9227981823, type: 2}
+    dialogue: Fishing rod obtained. Press 'I' to open the inventory to check.

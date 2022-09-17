@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhoenixFish : InteractableFollower
+public class PhoenixFish : Follower
 {
     public GameObject phoenixFish;
-
+    public GameEvent startFishing;
     public Conversation convo;
-
     public Item phoenixFishItem;
-
     private SpriteRenderer spriteR;
 
     void Start() 
@@ -28,6 +26,8 @@ public class PhoenixFish : InteractableFollower
     }
 
     void FixedUpdate() {
+        if (playerInRange)
+        return;
         if (spriteR.enabled)
         {
         Move();
@@ -45,6 +45,7 @@ public class PhoenixFish : InteractableFollower
     public override void Interact()
     {
         DialogueManager.StartConversation(convo);
+        startFishing.TriggerEvent();
         Inventory.instance.Add(phoenixFishItem);
         phoenixFish.SetActive(false);
     }

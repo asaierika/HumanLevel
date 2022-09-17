@@ -5,9 +5,8 @@ using UnityEngine;
 public class Kenji : Interactable
 {
     private SpriteRenderer spriteR;
-
     public Sprite kenjiStanding;
-
+    public Item fishingRod;
     public static bool talked1, talked2;
     public Conversation convo1, convo2, convo3, convo4, convo5;
     public Item phoenixFish;
@@ -43,6 +42,7 @@ public class Kenji : Interactable
         {
             DialogueManager.StartConversation(convo3);
             talked2 = true;
+            Inventory.instance.Add(fishingRod);
             return;
         }
 
@@ -51,7 +51,8 @@ public class Kenji : Interactable
             DialogueManager.StartConversation(convo4);
             return;
         }
-
+        Inventory.instance.Remove(fishingRod);
+        Inventory.instance.Remove(phoenixFish);
         DialogueManager.StartConversation(convo5);
     }
 }

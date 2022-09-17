@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Follower\Follower.cs" />
      <Compile Include="Assets\Scripts\DialogueSystem\Dialogues\DemiHumanDialogueManager.cs" />
      <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
@@ -59,6 +60,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
      <Compile Include="Assets\Scripts\Collidable.cs" />
      <Compile Include="Assets\Scripts\DialogueSystem\Conversation.cs" />
+     <Compile Include="Assets\Scripts\Follower\InteractableFollower.cs" />
      <Compile Include="Assets\Scripts\Portal.cs" />
      <Compile Include="Assets\Scripts\DialogueSystem\Speaker.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
@@ -125,8 +127,8 @@
      <Compile Include="Assets\Scripts\Player\SpiritMovement.cs" />
      <Compile Include="Assets\Scripts\UI\PopupExit.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-     <Compile Include="Assets\Scripts\Follower\Follower.cs" />
-     <Compile Include="Assets\Scripts\Follower\InteractableFollower.cs" />
+     <Compile Include="Assets\Scripts\Interactables\Demi-human_Home\FishingArea.cs" />
+     <Compile Include="Assets\Scripts\Player\Demi-human_Home\Fishing.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
