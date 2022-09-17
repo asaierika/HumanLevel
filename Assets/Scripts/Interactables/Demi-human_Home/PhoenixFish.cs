@@ -15,8 +15,8 @@ public class PhoenixFish : Follower
         Initialize();
         spriteR = gameObject.GetComponent<SpriteRenderer>();
 
-        GameEvents.instance.onEnterSpiritMode += Show;
-        GameEvents.instance.onExitSpiritMode -= Hide;
+        //GameEvents.instance.onEnterSpiritMode += Show;
+        //GameEvents.instance.onExitSpiritMode -= Hide;
     }
 
     void Update()

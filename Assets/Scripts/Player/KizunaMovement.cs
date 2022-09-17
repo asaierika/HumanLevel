@@ -65,6 +65,7 @@ public class KizunaMovement : MonoBehaviour
     }
 
     public void RestoreMovement() {
+        Debug.Log("restore movement");
         GameManager.instance.foxFrozen = false;
     }
 }
