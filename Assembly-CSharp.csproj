@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Interactables\Street\Eri.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
      <Compile Include="Assets\ScriptableObjects\Template\DialogueContainer.cs" />
+     <Compile Include="Assets\Scripts\Chamber\ICompletable.cs" />
      <Compile Include="Assets\Scripts\DialogueSystem\Dialogues\DialogueTrigger.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
@@ -103,6 +104,7 @@
      <Compile Include="Assets\Scripts\Interactables\Street\FishSeller.cs" />
      <Compile Include="Assets\Scripts\Cutscenes\CutsceneDialogue.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+     <Compile Include="Assets\Scripts\Chamber\DoorOpen.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
      <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
