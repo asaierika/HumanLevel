@@ -9,6 +9,10 @@ public class KizunaMovement : MonoBehaviour
     public VectorValue startingPosition;
     public Rigidbody2D rb;
     public Animator animator;
+    private RaycastHit2D hitX;
+    private RaycastHit2D hitY;
+    private BoxCollider2D boxCollider;
+    public Vector2 raycastPosition;
 
     private void Start()
     {
@@ -21,6 +25,10 @@ public class KizunaMovement : MonoBehaviour
 
         if (animator == null) {
             animator = GetComponent<Animator>();
+        }
+
+        if (boxCollider == null) {
+            boxCollider = GetComponent<BoxCollider2D>();
         }
 
         GameEvents.instance.onOpenUI += FreezeMovement;
@@ -37,7 +45,6 @@ public class KizunaMovement : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-  
         if (x != 0 || y != 0)
         {
             TryMove(new Vector2(x, y));
@@ -49,14 +56,29 @@ public class KizunaMovement : MonoBehaviour
                 animator.SetBool("moving", true);
             }
         } else {
-            if (animator != null) animator.SetBool("moving", false);
+            if (animator != null) 
+            animator.SetBool("moving", false);
         }
         
     }
 
-    private void TryMove(Vector2 direction)
+    private void TryMove(Vector2 movement)
     {
-        rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+        /*
+        Vector2 boxPosition = new Vector2(transform.position.x + boxCollider.offset.x,
+            transform.position.y + boxCollider.offset.y);
+        hitX = Physics2D.BoxCast(boxPosition, boxCollider.size, 0, new Vector2(movement.x, 0), 
+            Mathf.Abs(movement.x * Time.deltaTime * moveSpeed), LayerMask.GetMask("Game Object", "Blocking"));
+        hitY = Physics2D.BoxCast(boxPosition, boxCollider.size, 0, new Vector2(0, movement.y), 
+            Mathf.Abs(movement.y * Time.deltaTime * moveSpeed), LayerMask.GetMask("Game Object", "Blocking"));
+        if (hitX.collider != null)
+        movement.x = 0f;
+
+        if (hitY.collider != null)
+        movement.y = 0f;
+        */
+        
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }   
 
     public void FreezeMovement() {

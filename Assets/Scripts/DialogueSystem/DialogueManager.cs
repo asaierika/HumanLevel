@@ -15,7 +15,6 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        //dialogBox.transform.localScale = Vector3.zero;
         if (instance == null)
         {
             instance = this;
@@ -28,7 +27,6 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(inDialogue);
         if (Input.GetKeyDown(KeyCode.Z) && inDialogue)
         {
             instance.ReadNext();
@@ -41,7 +39,6 @@ public class DialogueManager : MonoBehaviour
         instance.dialogBox.SetActive(true);
         GameEvents.instance.OpenUI();
         
-        //instance.dialogBox.transform.localScale = Vector3.one;
         instance.currIndex = 0;
         instance.currentConvo = convo;
         instance.speakerName.text = "";

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DialogueManager
   - Floor
+  - Follower
   layers:
   - Default
   - TransparentFX
@@ -13,9 +14,9 @@ TagManager:
   - 
   - Water
   - UI
-  - Default Blocking
+  - Blocking
   - Water Blocking
-  - 
+  - Game Object
   - 
   - 
   - 

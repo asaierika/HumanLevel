@@ -2075,7 +2075,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f46ee74dd54c74bcc9eb4e350d3b0e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1329810882}
   moveSpeed: 1
   playerInRange: 0
   phoenixFish: {fileID: 451040741}
@@ -7818,6 +7817,8 @@ MonoBehaviour:
   playerInRange: 0
   convo1: {fileID: 11400000, guid: ede6345d787e945cdabf8ec3a65dee76, type: 2}
   convo2: {fileID: 11400000, guid: 847d69cb30b7a4a898d5094737102289, type: 2}
+  item1: {fileID: 11400000, guid: 76adc1d34b05143a0a8dba9a4c7f2443, type: 2}
+  item2: {fileID: 11400000, guid: cbe110b64d978429bbd1138d70ca1cc6, type: 2}
 --- !u!61 &2129816140
 BoxCollider2D:
   m_ObjectHideFlags: 0

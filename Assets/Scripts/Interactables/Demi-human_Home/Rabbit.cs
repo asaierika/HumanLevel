@@ -17,7 +17,7 @@ public class Rabbit : Interactable
     {
         if (!talked)
         {
-            DialogueManager.StartConversation(convo1);
+            DialogueManager.StartConversation(convo1);          
             talked = true;
             return;
         }

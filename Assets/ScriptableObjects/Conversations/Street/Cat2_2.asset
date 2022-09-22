@@ -26,5 +26,3 @@ MonoBehaviour:
       underneath.
   - speaker: {fileID: 11400000, guid: 86bf7fc2c5d21495db6e6e9227981823, type: 2}
     dialogue: It's a flower-shaped hair pin.
-  - speaker: {fileID: 11400000, guid: 86bf7fc2c5d21495db6e6e9227981823, type: 2}
-    dialogue: Hair pin obtained.

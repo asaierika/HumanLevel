@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhoenixFish : Follower
+public class PhoenixFish : Follower_simple
 {
     public GameObject phoenixFish;
     public GameEvent startFishing;
@@ -14,9 +14,6 @@ public class PhoenixFish : Follower
     {
         Initialize();
         spriteR = gameObject.GetComponent<SpriteRenderer>();
-
-        //GameEvents.instance.onEnterSpiritMode += Show;
-        //GameEvents.instance.onExitSpiritMode -= Hide;
     }
 
     void Update()

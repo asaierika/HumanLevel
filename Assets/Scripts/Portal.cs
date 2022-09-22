@@ -8,9 +8,9 @@ public class Portal : Collidable
     public Vector2 playerPosition;
     public VectorValue playerStorage;
 
-    protected override void OnCollide(Collider2D coll)
+    protected override void OnCollide(Collider2D collison)
     {
-        if (coll.name == "Fox")
+        if (collison.CompareTag("Player"))
         {
             playerStorage.initialValue = playerPosition;
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);

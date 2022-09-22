@@ -43,6 +43,7 @@
      <Compile Include="Assets\Scripts\DialogueSystem\DialogueManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
      <Compile Include="Assets\Scripts\Inventory\InventorySlot.cs" />
+     <Compile Include="Assets\Scripts\Inventory\ItemObtainedHint.cs" />
      <Compile Include="Assets\Scripts\Chamber\TableTurn.cs" />
      <Compile Include="Assets\Scripts\Cutscenes\SceneTransition.cs" />
      <Compile Include="Assets\Scripts\GameEvents.cs" />
@@ -51,6 +52,7 @@
      <Compile Include="Assets\Scripts\Interactables\Street\Eri.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
      <Compile Include="Assets\ScriptableObjects\Template\DialogueContainer.cs" />
+     <Compile Include="Assets\Scripts\Follower\Castle_1stHall\Eri_follower.cs" />
      <Compile Include="Assets\Scripts\DialogueSystem\Dialogues\DialogueTrigger.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
@@ -62,7 +64,6 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
      <Compile Include="Assets\Scripts\Collidable.cs" />
      <Compile Include="Assets\Scripts\DialogueSystem\Conversation.cs" />
-     <Compile Include="Assets\Scripts\Follower\InteractableFollower.cs" />
      <Compile Include="Assets\Scripts\Portal.cs" />
      <Compile Include="Assets\Scripts\DialogueSystem\Speaker.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
@@ -110,6 +111,7 @@
      <Compile Include="Assets\Scripts\Interactables\Street\FishSeller.cs" />
      <Compile Include="Assets\Scripts\Cutscenes\CutsceneDialogue.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+     <Compile Include="Assets\Scripts\Cutscenes\CutsceneController.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
      <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
@@ -128,6 +130,8 @@
      <Compile Include="Assets\Scripts\Player\SpiritMovement.cs" />
      <Compile Include="Assets\Scripts\UI\PopupExit.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+     <Compile Include="Assets\Scripts\Follower\FollowingManager.cs" />
+     <Compile Include="Assets\Scripts\Follower\Follower_simple.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

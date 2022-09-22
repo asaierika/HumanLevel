@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class InteractableFollower : Follower
+// simple follower that allows sliding
+public class Follower_simple : MonoBehaviour
 {
-    // true when the player triggers the collider of the interactable object 
-    // false when the player exits
+    protected Transform player;
+    public float moveSpeed = 1f; 
+    protected Rigidbody2D rb;
+    protected Vector2 movement;
     public bool playerInRange;
 
     // Start is called before the first frame update
@@ -25,6 +29,33 @@ public class InteractableFollower : Follower
         Move();
     }
 
+    protected void Initialize() {
+        rb = this.GetComponent<Rigidbody2D>();
+        player = GameObject.FindWithTag("Player").transform;
+
+    }
+
+    protected void Change() {
+        // specifies how the follower object changes its
+        // transform when in different relative position
+        // to the player 
+    }
+
+    protected void Trace() {
+        Vector3 direction = player.position - transform.position;
+        direction.Normalize();
+        movement = direction;
+    }
+
+
+    protected void Move() {
+
+        rb.MovePosition((Vector2) transform.position + (movement * moveSpeed * Time.deltaTime));
+    }
+    
+
+    // methods from Interactable class
+    // ignore if not using interactable
     public void TryInteract()
     {
         
@@ -56,26 +87,6 @@ public class InteractableFollower : Follower
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
-        }
+        } 
     }
-
-/*
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Collision with " + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Player in range");
-            playerInRange = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            playerInRange = false;
-        }
-    }
-    */
 }
