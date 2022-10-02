@@ -8,6 +8,7 @@ public class PhoenixFish : Follower_simple
     public GameEvent startFishing;
     public Conversation convo;
     public Item phoenixFishItem;
+    public Item fishingRod;
     private SpriteRenderer spriteR;
 
     void Start() 
@@ -27,8 +28,8 @@ public class PhoenixFish : Follower_simple
         return;
         if (spriteR.enabled)
         {
-        Move();
-        Change();
+            Move();
+            Change();
         }
     }
 
@@ -41,6 +42,9 @@ public class PhoenixFish : Follower_simple
 
     public override void Interact()
     {
+        if (!Inventory.instance.Contains(fishingRod))
+        return;
+
         DialogueManager.StartConversation(convo);
         startFishing.TriggerEvent();
         Inventory.instance.Add(phoenixFishItem);

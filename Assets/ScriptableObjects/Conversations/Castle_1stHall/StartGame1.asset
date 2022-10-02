@@ -16,28 +16,26 @@ MonoBehaviour:
   - speaker: {fileID: 11400000, guid: fd48fc2f15e944fabb5b3e41742b512a, type: 2}
     dialogue: ' So what do you want to play?'
   - speaker: {fileID: 11400000, guid: c2bdc014840524535b29ed26da06ef2a, type: 2}
-    dialogue: (I'm not here to play...) Eri, can I look around the house?
+    dialogue: (I'm not here to play...) Eri, can I ask you a question first?
   - speaker: {fileID: 11400000, guid: fd48fc2f15e944fabb5b3e41742b512a, type: 2}
-    dialogue: You're...not going to play with me?
-  - speaker: {fileID: 11400000, guid: 5f96e5339a25749dcab96a3dc80c1fa9, type: 2}
-    dialogue: (Stares.)
+    dialogue: Sure!
   - speaker: {fileID: 11400000, guid: c2bdc014840524535b29ed26da06ef2a, type: 2}
-    dialogue: (Guess I don't have a choice now.) I'm OK with anything you want to
-      play!
+    dialogue: Do you know about the offering?
   - speaker: {fileID: 11400000, guid: fd48fc2f15e944fabb5b3e41742b512a, type: 2}
-    dialogue: (Smiles.) Yeah! Let''s play catch and run then! I always like being
-      the ghost.
-  - speaker: {fileID: 11400000, guid: fd48fc2f15e944fabb5b3e41742b512a, type: 2}
-    dialogue: You'll run to a room with a crane painting before I catch you~
+    dialogue: Hmmm...I remember father got it one year ago, and kept it in the treasure
+      room.
   - speaker: {fileID: 11400000, guid: c2bdc014840524535b29ed26da06ef2a, type: 2}
-    dialogue: What? Crane painting? But I don't even know where it is...
+    dialogue: Treasure room?
   - speaker: {fileID: 11400000, guid: fd48fc2f15e944fabb5b3e41742b512a, type: 2}
-    dialogue: Let's start!
+    dialogue: Yup! It's on the second floor. Only father has the key. But he's out
+      today.
   - speaker: {fileID: 11400000, guid: c2bdc014840524535b29ed26da06ef2a, type: 2}
-    dialogue: (Oh my god...the littel human girl.)
-  - speaker: {fileID: 11400000, guid: 5f96e5339a25749dcab96a3dc80c1fa9, type: 2}
-    dialogue: Eri-sama, to keep it safe. Please don't go to the second floor.
+    dialogue: (I need to check the treasure room.) I see...thanks, Eri!
   - speaker: {fileID: 11400000, guid: fd48fc2f15e944fabb5b3e41742b512a, type: 2}
-    dialogue: Alright!
-  - speaker: {fileID: 11400000, guid: 86bf7fc2c5d21495db6e6e9227981823, type: 2}
-    dialogue: Find the room with crane painting before Eri catches you!
+    dialogue: 'Sure thing, Kizuna! You''re my friend! '
+  - speaker: {fileID: 11400000, guid: c2bdc014840524535b29ed26da06ef2a, type: 2}
+    dialogue: (Well, the sudden feeling of guilt...)
+  - speaker: {fileID: 11400000, guid: c2bdc014840524535b29ed26da06ef2a, type: 2}
+    dialogue: I'll play with you later, OK?
+  - speaker: {fileID: 11400000, guid: fd48fc2f15e944fabb5b3e41742b512a, type: 2}
+    dialogue: Whenener you're ready!

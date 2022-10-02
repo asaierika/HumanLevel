@@ -11,7 +11,7 @@ public class Interactable : MonoBehaviour
     public void TryInteract()
     {
         
-        if (GameManager.instance.foxFrozen)
+        if (GameManager.instance.foxFrozen || DialogueManager.inDialogue)
             // when the fox is frozen, eg inventory is open or in dialogue,
             // the player cannot interact with interactable objects 
             return;

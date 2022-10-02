@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6596021903434587413}
   - component: {fileID: 6596021903434587408}
   m_Layer: 8
-  m_Name: Eri
+  m_Name: Eri_follower
   m_TagString: Follower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

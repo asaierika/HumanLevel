@@ -5,10 +5,9 @@ using UnityEngine;
 public class Rabbit : Interactable
 {
     public Conversation convo1, convo2;
-
     public static bool talked;
 
-     void Update()
+    void Update()
     {
         TryInteract();
     }
@@ -17,7 +16,7 @@ public class Rabbit : Interactable
     {
         if (!talked)
         {
-            DialogueManager.StartConversation(convo1);          
+            DialogueManager.StartConversation(convo1);        
             talked = true;
             return;
         }

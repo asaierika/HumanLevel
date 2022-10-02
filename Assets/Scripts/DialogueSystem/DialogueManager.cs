@@ -51,7 +51,8 @@ public class DialogueManager : MonoBehaviour
     public void ReadNext()
     {
         if (currIndex >= currentConvo.allLines.Length)
-        {     
+        {    
+            GameEvents.instance.CloseUI();
             StartCoroutine(EndDialogue());       
         }
         else 
@@ -71,7 +72,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator EndDialogue() {
         yield return new WaitForSeconds(0.01f);
         inDialogue = false;
-        GameEvents.instance.CloseUI();
+        
         dialogBox.SetActive(false);   
     }
 }
