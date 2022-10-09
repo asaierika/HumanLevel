@@ -3,48 +3,59 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Follower : MonoBehaviour
+public abstract class Follower : MonoBehaviour
 {
     protected Transform player;
     public float moveSpeed = 1f; 
-    protected Rigidbody2D rb;
     protected Vector2 movement;
-    private bool isColliding;
     public bool playerInRange;
     protected enum Direction { Horizontal, Vertical }
     protected Direction direction = Direction.Horizontal;
+    public VectorValue startingPosition;
+
+    protected Rigidbody2D rb;
     protected RaycastHit2D hitX;
     protected RaycastHit2D hitY;
     protected BoxCollider2D boxCollider;
+    protected Animator animator;
+   
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         Initialize();
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
-        TryInteract();
         Trace();
     }
 
-    void FixedUpdate() {
+    protected virtual void FixedUpdate() {
+        if (!FollowingManager.instance.isFollowing)
+        return;
+
+        if (playerInRange)
+        {
+            animator.SetBool("moving", false);
+            FollowingManager.instance.isFollowing = false;
+            Found();
+            return;
+        }
         Move();
+        Change();
     }
 
-    protected void Initialize() {
+    protected virtual void Initialize() {
         rb = this.GetComponent<Rigidbody2D>();
         boxCollider = this.GetComponent<BoxCollider2D>();
+        animator = this.GetComponent<Animator>();
         player = GameObject.FindWithTag("Player").transform;
-
-    }
-
-    protected void Change() {
-        // specifies how the follower object changes its
-        // transform when in different relative position
-        // to the player 
+        if (FollowingManager.instance.isFollowing)
+        {
+            //FollowingManager.instance.instance.SwitchScene(startingPosition.initialValue);
+        }
     }
 
     protected void Trace() {
@@ -52,10 +63,10 @@ public class Follower : MonoBehaviour
         direction.Normalize();
         movement = direction;
 
-        hitX = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(movement.x, 0), 
-            0.01f, LayerMask.GetMask("Blocking"));
-        hitY = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, movement.y), 
-            0.01f, LayerMask.GetMask("Blocking"));
+        hitX = Physics2D.BoxCast(transform.position + new Vector3(boxCollider.offset.x, boxCollider.offset.y, 0f), boxCollider.size, 0, new Vector2(movement.x, 0), 
+            0.1f, LayerMask.GetMask("Blocking"));
+        hitY = Physics2D.BoxCast(transform.position + new Vector3(boxCollider.offset.x, boxCollider.offset.y, 0f), boxCollider.size, 0, new Vector2(0, movement.y), 
+            0.1f, LayerMask.GetMask("Blocking"));
         
         if (hitX.collider != null)
         {
@@ -80,8 +91,12 @@ public class Follower : MonoBehaviour
 
 
     protected void Move() {
+        
         if (this.direction == Direction.Horizontal) 
         {
+            if (Mathf.Abs(movement.x) < 0.01f)
+            return;
+
             if (movement.x > 0)
             {
                 rb.MovePosition((Vector2) transform.position 
@@ -99,6 +114,9 @@ public class Follower : MonoBehaviour
         } 
         else if (this.direction == Direction.Vertical)
         {
+            if (Mathf.Abs(movement.y) < 0.01f)
+            return;
+
             if (movement.y > 0)
             {
                 rb.MovePosition((Vector2) transform.position 
@@ -116,27 +134,27 @@ public class Follower : MonoBehaviour
         }
         //rb.MovePosition((Vector2) transform.position + (movement * moveSpeed * Time.deltaTime));
     }
-    
 
-    // methods from Interactable class
-    // ignore if not using interactable
-    public void TryInteract()
+    protected void Change() 
     {
-        
-        if (GameManager.instance.foxFrozen)
-            // when the fox is frozen, eg inventory is open or in dialogue,
-            // the player cannot interact with interactable objects 
-            return;
+        if (animator == null) 
+        return;
 
-        // when the player is in the range of the interactable object and
-        // at the same time the player press "Z", Interact() is called
-        if (Input.GetKeyDown(KeyCode.Z) && playerInRange) {
-            Debug.Log("Interact");
-            Interact();
+        if (this.direction == Direction.Horizontal) 
+        {
+            animator.SetFloat("moveX", movement.x);
+            animator.SetFloat("moveY", 0);
+            animator.SetBool("moving", true);
+        } 
+        else 
+        {
+            animator.SetFloat("moveY", movement.y);
+            animator.SetFloat("moveX", 0);
+            animator.SetBool("moving", true);
         }
     }
 
-    public virtual void Interact(){}
+    protected abstract void Found();
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

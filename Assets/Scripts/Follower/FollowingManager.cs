@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FollowingManager : MonoBehaviour
 {
     public static FollowingManager instance;
-    public static bool isFollowing;
+    public bool isFollowing;
+    public GameObject follower;
+    public VectorValue position;
+    public bool passedPortal;
 
     private void Awake()
     {
@@ -20,16 +24,9 @@ public class FollowingManager : MonoBehaviour
         instance = this;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.sceneLoaded += delegate { Spawn(); };
     }
 
     public void StartFollowing()
@@ -37,17 +34,33 @@ public class FollowingManager : MonoBehaviour
         isFollowing = true;
     }
 
-    public void SwitchScene(Vector2 position)
+    public void Spawn()
     {
-        StartCoroutine(SpawnFollower(position));
+        if (passedPortal && isFollowing)
+        {
+            StartCoroutine(SpawnFollower());
+            passedPortal = false;
+        }
     }
 
-    IEnumerator SpawnFollower(Vector2 position)
+    IEnumerator SpawnFollower()
     {
-        GameObject follower = GameObject.FindWithTag("Follower");
-        follower.SetActive(false);
+        //GameObject follower = GameObject.FindWithTag("Follower");
+        //follower.SetActive(false);
         yield return new WaitForSeconds(0.5f);
-        follower.transform.position = position;
-        follower.SetActive(true);
+        GameObject spawnedFollower = Instantiate(follower);
+        spawnedFollower.transform.position = position.initialValue;
+        spawnedFollower.SetActive(true);
+    }
+
+    public void Choice1()
+    {
+        isFollowing = true;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Castle_1stHall");
+    }
+
+    public void Choice2()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("CastleFollowingStart_cutscene");
     }
 }

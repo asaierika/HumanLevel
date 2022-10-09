@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6596021903434587415}
   - component: {fileID: 6596021903434587411}
   - component: {fileID: 6596021903434587410}
+  - component: {fileID: 9104071273551581161}
   - component: {fileID: 6596021903434587413}
   - component: {fileID: 6596021903434587408}
   m_Layer: 8
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1210394583
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2098602337, guid: cace4c80e4bd243539c7cdc0dc6a9c4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -143,11 +144,11 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0026495904, y: -0.40448415}
-  m_Size: {x: 0.2110317, y: 0.2110317}
-  m_Direction: 0
---- !u!61 &6596021903434587413
-BoxCollider2D:
+  m_Offset: {x: 0.0010256245, y: -0.43939853}
+  m_Size: {x: 0.18898061, y: 0.14120294}
+  m_Direction: 1
+--- !u!70 &9104071273551581161
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -159,7 +160,23 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0063549876, y: -0.017875433}
+  m_Offset: {x: 0.0015229881, y: -0.0035178661}
+  m_Size: {x: 0.43006927, y: 1.0308118}
+  m_Direction: 0
+--- !u!61 &6596021903434587413
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6596021903434587400}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.45}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -170,7 +187,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.49833798, y: 1.0956569}
+  m_Size: {x: 0.16551164, y: 0.096211314}
   m_EdgeRadius: 0
 --- !u!114 &6596021903434587408
 MonoBehaviour:
@@ -184,7 +201,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf76c5a519b38420596d43eb56d3d7b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 1.5
   playerInRange: 0
-  convo: {fileID: 11400000, guid: 2846f5e454d984be7a8677b5b3ae02d6, type: 2}
   startingPosition: {fileID: 11400000, guid: 51ddb9c301e284da4b8421225e7d5eb3, type: 2}
+  convo: {fileID: 11400000, guid: 2846f5e454d984be7a8677b5b3ae02d6, type: 2}
+  choice1: {fileID: 11400000, guid: f0e90153c48ce47c29e677b4863d3efc, type: 2}
+  choice2: {fileID: 11400000, guid: 74e1fc96b20444ee298704384ebb2f2c, type: 2}
