@@ -17,12 +17,17 @@ public class TableTurn : MonoBehaviour, ICompletable
     public float revertRotationSpeed;
     public GameEvent revertToStart;
     public GameEvent gameComplete;
+    public GameEvent closePopup;
     private float totalMovement = -1;
     public float[] prefixMovementCost;
+    public Lockable gateLock;
     
     void Update()
     {
-        if (!complete) {
+        if (complete && gateLock.IsLocked) {
+            // When the lock to fix the gate at open position is engaged
+            gameComplete.TriggerEvent();
+        } else if (!gateLock.IsLocked && !complete) {
             if (!mistake) {
                 if (transform.rotation.eulerAngles.z <= targetAngleSeq[stage] + acceptedAngleMargin && transform.rotation.eulerAngles.z >= targetAngleSeq[stage] - acceptedAngleMargin) {
                     if (!reached) {
@@ -31,7 +36,6 @@ public class TableTurn : MonoBehaviour, ICompletable
                         reached = true;
                         if (stage == targetAngleSeq.Length) {
                             complete = true;
-                            gameComplete.TriggerEvent();
                             return;
                         }
                     }
@@ -46,14 +50,14 @@ public class TableTurn : MonoBehaviour, ICompletable
                     } else if (transform.rotation.eulerAngles.z > targetAngleSeq[stage - 1] + acceptedAngleMargin || transform.rotation.eulerAngles.z < targetAngleSeq[stage - 1] - acceptedAngleMargin) {
                         // If player overturns the current dest region they are in
                         mistake = true;
-                        revertToStart.TriggerEvent();
+                        StartRevert(false);
                         Debug.Log("Overturn");
                     }
                 } else {
                     if (rotateDir / directionSeq[stage] == -1) {
                         Debug.Log("Wrong Direction");
                         mistake = true;
-                        revertToStart.TriggerEvent();
+                        StartRevert(false);
                     } 
                 }
 
@@ -63,10 +67,14 @@ public class TableTurn : MonoBehaviour, ICompletable
         }
     }
 
-    public void StartRevert() {
-        StartCoroutine(returnToStart());
+    public void StartRevert(bool isExit) {
+        if (!gateLock.IsLocked) {
+            revertToStart.TriggerEvent();
+            StartCoroutine(returnToStart(isExit));
+        }
     }
-    IEnumerator returnToStart() {
+
+    IEnumerator returnToStart(bool isExit) {
         Debug.Log("Reverting");
         while (Mathf.Abs(transform.rotation.eulerAngles.z) > 0.5f) {
             Debug.Log("Z angle " + transform.rotation.eulerAngles.z);
@@ -79,9 +87,14 @@ public class TableTurn : MonoBehaviour, ICompletable
         // Turntable complete reset after player made a mistake
         stage = 0;
         mistake = false;
+        reached = false;
+        complete = false;
+        if (isExit) {
+            closePopup.TriggerEvent();
+        }
     }
 
-    public float getCompletionStatus() {
+    public float GetCompletionStatus() {
         // Computed only once
         if (totalMovement == -1) {
             if (directionSeq[0] == 1) {

@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\DialogueSystem\Dialogues\DemiHumanDialogueManager.cs" />
+     <Compile Include="Assets\Scripts\Core Mechs\PopupManager.cs" />
      <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
      <Compile Include="Assets\Scripts\DialogueSystem\DialogueManager.cs" />
@@ -44,8 +45,10 @@
      <Compile Include="Assets\Scripts\Inventory\InventorySlot.cs" />
      <Compile Include="Assets\Scripts\Chamber\TableTurn.cs" />
      <Compile Include="Assets\Scripts\Cutscenes\SceneTransition.cs" />
+     <Compile Include="Assets\Scripts\Interactables\Chamber\InteractableWithGames.cs" />
      <Compile Include="Assets\Scripts\GameEvents.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
+     <Compile Include="Assets\Scripts\Core Mechs\SwitchCharacter.cs" />
      <Compile Include="Assets\Scripts\Interactables\Street\Eri.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
      <Compile Include="Assets\ScriptableObjects\Template\DialogueContainer.cs" />
@@ -81,22 +84,23 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
      <Compile Include="Assets\Scripts\Player\Fox_hide.cs" />
      <Compile Include="Assets\Scripts\Inventory\ZoomInBox.cs" />
-     <Compile Include="Assets\Scripts\Movements\PlayerMovement.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-     <Compile Include="Assets\Scripts\Interactables\Chamber\Turntable.cs" />
      <Compile Include="Assets\ScriptableObjects\Template\GameEvent.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
      <Compile Include="Assets\Scripts\EventListener.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
      <Compile Include="Assets\Scripts\Singleton.cs" />
+     <Compile Include="Assets\Scripts\Interactables\MiniGame.cs" />
      <Compile Include="Assets\Scripts\Player\Spawn.cs" />
      <Compile Include="Assets\Scripts\DialogueSystem\NarrativeManager.cs" />
-     <Compile Include="Assets\Scripts\UI\OnSwitch.cs" />
+     <Compile Include="Assets\Scripts\Core Mechs\OnSwitch.cs" />
+     <Compile Include="Assets\Scripts\Interactables\Chamber\Lockable.cs" />
+     <Compile Include="Assets\Scripts\Core Mechs\CharacterInteractableManager.cs" />
      <Compile Include="Assets\Scripts\Interactables\Street\Cat2.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
-     <Compile Include="Assets\Scripts\Player\Kizuna.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
      <Compile Include="Assets\Scripts\Inventory\Item.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
@@ -108,6 +112,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
      <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
+     <Compile Include="Assets\Scripts\Core Mechs\Playable.cs" />
      <Compile Include="Assets\Scripts\Movements\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\UI\UI.cs" />
      <Compile Include="Assets\Scripts\CameraManager.cs" />

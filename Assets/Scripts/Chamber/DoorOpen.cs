@@ -20,7 +20,7 @@ public class DoorOpen : MonoBehaviour
 
     void Update() {
         if (tableEngaged && !isOpen) {
-            transform.localPosition = (route[1] - route[0]) * table.getCompletionStatus() + route[0];
+            transform.localPosition = (route[1] - route[0]) * table.GetCompletionStatus() + route[0];
         }
     }
 

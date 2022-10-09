@@ -1,5 +1,7 @@
+using UnityEngine;
+
 namespace GameInterfaces {
     interface ICompletable {
-        float getCompletionStatus();
+        float GetCompletionStatus();
     }
 }

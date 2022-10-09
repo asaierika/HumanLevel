@@ -12,7 +12,7 @@ public class SwitchMode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) {
+        if (SwitchCharacter.who == SwitchCharacter.Who.Kizuna && Input.GetKeyDown(KeyCode.E)) {
             Debug.Log("Mode switch detected");
             if (mode == Mode.DemiHuman) {
                 switchToSpirit.TriggerEvent();
