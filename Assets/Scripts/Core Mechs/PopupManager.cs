@@ -11,7 +11,7 @@ public class PopupManager : MonoBehaviour
     public CharacterInteractableManager interactableManager;
 
     void Update() {
-        if (hasPopup && Input.GetKeyDown(KeyCode.Escape)) {
+        if (SwitchCharacter.who == identity && hasPopup && Input.GetKeyDown(KeyCode.Escape)) {
             if (terminatingSignal != null) {
                 // If there are tasks to be completed before the popup is closed
                 terminatingSignal.TriggerEvent();
