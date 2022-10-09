@@ -25,7 +25,7 @@ public class CutsceneDialogue : MonoBehaviour
 
     private void Update()
     {
-        if (finished && !GameManager.instance.foxFrozen)
+        if (finished && !GameManager.instance.playerFrozen)
         {
             timeline.playableGraph.GetRootPlayable(0).SetSpeed(1);
             finished = false;

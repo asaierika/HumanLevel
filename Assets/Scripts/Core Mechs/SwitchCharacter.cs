@@ -17,11 +17,11 @@ public class SwitchCharacter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q)) {
             Debug.Log("Character switch detected");
             if (who == Who.Kizuna) {
-                switchToPartner.TriggerEvent();
                 who = Who.Partner;
+                switchToPartner.TriggerEvent();
             } else {
-                switchToKizuna.TriggerEvent();
                 who = Who.Kizuna;
+                switchToKizuna.TriggerEvent();
             }
         } 
     }

@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+* Represents gameobjects that will start a mini game when it has been interacted with by 
+* the player.
+*/
 public class InteractableWithGames : Interactable
 {
     public GameEvent openMiniGame;
-    public GameEvent popupOpen;
+    public GameEvent[] popupOpen;
     public MiniGame game;
     public CharacterInteractableManager interactableManager;
     public SwitchCharacter.Who whoTriggered;
@@ -16,10 +20,14 @@ public class InteractableWithGames : Interactable
 
     public override void Interact() {
         Debug.Log("Player engaged table");
-        interactableManager.AddPossession(whoTriggered, game.gameObject);
+        interactableManager.AddPossession(whoTriggered, game);
         game.SetOwner(whoTriggered);
         openMiniGame.TriggerEvent();
-        popupOpen.TriggerEvent();
+        if (whoTriggered == SwitchCharacter.Who.Kizuna) {
+            popupOpen[0].TriggerEvent();
+        } else {
+            popupOpen[1].TriggerEvent();
+        }
     }
 
 

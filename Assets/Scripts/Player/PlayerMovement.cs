@@ -9,10 +9,11 @@ public class PlayerMovement : MonoBehaviour
     public VectorValue startingPosition;
     public Rigidbody2D rb;
     public Animator animator;
+    public bool characterFrozen;
 
     private void Start()
     {
-        if (GameManager.instance.foxInitialised)
+        if (GameManager.instance.playerInitialised)
         transform.position = startingPosition.initialValue;
         
         if (rb == null) {
@@ -29,7 +30,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {    
-        if (GameManager.instance.foxFrozen)
+        // Logically, when playerFrozen characterFrozen == true, but
+        // for convenience both might not evaluate to true simultaneously
+        // hence the condition clause below.
+        if (characterFrozen || GameManager.instance.playerFrozen)
         {
             return;
         }
@@ -59,12 +63,24 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
     }   
 
+    // Called when all characters the user could have control of should be frozen.
+    // eg. Inventory, dialogue
     public void FreezeMovement() {
-        GameManager.instance.foxFrozen = true;
+        GameManager.instance.playerFrozen = true;
         if (animator != null) animator.SetBool("moving", false);
     }
 
+    // Converse of FreezeMovement
     public void RestoreMovement() {
-        GameManager.instance.foxFrozen = false;
+        GameManager.instance.playerFrozen = false;
+    }
+
+    public void FreezeCharacterMovement() {
+        characterFrozen = true;
+        if (animator != null) animator.SetBool("moving", false);
+    }
+
+    public void RestoreCharacterMovement() {
+        characterFrozen = false;
     }
 }

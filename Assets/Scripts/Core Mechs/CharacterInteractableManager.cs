@@ -4,37 +4,49 @@ using UnityEngine;
 
 public class CharacterInteractableManager : MonoBehaviour
 {
-    public Dictionary<SwitchCharacter.Who, List<GameObject>> possessions = new Dictionary<SwitchCharacter.Who, List<GameObject>>();
+    public Dictionary<SwitchCharacter.Who, HashSet<MiniGame>> possessions = new Dictionary<SwitchCharacter.Who, HashSet<MiniGame>>();
 
     void Awake() {
-        possessions.Add(SwitchCharacter.Who.Kizuna, new List<GameObject>());
-        possessions.Add(SwitchCharacter.Who.Partner, new List<GameObject>());
+        possessions.Add(SwitchCharacter.Who.Kizuna, new HashSet<MiniGame>());
+        possessions.Add(SwitchCharacter.Who.Partner, new HashSet<MiniGame>());
     }
-    public void EnablePossessions(SwitchCharacter.Who who) {
-        if (who == SwitchCharacter.Who.Kizuna) {
-            foreach (GameObject obj in possessions[SwitchCharacter.Who.Kizuna]) {
-                obj.SetActive(true);;
+    public void EnablePossessions() {
+        if (SwitchCharacter.who == SwitchCharacter.Who.Kizuna) {
+            foreach (MiniGame game in possessions[SwitchCharacter.Who.Kizuna]) {
+                game.isCorrectCharacter = true;
+                foreach (SpriteRenderer renderer in game.renderers) {
+                    renderer.enabled = true;
+                }
             }
 
-            foreach (GameObject obj in possessions[SwitchCharacter.Who.Partner]) {
-                obj.SetActive(false);;
+            foreach (MiniGame game in possessions[SwitchCharacter.Who.Partner]) {
+                game.isCorrectCharacter = false;
+                foreach (SpriteRenderer renderer in game.renderers) {
+                    renderer.enabled = false;
+                }
             }
         } else {
-            foreach (GameObject obj in possessions[SwitchCharacter.Who.Kizuna]) {
-                obj.SetActive(false);;
+            foreach (MiniGame game in possessions[SwitchCharacter.Who.Kizuna]) {
+                game.isCorrectCharacter = false;
+                foreach (SpriteRenderer renderer in game.renderers) {
+                    renderer.enabled = false;
+                }
             }
 
-            foreach (GameObject obj in possessions[SwitchCharacter.Who.Partner]) {
-                obj.SetActive(true);;
+            foreach (MiniGame game in possessions[SwitchCharacter.Who.Partner]) {
+                game.isCorrectCharacter = true;
+                foreach (SpriteRenderer renderer in game.renderers) {
+                    renderer.enabled = true;
+                }
             }
         }
     }
 
-    public void AddPossession(SwitchCharacter.Who who, GameObject obj) {
-        possessions[who].Add(obj);
+    public void AddPossession(SwitchCharacter.Who who, MiniGame game) {
+        possessions[who].Add(game);
     }
 
-     public void RemovePossession(SwitchCharacter.Who who, GameObject obj) {
-        possessions[who].Remove(obj);
+     public void RemovePossession(SwitchCharacter.Who who, MiniGame game) {
+        possessions[who].Remove(game);
     }
 }
