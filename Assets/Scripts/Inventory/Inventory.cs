@@ -37,7 +37,6 @@ public class Inventory : MonoBehaviour
         {
             if (items[i].nameOfItem == item.nameOfItem)
             {
-                Debug.Log("amount+");
                 items[i].amount++;
                 if (onItemChangedCallback != null)
                     onItemChangedCallback.Invoke();
@@ -45,6 +44,9 @@ public class Inventory : MonoBehaviour
             }
         }
         items.Add(item);
+
+        // shows item obtained hint after each item is added
+        ItemObtainedHint.instance.Show(item);
 
         if (onItemChangedCallback != null)
         onItemChangedCallback.Invoke();

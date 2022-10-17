@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e16e8395ca1af4548bfc759b58b2610b
+guid: cace4c80e4bd243539c7cdc0dc6a9c4a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -100,18 +100,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -120,7 +108,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 226
+        y: 484
         width: 46
         height: 102
       alignment: 0
@@ -130,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ec4e845b6b964fe6bc88d7e09403e72
-      internalID: 352947154
+      spriteID: 691636da4043246dc9ebaa2c737d4a13
+      internalID: -1256436031
       vertices: []
       indices: 
       edges: []
@@ -141,7 +129,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 214
-        y: 226
+        y: 484
         width: 46
         height: 102
       alignment: 0
@@ -151,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e92c2f46b0f0a488583f6b6573bda6a7
-      internalID: 1330339467
+      spriteID: fd3e0bf3af10c4ef79f5151997c53e5f
+      internalID: 123569763
       vertices: []
       indices: 
       edges: []
@@ -161,50 +149,8 @@ TextureImporter:
       name: Eri_2
       rect:
         serializedVersion: 2
-        x: 368
-        y: 226
-        width: 40
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3487304bdcc545008420f6ee18e8161
-      internalID: 1153191067
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eri_3
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 76
-        width: 40
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 136d48924d3954d27893ed3ef1955aed
-      internalID: 1206082293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eri_4
-      rect:
-        serializedVersion: 2
-        x: 214
-        y: 76
+        x: 364
+        y: 484
         width: 46
         height: 102
       alignment: 0
@@ -214,8 +160,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90dacf4a1f8ad49f387abc4999906a70
-      internalID: 1001677650
+      spriteID: 7fd4a652a8aca4be4af98461271ad5e3
+      internalID: 2068536935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eri_3
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 324
+        width: 40
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a64feb00ee644f08c89f657d24f498
+      internalID: 1363633807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eri_4
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 324
+        width: 40
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab44769e6bfc049ceb69fed1f305e625
+      internalID: 492911357
       vertices: []
       indices: 
       edges: []
@@ -225,7 +213,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 368
-        y: 76
+        y: 324
         width: 40
         height: 102
       alignment: 0
@@ -235,8 +223,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f4436da9ae174667b4d89b2260ba67f
-      internalID: 1014817170
+      spriteID: 26834cb6277b64e488914ec90a5d8e9d
+      internalID: -1864688064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eri_6
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 174
+        width: 40
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e6f86ccf6c4c4909bdc39022c6dab6a
+      internalID: -1488086516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eri_7
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 174
+        width: 40
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c42b0b5a066224122b687d4cbe2358bc
+      internalID: -1140783923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eri_8
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 174
+        width: 40
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3903781ab59d3433592c3a87c885b05b
+      internalID: 123071769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eri_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 24
+        width: 46
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f086c6ef71840e292f6e300d1973d6
+      internalID: 371194144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eri_10
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 24
+        width: 46
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d848e04de8074d1f96c75c7ecf64bcd
+      internalID: -14006681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eri_11
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 24
+        width: 46
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b017b89203b3b44e3b1d8d731668cf88
+      internalID: 2098602337
       vertices: []
       indices: 
       edges: []
@@ -252,12 +366,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Eri_4: 1001677650
-      Eri_1: 1330339467
-      Eri_2: 1153191067
-      Eri_3: 1206082293
-      Eri_5: 1014817170
-      Eri_0: 352947154
+      Eri_4: 492911357
+      Eri_6: -1488086516
+      Eri_1: 123569763
+      Eri_7: -1140783923
+      Eri_2: 2068536935
+      Eri_3: 1363633807
+      Eri_8: 123071769
+      Eri_5: -1864688064
+      Eri_9: 371194144
+      Eri_10: -14006681
+      Eri_0: -1256436031
+      Eri_11: 2098602337
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

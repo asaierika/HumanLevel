@@ -15,7 +15,6 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        dialogBox.transform.localScale = Vector3.zero;
         if (instance == null)
         {
             instance = this;
@@ -28,34 +27,34 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && inDialogue)
         {
-            if (inDialogue)
             instance.ReadNext();
+
         }
     }
 
     public static void StartConversation(Conversation convo)
     {
+        instance.dialogBox.SetActive(true);
         GameEvents.instance.OpenUI();
-        inDialogue = true;
-        instance.dialogBox.transform.localScale = Vector3.one;
+        
         instance.currIndex = 0;
         instance.currentConvo = convo;
         instance.speakerName.text = "";
         instance.dialogue.text = "";
 
-        instance.ReadNext();       
+        instance.ReadNext();     
+        inDialogue = true;  
     }
 
     public void ReadNext()
     {
         if (currIndex >= currentConvo.allLines.Length)
-        {
-            instance.dialogBox.transform.localScale = Vector3.zero;    
+        {     
             StartCoroutine(EndDialogue());       
         }
-        else
+        else 
         {
             speakerName.text = currentConvo.allLines[currIndex].speaker.speakerName;
             dialogue.text = currentConvo.allLines[currIndex].dialogue;
@@ -70,10 +69,9 @@ public class DialogueManager : MonoBehaviour
     // triggered as the player stands in the trigger
     // zone of the interactable and presses 'z'. 
     IEnumerator EndDialogue() {
-        yield return new WaitForSeconds(0.1f);
-        Debug.Log("isDialogue = false");
+        yield return new WaitForSeconds(0.01f);
         inDialogue = false;
         GameEvents.instance.CloseUI();
+        dialogBox.SetActive(false);   
     }
-
 }

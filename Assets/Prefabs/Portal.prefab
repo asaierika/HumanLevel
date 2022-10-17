@@ -99,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.35442495, y: 0.43781948}
+  m_Offset: {x: 0.021001875, y: 0.23930573}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.042427, y: 0.7915144}
+  m_Size: {x: 0.6107992, y: 0.3944869}
   m_EdgeRadius: 0
 --- !u!114 &6496187629067207479
 MonoBehaviour:
@@ -138,6 +138,6 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  sceneName: MapleLeafGame
+  sceneName: Castle_1stHall
   playerPosition: {x: 0, y: 0}
-  playerStorage: {fileID: 0}
+  playerStorage: {fileID: 11400000, guid: 51ddb9c301e284da4b8421225e7d5eb3, type: 2}

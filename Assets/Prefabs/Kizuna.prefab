@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4175073323694080009}
   - component: {fileID: 4175073323694080008}
   - component: {fileID: 3366443424513905271}
+  - component: {fileID: 610231402}
   m_Layer: 0
   m_Name: Kizuna
   m_TagString: Player
@@ -122,6 +123,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   startingPosition: {fileID: 11400000, guid: 51ddb9c301e284da4b8421225e7d5eb3, type: 2}
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  raycastPosition: {x: 0, y: 0}
 --- !u!50 &4175073323694080008
 Rigidbody2D:
   serializedVersion: 4
@@ -159,3 +163,29 @@ CapsuleCollider2D:
   m_Offset: {x: -0.00000023841858, y: -0.42761934}
   m_Size: {x: 0.35476065, y: 0.35476136}
   m_Direction: 0
+--- !u!61 &610231402
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175073323694080013}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0034615993, y: -0.5219958}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.6, y: 1.21}
+    newSize: {x: 0.6, y: 1.21}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2330575, y: 0.12727356}
+  m_EdgeRadius: 0

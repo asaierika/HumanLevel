@@ -25,7 +25,7 @@ public class ZoomInBox : MonoBehaviour
 
     private void Start()
     {
-        zoomInBox.transform.localScale = Vector3.zero;
+        //zoomInBox.enabled = true;
     }
 
     public void Show(Item item)
@@ -34,12 +34,12 @@ public class ZoomInBox : MonoBehaviour
         discription.text = item.discription;
 
         
-        if (zoomInBox.transform.localScale == Vector3.one)
+        if (zoomInBox.activeInHierarchy)
         {
-            zoomInBox.transform.localScale = Vector3.zero;
+            zoomInBox.SetActive(false);
         } else
         {
-            zoomInBox.transform.localScale = Vector3.one;
+            zoomInBox.SetActive(true);
         }
         
     }

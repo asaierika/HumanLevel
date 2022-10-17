@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {    
         if (GameManager.instance.foxFrozen)
         {
-            return;
+            //return;
         }
         
         float x = Input.GetAxisRaw("Horizontal");
@@ -68,3 +68,4 @@ public class PlayerMovement : MonoBehaviour
         GameManager.instance.foxFrozen = false;
     }
 }
+
