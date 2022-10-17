@@ -12,7 +12,7 @@ public class SpiritMovement : MonoBehaviour
 
     private void Start()
     {
-        if (GameManager.instance.foxInitialised)
+        if (GameManager.instance.playerInitialised)
         transform.position = startingPosition.initialValue;
         
         if (rb == null) {
@@ -29,7 +29,7 @@ public class SpiritMovement : MonoBehaviour
 
     private void FixedUpdate()
     {    
-        if (GameManager.instance.foxFrozen)
+        if (GameManager.instance.playerFrozen)
         {
             //return;
         }
@@ -60,12 +60,12 @@ public class SpiritMovement : MonoBehaviour
     }   
 
     public void FreezeMovement() {
-        GameManager.instance.foxFrozen = true;
+        GameManager.instance.playerFrozen = true;
         if (animator != null) animator.SetBool("moving", false);
     }
 
     public void RestoreMovement() {
-        GameManager.instance.foxFrozen = false;
+        GameManager.instance.playerFrozen = false;
     }
 }
 

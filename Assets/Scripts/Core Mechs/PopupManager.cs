@@ -11,7 +11,7 @@ public class PopupManager : MonoBehaviour
     public CharacterInteractableManager interactableManager;
 
     void Update() {
-        if (hasPopup && Input.GetKeyDown(KeyCode.Escape)) {
+        if (SwitchCharacter.who == identity && hasPopup && Input.GetKeyDown(KeyCode.Escape)) {
             if (terminatingSignal != null) {
                 // If there are tasks to be completed before the popup is closed
                 terminatingSignal.TriggerEvent();
@@ -23,10 +23,10 @@ public class PopupManager : MonoBehaviour
     // One player can only have one popup active at a given moment
     public void ClosePopup() {
         popup.SetActive(false);
+        interactableManager.RemovePossession(identity, popup.GetComponent<MiniGame>());
         this.popup = null;
         this.hasPopup = false;
         this.terminatingSignal = null;
-        interactableManager.RemovePossession(identity, popup);
     }
 
     public void SetActivePopup(GameObject popup, params GameEvent[] signals) {

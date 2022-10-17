@@ -21,48 +21,53 @@ public class TableTurn : MonoBehaviour, ICompletable
     private float totalMovement = -1;
     public float[] prefixMovementCost;
     public Lockable gateLock;
+
+    // The game this mechanism belongs to.
+    public MiniGame game;
     
     void Update()
     {
-        if (complete && gateLock.IsLocked) {
-            // When the lock to fix the gate at open position is engaged
-            gameComplete.TriggerEvent();
-        } else if (!gateLock.IsLocked && !complete) {
-            if (!mistake) {
-                if (transform.rotation.eulerAngles.z <= targetAngleSeq[stage] + acceptedAngleMargin && transform.rotation.eulerAngles.z >= targetAngleSeq[stage] - acceptedAngleMargin) {
-                    if (!reached) {
-                        Debug.Log("Dest " + stage + " reached");
-                        stage++;
-                        reached = true;
-                        if (stage == targetAngleSeq.Length) {
-                            complete = true;
-                            return;
+        if (game.isCorrectCharacter) {
+            if (complete && gateLock.IsLocked) {
+                // When the lock to fix the gate at open position is engaged
+                gameComplete.TriggerEvent();
+            } else if (!gateLock.IsLocked && !complete) {
+                if (!mistake) {
+                    if (transform.rotation.eulerAngles.z <= targetAngleSeq[stage] + acceptedAngleMargin && transform.rotation.eulerAngles.z >= targetAngleSeq[stage] - acceptedAngleMargin) {
+                        if (!reached) {
+                            Debug.Log("Dest " + stage + " reached");
+                            stage++;
+                            reached = true;
+                            if (stage == targetAngleSeq.Length) {
+                                complete = true;
+                                return;
+                            }
                         }
                     }
-                }
 
-                int rotateDir = (int) Input.GetAxisRaw("Vertical");
-                if (reached) {
-                    if (rotateDir == directionSeq[stage]) {
-                        // Only make player move to the next dest if they change towards the direction
-                        reached = false;
-                        Debug.Log("Start stage " + stage);
-                    } else if (transform.rotation.eulerAngles.z > targetAngleSeq[stage - 1] + acceptedAngleMargin || transform.rotation.eulerAngles.z < targetAngleSeq[stage - 1] - acceptedAngleMargin) {
-                        // If player overturns the current dest region they are in
-                        mistake = true;
-                        StartRevert(false);
-                        Debug.Log("Overturn");
+                    int rotateDir = (int) Input.GetAxisRaw("Vertical");
+                    if (reached) {
+                        if (rotateDir == directionSeq[stage]) {
+                            // Only make player move to the next dest if they change towards the direction
+                            reached = false;
+                            Debug.Log("Start stage " + stage);
+                        } else if (transform.rotation.eulerAngles.z > targetAngleSeq[stage - 1] + acceptedAngleMargin || transform.rotation.eulerAngles.z < targetAngleSeq[stage - 1] - acceptedAngleMargin) {
+                            // If player overturns the current dest region they are in
+                            mistake = true;
+                            StartRevert(false);
+                            Debug.Log("Overturn");
+                        }
+                    } else {
+                        if (rotateDir / directionSeq[stage] == -1) {
+                            Debug.Log("Wrong Direction");
+                            mistake = true;
+                            StartRevert(false);
+                        } 
                     }
-                } else {
-                    if (rotateDir / directionSeq[stage] == -1) {
-                        Debug.Log("Wrong Direction");
-                        mistake = true;
-                        StartRevert(false);
-                    } 
-                }
 
-                float angleVelocity = angleSpeed * rotateDir;
-                transform.Rotate(new Vector3(0, 0, angleVelocity));
+                    float angleVelocity = angleSpeed * rotateDir;
+                    transform.Rotate(new Vector3(0, 0, angleVelocity));
+                }
             }
         }
     }
