@@ -10,7 +10,7 @@ public class Interactable : MonoBehaviour
 
     public void TryInteract()
     {
-        if (PlayerMovement.characterFrozen)
+        if (GameManager.instance.playerFrozen || DialogueManager.inDialogue)
             // when the player is frozen, eg inventory is open or in dialogue,
             // the player cannot interact with interactable objects 
             return;

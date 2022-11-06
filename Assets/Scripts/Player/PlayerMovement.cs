@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public VectorValue startingPosition;
     public Rigidbody2D rb;
     public Animator animator;
-    public static bool characterFrozen;
+    public bool characterFrozen;
 
     private void Start()
     {
@@ -24,8 +24,8 @@ public class PlayerMovement : MonoBehaviour
             animator = GetComponent<Animator>();
         }
 
-        GameEvents.instance.onOpenUI += FreezeCharacterMovement;
-        GameEvents.instance.onCloseUI += RestoreCharacterMovement;        
+        GameEvents.instance.onOpenUI += FreezeMovement;
+        GameEvents.instance.onCloseUI += RestoreMovement;        
     }
 
     private void FixedUpdate()

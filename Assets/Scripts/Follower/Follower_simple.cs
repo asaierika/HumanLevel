@@ -58,7 +58,7 @@ public class Follower_simple : MonoBehaviour
     // ignore if not using interactable
     public void TryInteract()
     {
-        if (PlayerMovement.characterFrozen)
+        if (GameManager.instance.playerFrozen)
             // when the fox is frozen, eg inventory is open or in dialogue,
             // the player cannot interact with interactable objects 
             return;

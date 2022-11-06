@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Portal_corridor : Collidable
 {
-    public string followingScene;
-    public string notFollowingScene;
+    public Conversation convo;
+    public string sceneName;
     public Vector2 playerPosition;
     public VectorValue playerStorage;
 
@@ -13,13 +13,11 @@ public class Portal_corridor : Collidable
     {
         if (collison.CompareTag("Player"))
         {
-            playerStorage.initialValue = playerPosition;
-
-            if(FollowingManager.instance == null || !FollowingManager.instance.isFollowing) {
-                UnityEngine.SceneManagement.SceneManager.LoadScene(notFollowingScene);
+            if (FollowingManager.instance == null || !FollowingManager.instance.isFollowing) {
+                playerStorage.initialValue = playerPosition;
+                UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
             } else {
-                FollowingManager.instance.passedPortal = true;
-                UnityEngine.SceneManagement.SceneManager.LoadScene(followingScene);
+                DialogueManager.StartConversation(convo);
             }
         }
     }

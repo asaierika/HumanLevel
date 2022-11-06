@@ -663,8 +663,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  followingScene: Castle_1stHall
-  notFollowingScene: Castle_1stHall_beforeFollowing
+  convo: {fileID: 11400000, guid: da8c3a44a93694807ba10cec2d13306f, type: 2}
+  sceneName: Castle_1stHall_beforeFollowing
   playerPosition: {x: -2, y: 0.5}
   playerStorage: {fileID: 11400000, guid: 51ddb9c301e284da4b8421225e7d5eb3, type: 2}
 --- !u!1 &1205285207

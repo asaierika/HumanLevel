@@ -12,9 +12,6 @@ public class Portal : Collidable
     {
         if (collison.CompareTag("Player"))
         {
-            if(FollowingManager.instance != null)
-            FollowingManager.instance.passedPortal = true;
-
             playerStorage.initialValue = playerPosition;
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
             

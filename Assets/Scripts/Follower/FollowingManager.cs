@@ -9,7 +9,6 @@ public class FollowingManager : MonoBehaviour
     public bool isFollowing;
     public GameObject follower;
     public VectorValue position;
-    public bool passedPortal;
 
     private void Awake()
     {
@@ -36,17 +35,20 @@ public class FollowingManager : MonoBehaviour
 
     public void Spawn()
     {
-        if (passedPortal && isFollowing)
+        GameObject follower = GameObject.FindWithTag("Follower");
+        if (follower != null) {
+            //does not spawn more than one follower
+            return;
+        }
+
+        if (isFollowing)
         {
             StartCoroutine(SpawnFollower());
-            passedPortal = false;
         }
     }
 
     IEnumerator SpawnFollower()
     {
-        //GameObject follower = GameObject.FindWithTag("Follower");
-        //follower.SetActive(false);
         yield return new WaitForSeconds(0.5f);
         GameObject spawnedFollower = Instantiate(follower);
         spawnedFollower.transform.position = position.initialValue;
