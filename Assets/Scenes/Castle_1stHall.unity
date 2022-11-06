@@ -833,6 +833,28 @@ PlayableDirector:
     value: {fileID: 1841020451}
   m_ExposedReferences:
     m_References: []
+--- !u!1 &1849251725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4175073323694080013, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+  m_PrefabInstance: {fileID: 1069855501}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1849251733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849251725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0922348a6a069456bb946065417ccb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  startingPosition: {fileID: 0}
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  characterFrozen: 0
 --- !u!1 &1909251696
 GameObject:
   m_ObjectHideFlags: 0
