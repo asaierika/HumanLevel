@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         // hence the condition clause below.
         if (characterFrozen || GameManager.instance.playerFrozen)
         {
-            //return;
+            return;
         }
         
         float x = Input.GetAxisRaw("Horizontal");
