@@ -629,8 +629,44 @@ PrefabInstance:
       propertyPath: playerPosition.y
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6496187629067207479, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
+--- !u!1 &1200448669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6496187629067207467, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
+  m_PrefabInstance: {fileID: 1200448668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1200448670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200448669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f301d484c5b843f29a07362fa95f5f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  followingScene: Castle_1stHall
+  notFollowingScene: Castle_1stHall_beforeFollowing
+  playerPosition: {x: -2, y: 0.5}
+  playerStorage: {fileID: 11400000, guid: 51ddb9c301e284da4b8421225e7d5eb3, type: 2}
 --- !u!1 &1205285207
 GameObject:
   m_ObjectHideFlags: 0

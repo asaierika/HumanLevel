@@ -61,6 +61,6 @@ public class FollowingManager : MonoBehaviour
 
     public void Choice2()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("CastleFollowingStart_cutscene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Castle_1stHall_beforeFollowing");
     }
 }

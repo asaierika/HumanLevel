@@ -48,6 +48,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Castle_1stCorridor.unity
     guid: 3ebc5e1d9a80041cab2bd664b8a91c7b
   - enabled: 1
-    path: Assets/Scenes/CastleFollowingStart_cutscene.unity
+    path: Assets/Scenes/Castle1st_Hall_beforeFollowing.unity
     guid: 2fd482ce3dac04c69b7e5c608c551d10
   m_configObjects: {}

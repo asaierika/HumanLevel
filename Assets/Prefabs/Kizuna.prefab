@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  startingPosition: {fileID: 0}
+  startingPosition: {fileID: 11400000, guid: 51ddb9c301e284da4b8421225e7d5eb3, type: 2}
   rb: {fileID: 0}
   animator: {fileID: 0}
   characterFrozen: 0

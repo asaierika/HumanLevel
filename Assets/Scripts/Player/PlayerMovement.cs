@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public VectorValue startingPosition;
     public Rigidbody2D rb;
     public Animator animator;
-    public bool characterFrozen;
+    public static bool characterFrozen;
 
     private void Start()
     {
@@ -24,8 +24,8 @@ public class PlayerMovement : MonoBehaviour
             animator = GetComponent<Animator>();
         }
 
-        GameEvents.instance.onOpenUI += FreezeMovement;
-        GameEvents.instance.onCloseUI += RestoreMovement;        
+        GameEvents.instance.onOpenUI += FreezeCharacterMovement;
+        GameEvents.instance.onCloseUI += RestoreCharacterMovement;        
     }
 
     private void FixedUpdate()
@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         // hence the condition clause below.
         if (characterFrozen || GameManager.instance.playerFrozen)
         {
-            //return;
+            return;
         }
         
         float x = Input.GetAxisRaw("Horizontal");
