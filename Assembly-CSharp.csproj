@@ -45,6 +45,7 @@
      <Compile Include="Assets/Scripts/DialogueSystem/DialogueManager.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/SimpleScript.cs" />
      <Compile Include="Assets/Scripts/Inventory/InventorySlot.cs" />
+     <Compile Include="Assets/Scripts/ChoiceSystem/ChoiceManager.cs" />
      <Compile Include="Assets/Scripts/Inventory/ItemObtainedHint.cs" />
      <Compile Include="Assets/Scripts/Player/KizunaMovement.cs" />
      <Compile Include="Assets/Scripts/Chamber/TableTurn.cs" />
@@ -84,6 +85,7 @@
      <Compile Include="Assets/Scripts/Core Mechs/SwitchMode.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/CameraController.cs" />
      <Compile Include="Assets/Scripts/Player/Spirit.cs" />
+     <Compile Include="Assets/Scripts/ChoiceSystem/Choice.cs" />
      <Compile Include="Assets/Scripts/Interactables/Demi-human_Home/PhoenixFish.cs" />
      <Compile Include="Assets/Scripts/LevelLoader/LevelLoader.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMPro_InstructionOverlay.cs" />
@@ -106,6 +108,7 @@
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_DigitValidator.cs" />
      <Compile Include="Assets/Scripts/Singleton.cs" />
      <Compile Include="Assets/Scripts/Interactables/MiniGame.cs" />
+     <Compile Include="Assets/Scripts/Interactables/Castle1st/Eri_caslte1st.cs" />
      <Compile Include="Assets/Scripts/Player/Spawn.cs" />
      <Compile Include="Assets/Scripts/DialogueSystem/NarrativeManager.cs" />
      <Compile Include="Assets/Scripts/Core Mechs/OnSwitch.cs" />
@@ -125,6 +128,7 @@
      <Compile Include="Assets/Scripts/Chamber/DoorOpen.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventHandler.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_B.cs" />
+     <Compile Include="Assets/Scripts/Interactables/Castle1st/CastleServantA.cs" />
      <Compile Include="Assets/Scripts/Inventory/InventoryUI.cs" />
      <Compile Include="Assets/Scripts/Core Mechs/Playable.cs" />
      <Compile Include="Assets/Scripts/Movements/CameraMovement.cs" />
@@ -141,10 +145,6 @@
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexZoom.cs" />
      <Compile Include="Assets/Scripts/Player/SpiritMovement.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01.cs" />
-     <Compile Include="Assets/Scripts/ChoiceSystem/Choice.cs" />
-     <Compile Include="Assets/Scripts/ChoiceSystem/ChoiceManager.cs" />
-     <Compile Include="Assets/Scripts/Interactables/Castle1st/Eri_caslte1st.cs" />
-     <Compile Include="Assets/Scripts/Interactables/Castle1st/CastleServantA.cs" />
      <Compile Include="Assets/Scripts/Portal/Castle1st/Portal_corridor.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
