@@ -64,6 +64,7 @@
      <Compile Include="Assets/Scripts/DialogueSystem/Dialogues/DialogueTrigger.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeA.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark04.cs" />
+     <Compile Include="Assets/Scripts/Portal/Castle1st/Portal_corridor.cs" />
      <Compile Include="Assets/Scripts/DialogueSystem/Dialogues/AutoTrigger.cs" />
      <Compile Include="Assets/Scripts/ScriptableObjects/VectorValue.cs" />
      <Compile Include="Assets/Scripts/Player/Demi-human_Home/Fishing.cs" />
@@ -82,6 +83,7 @@
      <Compile Include="Assets/Scripts/Interactables/Demi-human_Home/Rabbit.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/EnvMapAnimator.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_UiFrameRateCounter.cs" />
+     <Compile Include="Assets/Scripts/Portal/Block.cs" />
      <Compile Include="Assets/Scripts/Core Mechs/SwitchMode.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/CameraController.cs" />
      <Compile Include="Assets/Scripts/Player/Spirit.cs" />
@@ -145,8 +147,6 @@
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexZoom.cs" />
      <Compile Include="Assets/Scripts/Player/SpiritMovement.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01.cs" />
-     <Compile Include="Assets/Scripts/Portal/Castle1st/Portal_corridor.cs" />
-     <Compile Include="Assets/Scripts/Portal/Block.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />

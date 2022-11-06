@@ -50,4 +50,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Castle_1stHall_beforeFollowing.unity
     guid: 2fd482ce3dac04c69b7e5c608c551d10
+  - enabled: 1
+    path: Assets/Scenes/Castle_1stRoomA.unity
+    guid: 2029648c1b8114fab984bdcee6bb1456
+  - enabled: 1
+    path: Assets/Scenes/Castle_1stRoomB.unity
+    guid: 4a7e7fecf39544ccb8d261c54feac2fb
+  - enabled: 1
+    path: Assets/Scenes/Castle_1stRoomC.unity
+    guid: 6b267d96bf77f4db7b86ea7c44c75c74
+  - enabled: 1
+    path: Assets/Scenes/Castle_1stRoomD.unity
+    guid: c92295c3a7f694689840a97b6ac62cf4
   m_configObjects: {}
