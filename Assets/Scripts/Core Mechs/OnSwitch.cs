@@ -14,8 +14,4 @@ public class OnSwitch : MonoBehaviour
     public void SwitchToDemiHumanState() {
         gameObject.SetActive(!isActiveInSpirit);
     }
-
-    public void GenericSwitchState() {
-        gameObject.SetActive(!gameObject.activeInHierarchy);
-    }
 }

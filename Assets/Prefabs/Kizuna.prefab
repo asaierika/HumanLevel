@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4175073323694080010}
   - component: {fileID: 4175073323694080011}
   - component: {fileID: 4175073323694080012}
-  - component: {fileID: 4175073323694080009}
   - component: {fileID: 4175073323694080008}
   - component: {fileID: 3366443424513905271}
   - component: {fileID: 610231402}
+  - component: {fileID: 8488101351404026668}
   m_Layer: 0
   m_Name: Kizuna
   m_TagString: Player
@@ -109,23 +109,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4175073323694080009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4175073323694080013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 472cc0a5fa7094cf488c8e2eb9429c7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  startingPosition: {fileID: 11400000, guid: 51ddb9c301e284da4b8421225e7d5eb3, type: 2}
-  rb: {fileID: 0}
-  animator: {fileID: 0}
-  raycastPosition: {x: 0, y: 0}
 --- !u!50 &4175073323694080008
 Rigidbody2D:
   serializedVersion: 4
@@ -189,3 +172,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2330575, y: 0.12727356}
   m_EdgeRadius: 0
+--- !u!114 &8488101351404026668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175073323694080013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0922348a6a069456bb946065417ccb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  startingPosition: {fileID: 0}
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  characterFrozen: 0
