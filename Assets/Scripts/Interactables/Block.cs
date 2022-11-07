@@ -16,7 +16,6 @@ public class Block : Interactable
 
     public override void Interact()
     {
-        Debug.Log("start convo when blocked");
         DialogueManager.StartConversation(convo);
     }
 }

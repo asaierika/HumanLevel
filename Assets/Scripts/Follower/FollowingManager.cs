@@ -9,6 +9,7 @@ public class FollowingManager : MonoBehaviour
     public bool isFollowing;
     public GameObject follower;
     public VectorValue position;
+    public VectorValue playerPosition;
 
     private void Awake()
     {
@@ -35,12 +36,6 @@ public class FollowingManager : MonoBehaviour
 
     public void Spawn()
     {
-        GameObject follower = GameObject.FindWithTag("Follower");
-        if (follower != null) {
-            //does not spawn more than one follower
-            return;
-        }
-
         if (isFollowing)
         {
             StartCoroutine(SpawnFollower());
@@ -50,13 +45,18 @@ public class FollowingManager : MonoBehaviour
     IEnumerator SpawnFollower()
     {
         yield return new WaitForSeconds(0.5f);
-        GameObject spawnedFollower = Instantiate(follower);
-        spawnedFollower.transform.position = position.initialValue;
-        spawnedFollower.SetActive(true);
+        GameObject existingFollower = GameObject.FindWithTag("Follower");
+        if (existingFollower == null) {
+            GameObject spawnedFollower = Instantiate(follower);
+            spawnedFollower.transform.position = position.initialValue;
+            spawnedFollower.SetActive(true);
+        }
+       
     }
 
     public void Choice1()
     {
+        playerPosition.initialValue = new Vector2(1.2f, -1f);
         isFollowing = true;
         UnityEngine.SceneManagement.SceneManager.LoadScene("Castle_1stHall");
     }
