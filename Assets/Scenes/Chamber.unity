@@ -1655,7 +1655,7 @@ MonoBehaviour:
   terminatingSignal: {fileID: 0}
   popup: {fileID: 0}
   hasPopup: 0
-  interactableManager: {fileID: 1719169029}
+  interactableManager: {fileID: 0}
 --- !u!1 &685615528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,7 +2586,7 @@ MonoBehaviour:
   terminatingSignal: {fileID: 0}
   popup: {fileID: 0}
   hasPopup: 0
-  interactableManager: {fileID: 1719169029}
+  interactableManager: {fileID: 0}
 --- !u!1 &1171009436
 GameObject:
   m_ObjectHideFlags: 0
@@ -2884,6 +2884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4175073323694080009, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+    - {fileID: 8488101351404026668, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
 --- !u!1 &1249735376
 GameObject:
@@ -3629,7 +3630,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1719169029}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CharacterInteractableManager, Assembly-CSharp
         m_MethodName: EnablePossessions
         m_Mode: 1
@@ -5055,7 +5056,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 133542603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb436598542b14bde904d148b21320b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 13a5cae660e994ac29b09fad8ebe0a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1738122157
@@ -5885,6 +5886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4175073323694080009, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+    - {fileID: 8488101351404026668, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
 --- !u!212 &885925223367027554
 SpriteRenderer:
