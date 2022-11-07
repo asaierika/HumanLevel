@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4804737233705592838}
   - component: {fileID: 4804737233705592837}
-  - component: {fileID: 4804737233705593080}
-  - component: {fileID: 4804737233705592839}
   m_Layer: 0
   m_Name: FollowingManager
   m_TagString: Untagged
@@ -46,63 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0698fc8ab645a4e37835b88c53d332ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFollowing: 0
   follower: {fileID: 6596021903434587400, guid: 9ef66e24999ad48d08df5d03ffd470eb, type: 3}
   position: {fileID: 11400000, guid: 51ddb9c301e284da4b8421225e7d5eb3, type: 2}
---- !u!114 &4804737233705593080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4804737233705592836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa4d57a56d66f4d2cb9fda1d023f7468, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvents:
-  - {fileID: 11400000, guid: f0e90153c48ce47c29e677b4863d3efc, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4804737233705592837}
-        m_TargetAssemblyTypeName: FollowingManager, Assembly-CSharp
-        m_MethodName: Choice1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4804737233705592839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4804737233705592836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa4d57a56d66f4d2cb9fda1d023f7468, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvents:
-  - {fileID: 11400000, guid: 74e1fc96b20444ee298704384ebb2f2c, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4804737233705592837}
-        m_TargetAssemblyTypeName: FollowingManager, Assembly-CSharp
-        m_MethodName: Choice2
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  playerPosition: {fileID: 0}

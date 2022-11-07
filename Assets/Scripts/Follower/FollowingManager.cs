@@ -9,7 +9,6 @@ public class FollowingManager : MonoBehaviour
     public bool isFollowing;
     public GameObject follower;
     public VectorValue position;
-    public VectorValue playerPosition;
 
     private void Awake()
     {
@@ -52,17 +51,5 @@ public class FollowingManager : MonoBehaviour
             spawnedFollower.SetActive(true);
         }
        
-    }
-
-    public void Choice1()
-    {
-        playerPosition.initialValue = new Vector2(1.2f, -1f);
-        isFollowing = true;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Castle_1stHall");
-    }
-
-    public void Choice2()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Castle_1stHall_beforeFollowing");
     }
 }
