@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorOpen : MonoBehaviour 
+public class LightGate : MonoBehaviour 
 {
     public Vector2[] route = new Vector2[2];
-    public TableTurn table;
+    public TurnTable table;
     public float closeSpeed;
     public float closeTightness;
     public float sqrCloseTightness;

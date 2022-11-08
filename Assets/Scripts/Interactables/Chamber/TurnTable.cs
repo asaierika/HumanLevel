@@ -1,9 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using GameInterfaces;
 
-public class TableTurn : MonoBehaviour, ICompletable
+public class TurnTable : MonoBehaviour, ICompletable
 {
     public float angleSpeed;
     public float acceptedAngleMargin;

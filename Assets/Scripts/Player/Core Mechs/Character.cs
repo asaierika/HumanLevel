@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Playable : MonoBehaviour
+public class Character : MonoBehaviour
 {
     public bool isActive;
     public SwitchCharacter.Who identity;

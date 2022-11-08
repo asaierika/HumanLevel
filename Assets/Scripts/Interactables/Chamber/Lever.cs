@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class LeverPull : Interactable
+public class Lever : Interactable
 {
     // For now, the visual feedback is only the X axis inversion of handle.
     // Should be changed later

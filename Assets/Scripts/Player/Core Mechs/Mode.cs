@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class OnSwitch : MonoBehaviour
+public class Mode : MonoBehaviour
 {
     public bool isActiveInSpirit;
 

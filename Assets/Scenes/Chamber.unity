@@ -1652,8 +1652,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   identity: 0
-  terminatingSignal: {fileID: 0}
-  popup: {fileID: 0}
+  terminatingSignal: {fileID: 11400000, guid: 673d3358e57b04250ab83e5bd970e409, type: 2}
+  popup: {fileID: 741239156}
   hasPopup: 0
   interactableManager: {fileID: 1719169029}
 --- !u!1 &685615528
@@ -2583,8 +2583,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   identity: 1
-  terminatingSignal: {fileID: 0}
-  popup: {fileID: 0}
+  terminatingSignal: {fileID: 11400000, guid: 678db07cc4c744505a3dbc80187268d8, type: 2}
+  popup: {fileID: 741239156}
   hasPopup: 0
   interactableManager: {fileID: 1719169029}
 --- !u!1 &1171009436

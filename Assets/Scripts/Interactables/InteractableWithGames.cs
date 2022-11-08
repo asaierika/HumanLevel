@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /**
@@ -34,8 +32,8 @@ public class InteractableWithGames : Interactable
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") &&
-                collision.gameObject.GetComponent<Playable>().IsActive) {
-            whoTriggered = collision.gameObject.GetComponent<Playable>().identity;
+                collision.gameObject.GetComponent<Character>().IsActive) {
+            whoTriggered = collision.gameObject.GetComponent<Character>().identity;
             playerInRange = true;
         }
     }
@@ -43,7 +41,7 @@ public class InteractableWithGames : Interactable
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") &&
-                collision.gameObject.GetComponent<Playable>().IsActive) {
+                collision.gameObject.GetComponent<Character>().IsActive) {
             whoTriggered = SwitchCharacter.Who.None;
             playerInRange = false;
         }
@@ -53,8 +51,8 @@ public class InteractableWithGames : Interactable
     {
         Debug.Log("Collision with " + collision.gameObject.name);
         if (collision.gameObject.CompareTag("Player") &&
-                collision.gameObject.GetComponent<Playable>().IsActive) {
-            whoTriggered = collision.gameObject.GetComponent<Playable>().identity;
+                collision.gameObject.GetComponent<Character>().IsActive) {
+            whoTriggered = collision.gameObject.GetComponent<Character>().identity;
             playerInRange = true;
         }
     }
@@ -62,7 +60,7 @@ public class InteractableWithGames : Interactable
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player") &&
-                collision.gameObject.GetComponent<Playable>().IsActive) {
+                collision.gameObject.GetComponent<Character>().IsActive) {
             whoTriggered = SwitchCharacter.Who.None;
             playerInRange = false;
         }
