@@ -11,6 +11,7 @@ public class SpiritSpawner : MonoBehaviour
         SwitchMode.OnSwitchToSpirit += SpawnAt;
     }
     public void SpawnAt(Vector2 location) {
-        subject.transform.position = location;
+        
+        subject.transform.position = new Vector2(location.x, location.y + 0.2f);
     }
 }

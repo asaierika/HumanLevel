@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6748098707614136306}
   - component: {fileID: 6748098707614136308}
   - component: {fileID: 1339029272}
+  - component: {fileID: 1429715156}
+  - component: {fileID: 4301376069395468679}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -74,3 +76,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83408fb4b1e834255aa9a10feafa861a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1429715156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6748098707614136305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566aec7fae25644daa23cd39425efd20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  switchToSpirit: {fileID: 11400000, guid: 2a0afbd5abff24b4cb197be7e49a294a, type: 2}
+  player: {fileID: 0}
+--- !u!114 &4301376069395468679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6748098707614136305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4d57a56d66f4d2cb9fda1d023f7468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvents:
+  - {fileID: 11400000, guid: e1f70317279ad4f079cf1da0bc68743e, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1429715156}
+        m_TargetAssemblyTypeName: SwitchMode, Assembly-CSharp
+        m_MethodName: SwitchToDemiHuman
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

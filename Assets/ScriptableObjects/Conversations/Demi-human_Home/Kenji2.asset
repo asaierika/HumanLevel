@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07fd9bf9ca7674ccf9fbb58cbe9468e4, type: 3}
+  m_Name: Kenji2
+  m_EditorClassIdentifier: 
+  allLines:
+  - speaker: {fileID: 11400000, guid: 82599341f3fb340ddb49e6307714d021, type: 2}
+    dialogue: Hi, Kenji!
+  - speaker: {fileID: 11400000, guid: 6f45238e7f3ff4046a97a9daa81c0cef, type: 2}
+    dialogue: Who're you?
+  - speaker: {fileID: 11400000, guid: 82599341f3fb340ddb49e6307714d021, type: 2}
+    dialogue: I'm Kizuna, I heard you from Nanami. I was told that you know someone
+      familiar with the sacred treasure?
+  - speaker: {fileID: 11400000, guid: 6f45238e7f3ff4046a97a9daa81c0cef, type: 2}
+    dialogue: Huh, another hunter for the treasure? This you'll have to ask Ryu.
+  - speaker: {fileID: 11400000, guid: 6f45238e7f3ff4046a97a9daa81c0cef, type: 2}
+    dialogue: But he doesn't just talk to anyone. You'll have to prove your worth.
+  - speaker: {fileID: 11400000, guid: 82599341f3fb340ddb49e6307714d021, type: 2}
+    dialogue: I see. And how can I do that?
+  - speaker: {fileID: 11400000, guid: 6f45238e7f3ff4046a97a9daa81c0cef, type: 2}
+    dialogue: (Sighs.) How about this. I've being trying to catch the phoenix fish
+      for a while but to no avail.
+  - speaker: {fileID: 11400000, guid: 6f45238e7f3ff4046a97a9daa81c0cef, type: 2}
+    dialogue: If you can catch one. I'd vouch for you.
+  - speaker: {fileID: 11400000, guid: 82599341f3fb340ddb49e6307714d021, type: 2}
+    dialogue: (Phoenix fish...?)

@@ -84,3 +84,4 @@ public class PlayerMovement : MonoBehaviour
         characterFrozen = false;
     }
 }
+

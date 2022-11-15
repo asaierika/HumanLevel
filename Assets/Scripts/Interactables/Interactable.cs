@@ -8,8 +8,7 @@ public class Interactable : MonoBehaviour
 
     public void TryInteract()
     {
-        
-        if (GameManager.instance.playerFrozen)
+        if (GameManager.instance.playerFrozen || DialogueManager.inDialogue)
             // when the player is frozen, eg inventory is open or in dialogue,
             // the player cannot interact with interactable objects 
             return;
@@ -17,7 +16,6 @@ public class Interactable : MonoBehaviour
         // when the player is in the range of the interactable object and
         // at the same time the player press "Z", Interact() is called
         if (Input.GetKeyDown(KeyCode.Z) && playerInRange) {
-            Debug.Log("Interact");
             Interact();
         }
     }
