@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour
     {
         if (items.Count >= capacity)
         {
-            Debug.Log("Inventory capacity excedded.");
+            Debug.Log("Inventory capacity exceeded.");
             return;
         }
 
