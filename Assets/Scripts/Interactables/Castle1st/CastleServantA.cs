@@ -6,6 +6,8 @@ public class CastleServantA : Interactable
 {
     public Conversation convo1, convo2, convo3;
     public Choice choice1, choice2;
+    public DialogueManager dialogueManager;
+    public ChoiceManager choiceManager;
 
     void Update()
     {
@@ -14,17 +16,17 @@ public class CastleServantA : Interactable
 
     public override void Interact()
     {
-        DialogueManager.StartConversation(convo1);
-        ChoiceManager.instance.StartChoice(choice1, choice2);
+        dialogueManager.StartConversation(convo1);
+        choiceManager.StartChoice(choice1, choice2);
     }
 
     public void Choice1()
     {
-        DialogueManager.StartConversation(convo2);
+        dialogueManager.StartConversation(convo2);
     }
 
     public void Choice2()
     {
-        DialogueManager.StartConversation(convo3);
+        dialogueManager.StartConversation(convo3);
     }
 }

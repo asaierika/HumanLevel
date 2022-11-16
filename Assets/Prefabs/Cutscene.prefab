@@ -131,7 +131,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2188395965718535564}
-  - component: {fileID: 2188395965718535567}
   m_Layer: 0
   m_Name: Timeline
   m_TagString: Untagged
@@ -154,31 +153,6 @@ Transform:
   m_Father: {fileID: 2188395966050991261}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!320 &2188395965718535567
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2188395965718535566}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 23546d940fd6a48fda0db97b1216bf42, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: -6836311248851646429, guid: 23546d940fd6a48fda0db97b1216bf42, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -6456390539490549122, guid: 23546d940fd6a48fda0db97b1216bf42, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -150188382670823430, guid: 23546d940fd6a48fda0db97b1216bf42, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 4953128495386539844, guid: 23546d940fd6a48fda0db97b1216bf42, type: 2}
-    value: {fileID: 2188395964923986966}
-  m_ExposedReferences:
-    m_References: []
 --- !u!1 &2188395966050991260
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +198,7 @@ PrefabInstance:
     - target: {fileID: 5738369581083604212, guid: d19da03e75eb64972aa8405ec69d665b, type: 3}
       propertyPath: timeline
       value: 
-      objectReference: {fileID: 2188395965718535567}
+      objectReference: {fileID: 0}
     - target: {fileID: 5738369581083604212, guid: d19da03e75eb64972aa8405ec69d665b, type: 3}
       propertyPath: convo.Array.size
       value: 1

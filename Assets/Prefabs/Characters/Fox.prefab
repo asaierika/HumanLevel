@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9018735197294990355}
   - component: {fileID: 9018735197294990354}
   - component: {fileID: 9018735197294990349}
-  - component: {fileID: 9018735197294990352}
+  - component: {fileID: 5230202220673278077}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Untagged
@@ -106,7 +106,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9018735197294990352
+--- !u!114 &5230202220673278077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,8 +115,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9018735197294990348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 472cc0a5fa7094cf488c8e2eb9429c7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0922348a6a069456bb946065417ccb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  startingPosition: {fileID: 0}
+  moveSpeed: 1
+  startingPosition: {fileID: 11400000, guid: 51ddb9c301e284da4b8421225e7d5eb3, type: 2}
+  rb: {fileID: 0}
+  animator: {fileID: 9018735197294990349}
+  characterFrozen: 0

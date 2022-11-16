@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
+// All data that must be persisted through scene in the session will be stored here.
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public Inventory inventory;
     public bool playerFrozen;
     public bool playerInitialised;
 
@@ -21,6 +20,4 @@ public class GameManager : MonoBehaviour
 
         instance = this;
     }
-
-    
 }

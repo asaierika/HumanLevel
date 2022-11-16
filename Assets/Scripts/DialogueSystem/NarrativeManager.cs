@@ -3,27 +3,21 @@ using UnityEngine.UI;
 
 // Same as Dialogue Manager but with a larger dialogue box
 // and no speaker. Used for stories etc.
+
+// Must be placed under a singleton parent.
 public class NarrativeManager : MonoBehaviour
 {
     public GameObject dialogBox;
     public Text dialogue;
     private int currIndex;
     private Conversation currentConvo;
-    private static NarrativeManager instance;
+    public UiStatus uiStatus;
     public static bool inDialogue = false;
 
     private void Awake()
     {
+        // TODO: Should change to SetActive()
         dialogBox.transform.localScale = Vector3.zero;
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
     }
 
     private void Update()
@@ -31,28 +25,28 @@ public class NarrativeManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             if (inDialogue)
-                instance.ReadNext();
+                ReadNext();
         }
     }
 
-    public static void StartConversation(Conversation convo)
+    public void StartConversation(Conversation convo)
     {
-        GameEvents.instance.OpenUI();
+        uiStatus.OpenUI();
         inDialogue = true;
-        instance.dialogBox.transform.localScale = Vector3.one;
-        instance.currIndex = 0;
-        instance.currentConvo = convo;
+        dialogBox.transform.localScale = Vector3.one;
+        currIndex = 0;
+        currentConvo = convo;
 
-        instance.ReadNext();
+        ReadNext();
     }
 
     public void ReadNext()
     {
         if (currIndex >= currentConvo.allLines.Length)
         {
-            instance.dialogBox.transform.localScale = Vector3.zero;
+            dialogBox.transform.localScale = Vector3.zero;
             inDialogue = false;
-            GameEvents.instance.CloseUI();
+            uiStatus.CloseUI();
         }
         else
         {

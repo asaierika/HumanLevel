@@ -5,40 +5,14 @@ using UnityEngine.UI;
 
 public class ItemObtainedHint : MonoBehaviour
 {
-    public static ItemObtainedHint instance;
-    public static bool isActive;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
+    public bool isActive;
     public GameObject hintBox;
     public Transform hintBoxTransform;
     public Image itemImage;
-    public Text name;
+    public Text nameHolder;
     public List<Item> items;
 
-    private void Start()
-    {
-    }
-
     private void Update() {
-        /*
-        if (isActive && !DialogueManager.inDialogue)
-        {
-            isActive = false;
-            StartCoroutine(Display());
-        }
-        */
-
         if (items.Count != 0 && isActive && !DialogueManager.inDialogue)
         {
             isActive = false;
@@ -50,8 +24,8 @@ public class ItemObtainedHint : MonoBehaviour
     {
         isActive = true;
         items.Add(item);
-        //itemImage.sprite = item.itemImage;
-        //name.text = item.nameOfItem;
+        itemImage.sprite = item.itemImage;
+        nameHolder.text = item.nameOfItem;
     }
 
     IEnumerator Display()
@@ -62,7 +36,7 @@ public class ItemObtainedHint : MonoBehaviour
         for (int j = 0; j < items.Count; j++)
         {
             itemImage.sprite = items[j].itemImage;
-            name.text = items[j].nameOfItem;
+            nameHolder.text = items[j].nameOfItem;
         
             for (float i = 0; i < 840; i += 40f)
             {

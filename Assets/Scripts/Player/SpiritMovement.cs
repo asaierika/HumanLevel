@@ -9,6 +9,7 @@ public class SpiritMovement : MonoBehaviour
     public VectorValue startingPosition;
     public Rigidbody2D rb;
     public Animator animator;
+    public UiStatus uiStatus;
 
     private void Start()
     {
@@ -23,8 +24,8 @@ public class SpiritMovement : MonoBehaviour
             animator = GetComponent<Animator>();
         }
 
-        GameEvents.instance.onOpenUI += FreezeMovement;
-        GameEvents.instance.onCloseUI += RestoreMovement;        
+        uiStatus.onOpenUI += FreezeMovement;
+        uiStatus.onCloseUI += RestoreMovement;        
     }
 
     private void FixedUpdate()

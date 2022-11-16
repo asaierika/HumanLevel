@@ -507,7 +507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hikaru_p
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1627761139, guid: ad2f9d9308f4d4a59ab462704bc9619d, type: 3}
+    - {fileID: 1627761138, guid: ad2f9d9308f4d4a59ab462704bc9619d, type: 3}
+    - {fileID: 4439606797273825434, guid: ad2f9d9308f4d4a59ab462704bc9619d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ad2f9d9308f4d4a59ab462704bc9619d, type: 3}
 --- !u!4 &1027510922 stripped
 Transform:

@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: Remove the class
 public class Singleton : MonoBehaviour
 {
-    public static Singleton Instance {get; private set;}
+    public static Singleton instance;
 
     void Awake() {
-        if (Instance != null) {
+        if (instance != null) {
             Destroy(gameObject);
         } else {
-            Instance = this;
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 // A block in the position of a portal when the player tries to
 // access. Shows some words as Conversation to inform the player 
 // that tranporting to another scene is blocked.
-public class Block : Interactable
+public class Block : Conversable
 {
     public Conversation convo;
 
@@ -16,6 +16,6 @@ public class Block : Interactable
 
     public override void Interact()
     {
-        DialogueManager.StartConversation(convo);
+        dialogueManager.StartConversation(convo);
     }
 }

@@ -1,40 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// Must be placed under a singleton parent.
 public class InventoryUI : MonoBehaviour
 {
-    public static InventoryUI instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    public ZoomInBox zoomBox;
 
     public Transform itemsParent;
     public GameObject inventoryUI;
 
     Inventory inventory;
     InventorySlot[] slots;
+    public UiStatus uiStatus;
 
     public GameObject firstSlot;
 
     // Start is called before the first frame update
     void Start()
     {
-        inventory = Inventory.instance;
+        SetInventory(inventory);
         inventory.onItemChangedCallback += UpdateUI;
-
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
-        
     }
 
     // Update is called once per frame
@@ -60,7 +46,7 @@ public class InventoryUI : MonoBehaviour
         {
             if (i < inventory.items.Count)
             {
-                slots[i].AddItem(inventory.items[i]);
+                slots[i].SetItem(inventory.items[i]);
             } else
             {
                 slots[i].ClearSlot();
@@ -73,7 +59,7 @@ public class InventoryUI : MonoBehaviour
         inventoryUI.SetActive(true);
 
         // Freeze the movement of the player
-        GameEvents.instance.OpenUI();
+        uiStatus.OpenUI();
 
         //Set the first selected object to be the first slot
         if (inventory.Size() != 0)
@@ -87,6 +73,14 @@ public class InventoryUI : MonoBehaviour
     {
         inventoryUI.SetActive(false);
         // Restore the movement of the player
-        GameEvents.instance.CloseUI();
+        uiStatus.CloseUI();
+    }
+
+    public void ZoomToShowItem(Item item) {
+        zoomBox.Show(item);
+    }   
+
+    public void SetInventory(Inventory inventory) {
+        this.inventory = inventory;
     }
 }

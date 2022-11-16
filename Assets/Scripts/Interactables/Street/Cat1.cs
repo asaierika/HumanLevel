@@ -1,4 +1,4 @@
-public class Cat1 : Interactable
+public class Cat1 : Conversable
 {
     public Conversation convo;
     
@@ -11,7 +11,7 @@ public class Cat1 : Interactable
     public override void Interact()
     {
         // specific things to do when the player is interacting with the object      
-        DialogueManager.StartConversation(convo);
+        dialogueManager.StartConversation(convo);
 
     }
 }

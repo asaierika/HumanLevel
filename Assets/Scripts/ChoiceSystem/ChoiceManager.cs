@@ -1,25 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class ChoiceManager : MonoBehaviour
 {
-    public static ChoiceManager instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }        
-    }
-
     private Choice choice1;
     private Choice choice2;
     public GameObject choiceHolder;
@@ -27,12 +12,7 @@ public class ChoiceManager : MonoBehaviour
     public GameObject firstButton;
     private int choiceIndex = -1;
     private bool isActive;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public UiStatus uiStatus;
 
     // Update is called once per frame
     void Update()
@@ -60,7 +40,7 @@ public class ChoiceManager : MonoBehaviour
 
     IEnumerator Choose()
     {
-        GameEvents.instance.OpenUI();
+        uiStatus.OpenUI();
         yield return new WaitForSeconds(0.01f);
         choiceHolder.SetActive(true);
         buttons = choiceHolder.GetComponentsInChildren<Button>();
@@ -98,6 +78,6 @@ public class ChoiceManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.01f);
         choiceHolder.SetActive(false);
-        GameEvents.instance.CloseUI();
+        uiStatus.CloseUI();
     }
 }

@@ -7,31 +7,14 @@ public class ZoomInBox : MonoBehaviour
 {
     public static ZoomInBox instance;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     public GameObject zoomInBox;
     public Image itemImage;
-    public Text discription;
-
-    private void Start()
-    {
-        //zoomInBox.enabled = true;
-    }
+    public Text description;
 
     public void Show(Item item)
     {
         itemImage.sprite = item.itemImage;
-        discription.text = item.discription;
+        description.text = item.description;
 
         
         if (zoomInBox.activeInHierarchy)

@@ -1,15 +1,8 @@
 using UnityEngine;
 using System;
 
-public class GameEvents : MonoBehaviour
+public class UiStatus : MonoBehaviour
 {
-    public static GameEvents instance;
-
-    private void Awake()
-    {
-        instance = this;
-    }
-
     public event Action onOpenUI;
 
     public void OpenUI()

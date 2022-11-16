@@ -7,6 +7,8 @@ public class PhoenixFish : Follower_simple
     public GameObject phoenixFish;
     public GameEvent startFishing;
     public Conversation convo;
+    public DialogueManager dialogueManager;
+    private Inventory inventory;
     public Item phoenixFishItem;
     public Item fishingRod;
     private SpriteRenderer spriteR;
@@ -15,6 +17,7 @@ public class PhoenixFish : Follower_simple
     {
         Initialize();
         spriteR = gameObject.GetComponent<SpriteRenderer>();
+        inventory = GameManager.instance.inventory;
     }
 
     void Update()
@@ -33,7 +36,7 @@ public class PhoenixFish : Follower_simple
         }
     }
 
-    protected void Change() {
+    protected override void Change() {
         if (transform.position.x >= player.position.x)
         transform.localScale = new Vector3(1, 1, 1);
         else 
@@ -42,12 +45,12 @@ public class PhoenixFish : Follower_simple
 
     public override void Interact()
     {
-        if (!Inventory.instance.Contains(fishingRod))
+        if (!inventory.Contains(fishingRod))
         return;
 
-        DialogueManager.StartConversation(convo);
+        dialogueManager.StartConversation(convo);
         startFishing.TriggerEvent();
-        Inventory.instance.Add(phoenixFishItem);
+        inventory.Add(phoenixFishItem);
         phoenixFish.SetActive(false);
     }
 

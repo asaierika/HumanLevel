@@ -6,13 +6,8 @@ public class Eri_follower : Follower
 {
     public Conversation convo;
     public Choice choice1, choice2;
+    public Conversable reaction;
     private static bool isFollowing;
-    
-
-    private void Awake()
-    {
-        //DontDestroyOnLoad(gameObject);  
-    }
 
     protected override void Start()
     {
@@ -32,7 +27,7 @@ public class Eri_follower : Follower
 
     protected override void Found()
     {
-        DialogueManager.StartConversation(convo);
-        ChoiceManager.instance.StartChoice(choice1, choice2);
+        reaction.dialogueManager.StartConversation(convo);
+        reaction.choiceManager.StartChoice(choice1, choice2);
     }
 }

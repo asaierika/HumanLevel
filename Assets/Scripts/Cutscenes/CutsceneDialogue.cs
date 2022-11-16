@@ -7,6 +7,7 @@ public class CutsceneDialogue : MonoBehaviour
     public Conversation[] convo;
     private int currIndex;
     public bool finished;
+    public DialogueManager dialogueManager;
 
     private void Start()
     {
@@ -16,7 +17,7 @@ public class CutsceneDialogue : MonoBehaviour
     public void StartCutscene()
     {
         timeline.playableGraph.GetRootPlayable(0).SetSpeed(0);
-        DialogueManager.StartConversation(convo[currIndex]);
+        dialogueManager.StartConversation(convo[currIndex]);
         currIndex++;
         finished = true;
     }

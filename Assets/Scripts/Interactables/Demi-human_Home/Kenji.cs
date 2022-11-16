@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kenji : Interactable
+public class Kenji : Conversable
 {
     private SpriteRenderer spriteR;
     public Sprite kenjiStanding;
@@ -10,10 +10,13 @@ public class Kenji : Interactable
     public static bool talked1, talked2;
     public Conversation convo1, convo2, convo3, convo4, convo5;
     public Item phoenixFish;
+    public Inventory inventory;
 
     void Start() {
         spriteR = gameObject.GetComponent<SpriteRenderer>();
+        inventory = GameManager.instance.inventory;
     }
+
     void Update()
     {
         TryInteract();
@@ -27,32 +30,32 @@ public class Kenji : Interactable
     {
         if (!Rabbit.talked)
         {
-            DialogueManager.StartConversation(convo1);
+            dialogueManager.StartConversation(convo1);
             return;
         } 
         
         if (!talked1) 
         {
-            DialogueManager.StartConversation(convo2);
+            dialogueManager.StartConversation(convo2);
             talked1 = true;
             return;
         }
 
         if (!talked2)
         {
-            DialogueManager.StartConversation(convo3);
+            dialogueManager.StartConversation(convo3);
             talked2 = true;
-            Inventory.instance.Add(fishingRod);
+            inventory.Add(fishingRod);
             return;
         }
 
-        if (!Inventory.instance.Contains(phoenixFish))
+        if (!inventory.Contains(phoenixFish))
         {
-            DialogueManager.StartConversation(convo4);
+            dialogueManager.StartConversation(convo4);
             return;
         }
-        Inventory.instance.Remove(fishingRod);
-        Inventory.instance.Remove(phoenixFish);
-        DialogueManager.StartConversation(convo5);
+        inventory.Remove(fishingRod);
+        inventory.Remove(phoenixFish);
+        dialogueManager.StartConversation(convo5);
     }
 }

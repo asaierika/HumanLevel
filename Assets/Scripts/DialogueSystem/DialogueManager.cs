@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Placed under a singleton parent
 public class DialogueManager : MonoBehaviour
 {
     public GameObject dialogBox;
@@ -9,41 +10,28 @@ public class DialogueManager : MonoBehaviour
     public Image speakerSprite;
     private int currIndex;
     private Conversation currentConvo;
-    public static DialogueManager instance;
     public static bool inDialogue = false;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }        
-    }
+    public UiStatus uiStatus;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z) && inDialogue)
         {
-            instance.ReadNext();
-
+            ReadNext();
         }
     }
 
-    public static void StartConversation(Conversation convo)
+    public void StartConversation(Conversation convo)
     {
-        instance.dialogBox.SetActive(true);
-        GameEvents.instance.OpenUI();
+        dialogBox.SetActive(true);
+        uiStatus.OpenUI();
         
-        instance.currIndex = 0;
-        instance.currentConvo = convo;
-        instance.speakerName.text = "";
-        instance.dialogue.text = "";
+        currIndex = 0;
+        currentConvo = convo;
+        speakerName.text = "";
+        dialogue.text = "";
 
-        instance.ReadNext();     
+        ReadNext();     
         inDialogue = true;  
     }
 
@@ -51,7 +39,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (currIndex >= currentConvo.allLines.Length)
         {    
-            GameEvents.instance.CloseUI();
+            uiStatus.CloseUI();
             StartCoroutine(EndDialogue());       
         }
         else 

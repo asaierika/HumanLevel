@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public bool characterFrozen;
+    public UiStatus uiStatus;
 
     private void Start()
     {
@@ -24,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
             animator = GetComponent<Animator>();
         }
 
-        GameEvents.instance.onOpenUI += FreezeMovement;
-        GameEvents.instance.onCloseUI += RestoreMovement;        
+        uiStatus.onOpenUI += FreezeMovement;
+        uiStatus.onCloseUI += RestoreMovement;        
     }
 
     private void FixedUpdate()

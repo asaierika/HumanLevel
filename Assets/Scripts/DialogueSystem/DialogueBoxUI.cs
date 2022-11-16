@@ -6,15 +6,15 @@ public class DialogueBoxUI : MonoBehaviour
 
     DialogueManager dialogManager;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        dialogManager = DialogueManager.instance;
-    }
+    // // Start is called before the first frame update
+    // void Start()
+    // {
+    //     dialogManager = DialogueManager.instance;
+    // }
 
-    // Update is called once per frame
-    void Update()
-    {
+    // // Update is called once per frame
+    // void Update()
+    // {
         
-    }
+    // }
 }

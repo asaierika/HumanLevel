@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 391, y: -150}
+  m_AnchoredPosition: {x: 432, y: -131}
   m_SizeDelta: {x: 436.3222, y: 113.59}
   m_Pivot: {x: 0.5, y: 0.49999982}
 --- !u!222 &7307433779881262049
@@ -68,10 +68,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6e9db97fe593847a4aef77a22f555cb6, type: 3}
-    m_FontSize: 40
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -115,8 +115,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -204, y: -5}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchoredPosition: {x: -158, y: 8}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7264432376843431339
 CanvasRenderer:
@@ -191,8 +191,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -156.5395, y: -34.584}
-  m_SizeDelta: {x: 1264.8207, y: 266.34}
+  m_AnchoredPosition: {x: -119.69, y: -21.25}
+  m_SizeDelta: {x: 1360.6, y: 177}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7264432377123241854
 CanvasRenderer:
@@ -224,7 +224,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7703dff6110f1472c8e0978b9d80b45e, type: 3}
-    m_FontSize: 55
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -247,14 +247,13 @@ GameObject:
   - component: {fileID: 7264432378007551932}
   - component: {fileID: 7264432378007551934}
   - component: {fileID: 7264432378007551935}
-  - component: {fileID: 7264432378007551921}
   m_Layer: 5
   m_Name: Dialogue Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7264432378007551932
 RectTransform:
   m_ObjectHideFlags: 0
@@ -300,14 +299,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.70980394}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7d4df857a70f64d559a9c1e5387253cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15dea0b7b420a421785259c9e71d96bf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -317,22 +316,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7264432378007551921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7264432378007551933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c519ebb4e0a2a40abb910502a1684fcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogBox: {fileID: 7264432378007551933}
-  speakerName: {fileID: 7264432378287631694}
-  dialogue: {fileID: 7264432377123241855}
-  speakerSprite: {fileID: 7264432376843431336}
 --- !u!1 &7264432378287631692
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,8 +351,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -422.66858, y: 135.53078}
-  m_SizeDelta: {x: 732.5372, y: 73.8881}
+  m_AnchoredPosition: {x: -536.4229, y: 95}
+  m_SizeDelta: {x: 527.1543, y: 54.1971}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7264432378287631681
 CanvasRenderer:
@@ -401,7 +384,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5cd3894826f314892ba74735ed65e034, type: 3}
-    m_FontSize: 55
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 5

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
+// TODO: A lot of redundant movement code. Remove those that are unnecessary.
 public class KizunaMovement : MonoBehaviour
 {
     public float moveSpeed = 1f;
@@ -13,6 +11,7 @@ public class KizunaMovement : MonoBehaviour
     private RaycastHit2D hitY;
     private BoxCollider2D boxCollider;
     public Vector2 raycastPosition;
+    public UiStatus uiStatus;
 
     private void Start()
     {
@@ -31,8 +30,8 @@ public class KizunaMovement : MonoBehaviour
             boxCollider = GetComponent<BoxCollider2D>();
         }
 
-        GameEvents.instance.onOpenUI += FreezeMovement;
-        GameEvents.instance.onCloseUI += RestoreMovement;        
+        uiStatus.onOpenUI += FreezeMovement;
+        uiStatus.onCloseUI += RestoreMovement;        
     }
 
     private void FixedUpdate()

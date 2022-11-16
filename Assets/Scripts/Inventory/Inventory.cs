@@ -2,21 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// #TODO: Change to concurrent implementation of dictionary and list for faster access.
 public class Inventory : MonoBehaviour
 {
-    public static Inventory instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    public ItemObtainedHint itemHint;
 
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
@@ -46,7 +35,7 @@ public class Inventory : MonoBehaviour
         items.Add(item);
 
         // shows item obtained hint after each item is added
-        ItemObtainedHint.instance.Show(item);
+        itemHint.Show(item);
 
         if (onItemChangedCallback != null)
         onItemChangedCallback.Invoke();
@@ -101,7 +90,7 @@ public class Inventory : MonoBehaviour
         return items.Count;
     }
 
-    public void Decrease(Item item)
+    public void UseItem(Item item)
     {
 
         for (int i = 0; i < items.Count; i++)
@@ -111,6 +100,7 @@ public class Inventory : MonoBehaviour
                 if (items[i].amount > 1)
                 {
                     items[i].amount--;
+                    items[i].Use();
                     if (onItemChangedCallback != null)
                         onItemChangedCallback.Invoke();
                     return;
