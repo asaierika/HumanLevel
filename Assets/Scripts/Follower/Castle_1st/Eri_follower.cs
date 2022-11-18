@@ -9,22 +9,6 @@ public class Eri_follower : Follower
     public Conversable reaction;
     private static bool isFollowing;
 
-    protected override void Start()
-    {
-        base.Start();
-    }
-
-    // Update is called once per frame
-    protected override void Update()
-    {
-        base.Update();
-    }
-
-    protected override void FixedUpdate() 
-    {
-        base.FixedUpdate();
-    }
-
     protected override void Found()
     {
         reaction.dialogueManager.StartConversation(convo);

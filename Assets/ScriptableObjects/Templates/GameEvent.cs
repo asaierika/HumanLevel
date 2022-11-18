@@ -7,10 +7,10 @@ public class GameEvent : ScriptableObject
     private List<EventListener> listeners = new List<EventListener>();
 
     public void TriggerEvent() {
-        Debug.Log("Event triggered");
+        Debug.Log("Event " + name + " triggered");
 
         foreach (EventListener listener in listeners) {
-            Debug.Log(listener.gameObject.name);
+            Debug.Log(listener.gameObject.name + " response triggered");
             listener.OnEventTriggered();
         }
     }

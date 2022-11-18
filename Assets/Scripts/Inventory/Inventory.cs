@@ -1,14 +1,16 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 // #TODO: Change to concurrent implementation of dictionary and list for faster access.
 public class Inventory : MonoBehaviour
 {
-    public ItemObtainedHint itemHint;
-
     public delegate void OnItemChanged();
+    public delegate void OnNewItemAdded(Item item);
+    public delegate void OnItemUsed(Item item);
     public OnItemChanged onItemChangedCallback;
+    public OnNewItemAdded onNewItemAddedCallback;
+    public OnItemUsed onItemUsedCallback;
+
 
     public int capacity = 6;
 
@@ -22,31 +24,28 @@ public class Inventory : MonoBehaviour
             return;
         }
 
+        // Existing item.
         for (int i = 0; i < items.Count; i++)
         {
             if (items[i].nameOfItem == item.nameOfItem)
             {
                 items[i].amount++;
-                if (onItemChangedCallback != null)
-                    onItemChangedCallback.Invoke();
+                onItemChangedCallback?.Invoke();
                 return;
             }
         }
+        // New item.
         items.Add(item);
 
         // shows item obtained hint after each item is added
-        itemHint.Show(item);
-
-        if (onItemChangedCallback != null)
-        onItemChangedCallback.Invoke();
+        onNewItemAddedCallback?.Invoke(item);
+        onItemChangedCallback?.Invoke();
     }
 
     public void Remove(Item item)
     {
         items.Remove(item);
-
-        if (onItemChangedCallback != null)
-            onItemChangedCallback.Invoke();
+        onItemChangedCallback?.Invoke();
     }
 
     public bool Contains(string itemName)
@@ -97,25 +96,16 @@ public class Inventory : MonoBehaviour
         {
             if (items[i].nameOfItem == item.nameOfItem)
             {
-                if (items[i].amount > 1)
-                {
-                    items[i].amount--;
-                    items[i].Use();
-                    if (onItemChangedCallback != null)
-                        onItemChangedCallback.Invoke();
-                    return;
+                bool noneLeft = items[i].Use();
+                if (noneLeft) {
+                    items.RemoveAt(i);
                 }
-                else
-                {
-                    items.Remove(item);
-                    if (onItemChangedCallback != null)
-                        onItemChangedCallback.Invoke();
-                    return;
-                }
+                onItemChangedCallback?.Invoke();
+                onItemUsedCallback?.Invoke(item);
+                return;
             }
         }
-        Debug.Log("can't decrease because does not contain item");
-        return;
+        // Should not occur.
+        Debug.Log("Inventory does not contain item.");
     }
-
 }

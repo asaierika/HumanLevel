@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +8,8 @@ public class FollowingManager : MonoBehaviour
     public bool isFollowing;
     public GameObject follower;
     public VectorValue position;
+    // Delay before the follwing gameobject appears in scene and continues to chase after player.
+    public float spawnDelay = 0.5f;
 
     private void Awake()
     {
@@ -46,8 +47,7 @@ public class FollowingManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         GameObject existingFollower = GameObject.FindWithTag("Follower");
         if (existingFollower == null) {
-            GameObject spawnedFollower = Instantiate(follower);
-            spawnedFollower.transform.position = position.initialValue;
+            GameObject spawnedFollower = Instantiate(follower, position.initialValue, Quaternion.identity);
             spawnedFollower.SetActive(true);
         }
        

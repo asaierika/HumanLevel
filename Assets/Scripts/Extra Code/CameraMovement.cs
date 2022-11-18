@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: Remove this class/
 public class CameraMovement : MonoBehaviour
 {
     public float[] positionLimits; // Top, down, right, left

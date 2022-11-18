@@ -11,16 +11,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        if (GameManager.instance.playerInitialised)
-        transform.position = startingPosition.initialValue;
+        if (GameManager.instance.playerInitialised) {
+            transform.position = startingPosition.initialValue;
+        }
         
-        if (rb == null) {
-            rb = GetComponent<Rigidbody2D>();
-        }
-
-        if (animator == null) {
-            animator = GetComponent<Animator>();
-        }
+        rb = rb == null ? GetComponent<Rigidbody2D>() : rb;
+        animator = animator == null ? GetComponent<Animator>() : animator;
 
         uiStatus.onOpenUI += FreezeMovement;
         uiStatus.onCloseUI += RestoreMovement;        
@@ -51,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("moving", true);
             }
         } else {
-            if (animator != null) animator.SetBool("moving", false);
+            animator?.SetBool("moving", false);
         }
         
     }
@@ -65,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
     // eg. Inventory, dialogue
     public void FreezeMovement() {
         GameManager.instance.playerFrozen = true;
-        if (animator != null) animator.SetBool("moving", false);
+        animator?.SetBool("moving", false);
     }
 
     // Converse of FreezeMovement
@@ -75,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void FreezeCharacterMovement() {
         characterFrozen = true;
-        if (animator != null) animator.SetBool("moving", false);
+        animator?.SetBool("moving", false);
     }
 
     public void RestoreCharacterMovement() {

@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 // simple follower that allows sliding
-public class Follower_simple : Interactable
+public abstract class Follower_simple : Interactable
 {
     protected Transform player;
     public float moveSpeed = 1f; 
@@ -34,11 +34,10 @@ public class Follower_simple : Interactable
 
     }
 
-    protected virtual void Change() {
-        // specifies how the follower object changes its
-        // transform when in different relative position
-        // to the player 
-    }
+    // specifies how the follower object changes its
+    // transform when in different relative position
+    // to the player 
+    protected abstract void Change();
 
     protected void Trace() {
         Vector3 direction = player.position - transform.position;

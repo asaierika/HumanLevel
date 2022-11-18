@@ -9,21 +9,13 @@ public class InventorySlot : MonoBehaviour
     public Text nameOfItem;
     public Text amount;
     public Button InventorySlotButton;
-    public static InventoryUI inventoryUI;
+    public static Inventory inventory;
 
     void Start() {
         // Assumes per scene there will only be one inventoryUI.
-        if (inventoryUI == null) {
-            inventoryUI = GameObject.FindObjectOfType<InventoryUI>();
+        if (inventory == null) {
+            inventory = GameManager.instance.inventory;
         }
-    }
-
-    private void Update()
-    {
-        /*
-        if (Input.GetKeyDown(KeyCode.Z))
-        InventorySlotButton.onClick.Invoke();
-        */
     }
 
     public void SetItem(Item newItem)
@@ -56,7 +48,8 @@ public class InventorySlot : MonoBehaviour
 
     public void UseItem()
     {
-        if (item != null)
-            inventoryUI.ZoomToShowItem(item);
+        if (item != null) {
+            inventory.UseItem(item);
+        }
     }
 }

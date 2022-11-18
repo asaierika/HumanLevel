@@ -5,9 +5,10 @@ using UnityEngine.EventSystems;
 public class InventoryUI : MonoBehaviour
 {
     public ZoomInBox zoomBox;
+    public ItemObtainedHint itemHint;
 
     public Transform itemsParent;
-    public GameObject inventoryUI;
+    public GameObject panel;
 
     Inventory inventory;
     InventorySlot[] slots;
@@ -18,9 +19,34 @@ public class InventoryUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetInventory(inventory);
-        inventory.onItemChangedCallback += UpdateUI;
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        inventory = GameManager.instance.inventory;
+        Debug.Log("Inventory reference obtained " + (inventory == GameManager.instance.inventory) + " at " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        inventory.onNewItemAddedCallback += ShowItemHint;
+        inventory.onItemUsedCallback += ZoomToShowItem;
+    }
+
+    void OnEnable() {
+        Debug.Log("Inventory UI enabled at " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        if (inventory != null) {
+            Debug.Log("Inventory UI enabled and setting callbacks");
+            inventory.onNewItemAddedCallback += ShowItemHint;
+            inventory.onItemUsedCallback += ZoomToShowItem;
+        }
+    }
+
+    void OnDisable() {
+        if (panel.activeInHierarchy) {
+            // Ensure UpdateUI is unregistered when panel is inactive.
+            Disable();
+        }
+
+        Debug.Log("Decommission inventory UI at " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        // BUG: The check null is only required for the corridor scene. Why is OnDisable being called without Start(). 
+        if (inventory != null) {
+            inventory.onNewItemAddedCallback -= ShowItemHint;
+            inventory.onItemUsedCallback -= ZoomToShowItem;
+        }
     }
 
     // Update is called once per frame
@@ -28,7 +54,7 @@ public class InventoryUI : MonoBehaviour
     {
         if (Input.GetButtonDown("Inventory") && !DialogueManager.inDialogue)
         {
-            if (!inventoryUI.activeInHierarchy)
+            if (!panel.activeInHierarchy)
             {
                 Enable();
             }
@@ -40,6 +66,7 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    // Function only need to be registered when inventory panel is active.
     void UpdateUI()
     {
         for (int i = 0; i < slots.Length; i++)
@@ -56,7 +83,9 @@ public class InventoryUI : MonoBehaviour
 
     void Enable()
     {
-        inventoryUI.SetActive(true);
+        inventory.onItemChangedCallback += UpdateUI;
+        UpdateUI();
+        panel.SetActive(true);
 
         // Freeze the movement of the player
         uiStatus.OpenUI();
@@ -71,7 +100,8 @@ public class InventoryUI : MonoBehaviour
 
     public void Disable()
     {
-        inventoryUI.SetActive(false);
+        inventory.onItemChangedCallback -= UpdateUI;
+        panel.SetActive(false);
         // Restore the movement of the player
         uiStatus.CloseUI();
     }
@@ -80,7 +110,7 @@ public class InventoryUI : MonoBehaviour
         zoomBox.Show(item);
     }   
 
-    public void SetInventory(Inventory inventory) {
-        this.inventory = inventory;
+    public void ShowItemHint(Item item) {
+        itemHint.Show(item);
     }
 }

@@ -29,7 +29,7 @@ public class MiniGame : MonoBehaviour
             } else if (owner == SwitchCharacter.Who.Partner) {
                 popupManagers[1].SetActivePopup(gameObject);
             } else {
-                throw new UnityException("Fuck the world and coding");
+                throw new UnityException("Invalid owner for minigame " + name);
             }
         } else {
             if (owner == SwitchCharacter.Who.Kizuna) {
@@ -37,7 +37,7 @@ public class MiniGame : MonoBehaviour
             } else if (owner == SwitchCharacter.Who.Partner) {
                 popupManagers[1].SetActivePopup(gameObject, terminateSignal);
             } else {
-                throw new UnityException("Fuck the world and coding");
+                throw new UnityException("Invalid owner for minigame " + name);
             }
         }
     }

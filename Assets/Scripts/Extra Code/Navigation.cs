@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+// TODO: Remove this class if follower works.
 public class Navigation : MonoBehaviour
 {
     public GameObject target;

@@ -123,3 +123,4 @@ MonoBehaviour:
   rb: {fileID: 0}
   animator: {fileID: 9018735197294990349}
   characterFrozen: 0
+  uiStatus: {fileID: 0}

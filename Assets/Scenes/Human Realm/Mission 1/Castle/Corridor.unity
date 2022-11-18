@@ -294,6 +294,8 @@ MonoBehaviour:
   convo3: {fileID: 11400000, guid: ec07872741c824e24a478e21ea5d0201, type: 2}
   choice1: {fileID: 11400000, guid: 8dd1afe55e59b4d7eba1eb73b0f2bb34, type: 2}
   choice2: {fileID: 11400000, guid: 672a5ef8c0fa24b89b52b8dfcfc0e44d, type: 2}
+  dialogueManager: {fileID: 688052929}
+  choiceManager: {fileID: 688052927}
 --- !u!114 &111991791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,6 +642,14 @@ PrefabInstance:
       propertyPath: convo
       value: 
       objectReference: {fileID: 11400000, guid: da8c3a44a93694807ba10cec2d13306f, type: 2}
+    - target: {fileID: 2585713245430550760, guid: b8f31e6173a1348d696d7815e9f6f7e6, type: 3}
+      propertyPath: choiceManager
+      value: 
+      objectReference: {fileID: 688052927}
+    - target: {fileID: 2585713245430550760, guid: b8f31e6173a1348d696d7815e9f6f7e6, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 688052929}
     - target: {fileID: 5193581498739797906, guid: b8f31e6173a1348d696d7815e9f6f7e6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -908,7 +918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6496187629067207479, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
       propertyPath: sceneName
-      value: Castle_1stRoomC
+      value: Room C
       objectReference: {fileID: 0}
     - target: {fileID: 6496187629067207479, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
       propertyPath: playerStorage
@@ -947,6 +957,10 @@ PrefabInstance:
     - target: {fileID: 1160407569407465096, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160407569407465096, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3214466593771076071, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
       propertyPath: m_RootOrder
@@ -994,6 +1008,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
+--- !u!114 &688052927 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3310133960076634330, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
+  m_PrefabInstance: {fileID: 688052926}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe4da878960304b4f943a4eadd8c5bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &688052928 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9090316670615857145, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
+  m_PrefabInstance: {fileID: 688052926}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83408fb4b1e834255aa9a10feafa861a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &688052929 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 551229312640529246, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
+  m_PrefabInstance: {fileID: 688052926}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c519ebb4e0a2a40abb910502a1684fcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &951324991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1162,8 +1209,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kizuna
       objectReference: {fileID: 0}
+    - target: {fileID: 8488101351404026668, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1069855502}
+    - target: {fileID: 8488101351404026668, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1069855503}
+    - target: {fileID: 8488101351404026668, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+      propertyPath: uiStatus
+      value: 
+      objectReference: {fileID: 688052928}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+--- !u!50 &1069855502 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4175073323694080008, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+  m_PrefabInstance: {fileID: 1069855501}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1069855503 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4175073323694080012, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+  m_PrefabInstance: {fileID: 1069855501}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1190761011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1237,7 +1306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6496187629067207479, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
       propertyPath: sceneName
-      value: Castle_1stRoomD
+      value: Room D
       objectReference: {fileID: 0}
     - target: {fileID: 6496187629067207479, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
       propertyPath: playerStorage
@@ -1368,7 +1437,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  sceneName: Castle_1stHall_beforeFollowing
+  sceneName: Hall_Before_Chase
   playerPosition: {x: -2, y: 0.35}
   playerStorage: {fileID: 11400000, guid: 51ddb9c301e284da4b8421225e7d5eb3, type: 2}
 --- !u!1 &1205285207
@@ -1711,6 +1780,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6748098707614136306, guid: 39dbdb6108ff44751a77d2d13cf73534, type: 3}
+      propertyPath: playerInitialised
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6748098707614136307, guid: 39dbdb6108ff44751a77d2d13cf73534, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1830,7 +1903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6496187629067207479, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
       propertyPath: sceneName
-      value: Castle_1stRoomB
+      value: Room B
       objectReference: {fileID: 0}
     - target: {fileID: 6496187629067207479, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
       propertyPath: playerStorage
@@ -2181,7 +2254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6496187629067207479, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
       propertyPath: sceneName
-      value: Castle_1stRoomA
+      value: Room A
       objectReference: {fileID: 0}
     - target: {fileID: 6496187629067207479, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
       propertyPath: playerStorage

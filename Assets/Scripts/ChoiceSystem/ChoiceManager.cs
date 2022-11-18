@@ -55,7 +55,7 @@ public class ChoiceManager : MonoBehaviour
 
     public void SetChoice(int i)
     {
-        Debug.Log(i);
+        // Debug.Log(i);
         choiceIndex = i;
 
         if (choiceIndex == 0)

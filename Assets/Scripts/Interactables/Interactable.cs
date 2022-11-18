@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour
 {
     // true when the player triggers the collider of the interactable object 
     // false when the player exits
@@ -20,8 +20,7 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    public virtual void Interact()
-    { }
+    public abstract void Interact();
  
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -41,10 +40,10 @@ public class Interactable : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision with " + collision.gameObject.name);
+        // Debug.Log("Collision with " + collision.gameObject.name);
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player in range");
+            // Debug.Log("Player in range");
             playerInRange = true;
         }
     }

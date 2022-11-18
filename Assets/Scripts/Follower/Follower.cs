@@ -52,12 +52,13 @@ public abstract class Follower : MonoBehaviour
         boxCollider = this.GetComponent<BoxCollider2D>();
         animator = this.GetComponent<Animator>();
         player = GameObject.FindWithTag("Player").transform;
-        if (FollowingManager.instance.isFollowing)
-        {
-            //FollowingManager.instance.instance.SwitchScene(startingPosition.initialValue);
-        }
+        // if (FollowingManager.instance.isFollowing)
+        // {
+        //     //FollowingManager.instance.instance.SwitchScene(startingPosition.initialValue);
+        // }
     }
 
+    // TODO: Deal with concave obstacles.
     protected void Trace() {
         Vector3 direction = player.position - transform.position;
         direction.Normalize();
@@ -106,11 +107,8 @@ public abstract class Follower : MonoBehaviour
             {
                 rb.MovePosition((Vector2) transform.position 
                     + new Vector2(-1 * moveSpeed * Time.deltaTime, 0));
-            }
-            else
-            {
-                return;
-            }
+            } 
+            return;
         } 
         else if (this.direction == Direction.Vertical)
         {
@@ -127,14 +125,13 @@ public abstract class Follower : MonoBehaviour
                 rb.MovePosition((Vector2) transform.position 
                     + new Vector2(0, -1 * moveSpeed * Time.deltaTime));
             } 
-            else 
-            {
-                return;
-            }
+            return;
         }
-        //rb.MovePosition((Vector2) transform.position + (movement * moveSpeed * Time.deltaTime));
     }
 
+    /**
+    * Adjust the animation to fit the motion.
+    */
     protected void Change() 
     {
         if (animator == null) 

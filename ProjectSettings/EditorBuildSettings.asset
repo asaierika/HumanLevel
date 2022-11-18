@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Demi-human Realm/Holy Wood.unity
     guid: 526d60ff1c9954ce981e70d551df2083
   - enabled: 1
-    path: Assets/Scenes/Human Realm/Intro/Moutain_cutscene.unity
+    path: Assets/Scenes/Human Realm/Intro/Mountain_cutscene.unity
     guid: 1dac531ebc09548c596ced8cfb31dc15
   - enabled: 0
     path: Assets/Scenes/Test.unity
@@ -30,13 +30,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Human Realm/Mission 1/Street.unity
     guid: 7416d3fddb2984e5ca6d7c86afb8897e
   - enabled: 1
-    path: Assets/Scenes/Human Realm/Mission 1/Castle/Castle_1stHall.unity
+    path: Assets/Scenes/Human Realm/Mission 1/Castle/Hall.unity
     guid: 5a0da1f3a98d346bc9609d07e57747fe
   - enabled: 1
-    path: Assets/Scenes/Human Realm/Mission 1/Castle/Castle_cutscene1.unity
+    path: Assets/Scenes/Human Realm/Mission 1/Castle/Gate 1.unity
     guid: e0fb29bd89ab2407aa5ecd0a3171833d
   - enabled: 1
-    path: Assets/Scenes/Human Realm/Mission 1/Castle/Castle_cutscene2.unity
+    path: Assets/Scenes/Human Realm/Mission 1/Castle/Gate 2.unity
     guid: 8cb05c03afe4b4f6ab8718120c46d275
   - enabled: 1
     path: Assets/Scenes/Demi-human Realm/Chamber.unity
@@ -45,21 +45,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Human Realm/Intro/HikaruRoom_cutscene.unity
     guid: 4c2e5df678e4d4d6498bf9d362b7d4e7
   - enabled: 1
-    path: Assets/Scenes/Human Realm/Mission 1/Castle/Castle_1stCorridor.unity
+    path: Assets/Scenes/Human Realm/Mission 1/Castle/Corridor.unity
     guid: 3ebc5e1d9a80041cab2bd664b8a91c7b
   - enabled: 1
-    path: Assets/Scenes/Human Realm/Mission 1/Castle/Castle_1stHall_beforeFollowing.unity
+    path: Assets/Scenes/Human Realm/Mission 1/Castle/Hall_Before_Chase.unity
     guid: 2fd482ce3dac04c69b7e5c608c551d10
   - enabled: 1
-    path: Assets/Scenes/Human Realm/Mission 1/Castle/Castle_1stRoomA.unity
+    path: Assets/Scenes/Human Realm/Mission 1/Castle/Room A.unity
     guid: 2029648c1b8114fab984bdcee6bb1456
   - enabled: 1
-    path: Assets/Scenes/Human Realm/Mission 1/Castle/Castle_1stRoomB.unity
+    path: Assets/Scenes/Human Realm/Mission 1/Castle/Room B.unity
     guid: 4a7e7fecf39544ccb8d261c54feac2fb
   - enabled: 1
-    path: Assets/Scenes/Human Realm/Mission 1/Castle/Castle_1stRoomC.unity
+    path: Assets/Scenes/Human Realm/Mission 1/Castle/Room C.unity
     guid: 6b267d96bf77f4db7b86ea7c44c75c74
   - enabled: 1
-    path: Assets/Scenes/Human Realm/Mission 1/Castle/Castle_1stRoomD.unity
+    path: Assets/Scenes/Human Realm/Mission 1/Castle/Room D.unity
     guid: c92295c3a7f694689840a97b6ac62cf4
   m_configObjects: {}

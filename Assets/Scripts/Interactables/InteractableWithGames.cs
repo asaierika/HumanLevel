@@ -17,7 +17,7 @@ public class InteractableWithGames : Interactable
     }
 
     public override void Interact() {
-        Debug.Log("Player engaged table");
+        // Debug.Log("Player engaged game interactable " + name);
         interactableManager.AddPossession(whoTriggered, game);
         game.SetOwner(whoTriggered);
         openMiniGame.TriggerEvent();
@@ -49,7 +49,7 @@ public class InteractableWithGames : Interactable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision with " + collision.gameObject.name);
+        // Debug.Log("Collision with " + collision.gameObject.name);
         if (collision.gameObject.CompareTag("Player") &&
                 collision.gameObject.GetComponent<Character>().IsActive) {
             whoTriggered = collision.gameObject.GetComponent<Character>().identity;

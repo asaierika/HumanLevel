@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -12,5 +11,8 @@ public class Item : ScriptableObject
     public string description;
 
     // Item effects
-    public virtual void Use() {}
+    public virtual bool Use() {
+        amount = Math.Max(0, amount - 1);
+        return amount == 0;
+    }
 }
