@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -9,10 +8,11 @@ public class Item : ScriptableObject
     public Sprite icon;
     public int amount = 1;
     public Sprite itemImage;
-    public string discription;
+    public string description;
 
-    public virtual void Use()
-    {
-        ZoomInBox.instance.Show(this);
+    // Item effects
+    public virtual bool Use() {
+        amount = Math.Max(0, amount - 1);
+        return amount == 0;
     }
 }

@@ -1,11 +1,17 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FollowingManager : MonoBehaviour
 {
     public static FollowingManager instance;
-    public static bool isFollowing;
+    public GameObject follower;
+    // Chasing status of the given follower.
+    public bool isFollowing;
+    // public VectorValue position;
+    public Map castleMap;
+    // Delay before the follwing gameobject appears in scene and continues to chase after player.
+    public float spawnDelay = 1f;
 
     private void Awake()
     {
@@ -16,20 +22,13 @@ public class FollowingManager : MonoBehaviour
         }
        
         DontDestroyOnLoad(gameObject);
-
         instance = this;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        StartFollowing();
+        SceneManager.sceneLoaded += delegate { Spawn(); };
     }
 
     public void StartFollowing()
@@ -37,17 +36,26 @@ public class FollowingManager : MonoBehaviour
         isFollowing = true;
     }
 
-    public void SwitchScene(Vector2 position)
-    {
-        StartCoroutine(SpawnFollower(position));
+    void OnDisable() {
+        SceneManager.sceneLoaded -= delegate { Spawn(); };
     }
 
-    IEnumerator SpawnFollower(Vector2 position)
+    public void Spawn()
     {
-        GameObject follower = GameObject.FindWithTag("Follower");
-        follower.SetActive(false);
-        yield return new WaitForSeconds(0.5f);
-        follower.transform.position = position;
-        follower.SetActive(true);
+        if (isFollowing)
+        {
+            StartCoroutine(SpawnFollower());
+        }
+    }
+
+    IEnumerator SpawnFollower()
+    {
+        yield return new WaitForSeconds(spawnDelay);
+        GameObject existingFollower = GameObject.FindWithTag("Follower");
+        if (existingFollower == null) {
+            // GameObject spawnedFollower = Instantiate(follower, position.initialValue, Quaternion.identity);
+            GameObject spawnedFollower = Instantiate(follower, castleMap.GetStartingPosition(GameManager.instance.lastScene, UnityEngine.SceneManagement.SceneManager.GetActiveScene().name), 
+                    Quaternion.identity);
+        }
     }
 }

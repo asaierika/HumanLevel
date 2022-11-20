@@ -1,31 +1,32 @@
-public class Cat2 : Interactable
+public class Cat2 : Conversable
 {
     public Conversation convo1, convo2, convo3;
     public Item fish, hairPin;
-    public static bool fed;
+    public bool fed;
+    public Inventory inventory;
+    public FishSeller seller;
 
-    void Update()
-    {
-        TryInteract();
+    void Start() {
+        inventory = GameManager.instance.inventory;
     }
 
     public override void Interact()
     {
         if (fed)
         {
-            DialogueManager.StartConversation(convo3);            
+            dialogueManager.StartConversation(convo3);            
             return;
         }
-        if (Inventory.instance.Contains(fish))
+        if (inventory.Contains(fish))
         {
-            DialogueManager.StartConversation(convo2);
+            dialogueManager.StartConversation(convo2);
             fed = true;
-            Inventory.instance.Add(hairPin);
-            Inventory.instance.Remove(fish);
+            inventory.Add(hairPin);
+            inventory.Remove(fish);
             return;
         }
 
-        DialogueManager.StartConversation(convo1);
-        FishSeller.sawCat = true;
+        dialogueManager.StartConversation(convo1);
+        seller.sawCat = true;
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,16 +9,16 @@ public class InventorySlot : MonoBehaviour
     public Text nameOfItem;
     public Text amount;
     public Button InventorySlotButton;
+    public static Inventory inventory;
 
-    private void Update()
-    {
-        /*
-        if (Input.GetKeyDown(KeyCode.Z))
-        InventorySlotButton.onClick.Invoke();
-        */
+    void Start() {
+        // Assumes per scene there will only be one inventoryUI.
+        if (inventory == null) {
+            inventory = GameManager.instance.inventory;
+        }
     }
 
-    public void AddItem(Item newItem)
+    public void SetItem(Item newItem)
     {
         item = newItem;
        
@@ -50,7 +48,8 @@ public class InventorySlot : MonoBehaviour
 
     public void UseItem()
     {
-        if (item != null)
-            item.Use();
+        if (item != null) {
+            inventory.UseItem(item);
+        }
     }
 }

@@ -7,31 +7,15 @@ public class ZoomInBox : MonoBehaviour
 {
     public static ZoomInBox instance;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     public GameObject zoomInBox;
     public Image itemImage;
-    public Text discription;
+    public Text description;
 
-    private void Start()
-    {
-        //zoomInBox.enabled = true;
-    }
-
+    // FIXME: Exit zoom view. Does zooming on the object result in usage?
     public void Show(Item item)
     {
         itemImage.sprite = item.itemImage;
-        discription.text = item.discription;
+        description.text = item.description;
 
         
         if (zoomInBox.activeInHierarchy)

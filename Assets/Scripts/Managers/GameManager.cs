@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
+// All data that must be persisted through scene in the session will be stored here.
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public Inventory inventory;
     public bool playerFrozen;
     public bool playerInitialised;
+    // TODO: Delegate all scene transition to one class
+    public string lastScene;
 
     private void Awake()
     {
@@ -21,6 +22,4 @@ public class GameManager : MonoBehaviour
 
         instance = this;
     }
-
-    
 }

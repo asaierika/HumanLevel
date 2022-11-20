@@ -1,31 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 1f;
-    public VectorValue startingPosition;
+    // public VectorValue startingPosition;
+    // Whether different scenes come together to form a continuous map e.g. Castle.
+    public static bool inContinuousLocations;
     public Rigidbody2D rb;
     public Animator animator;
     public bool characterFrozen;
+    public UiStatus uiStatus;
+
+    public static void AlterLocationType(bool isContinuousType) {
+        inContinuousLocations = isContinuousType;
+    }
 
     private void Start()
-    {
-        if (GameManager.instance.playerInitialised)
-        transform.position = startingPosition.initialValue;
-        
-        if (rb == null) {
-            rb = GetComponent<Rigidbody2D>();
-        }
+    {   
+        rb = rb == null ? GetComponent<Rigidbody2D>() : rb;
+        animator = animator == null ? GetComponent<Animator>() : animator;
+        uiStatus = uiStatus == null ? GameObject.FindObjectOfType<UiStatus>() : uiStatus;
 
-        if (animator == null) {
-            animator = GetComponent<Animator>();
-        }
-
-        GameEvents.instance.onOpenUI += FreezeMovement;
-        GameEvents.instance.onCloseUI += RestoreMovement;        
+        uiStatus.onOpenUI += FreezeMovement;
+        uiStatus.onCloseUI += RestoreMovement;        
     }
 
     private void FixedUpdate()
@@ -35,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         // hence the condition clause below.
         if (characterFrozen || GameManager.instance.playerFrozen)
         {
-            //return;
+            return;
         }
         
         float x = Input.GetAxisRaw("Horizontal");
@@ -53,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("moving", true);
             }
         } else {
-            if (animator != null) animator.SetBool("moving", false);
+            animator?.SetBool("moving", false);
         }
         
     }
@@ -67,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
     // eg. Inventory, dialogue
     public void FreezeMovement() {
         GameManager.instance.playerFrozen = true;
-        if (animator != null) animator.SetBool("moving", false);
+        animator?.SetBool("moving", false);
     }
 
     // Converse of FreezeMovement
@@ -77,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void FreezeCharacterMovement() {
         characterFrozen = true;
-        if (animator != null) animator.SetBool("moving", false);
+        animator?.SetBool("moving", false);
     }
 
     public void RestoreCharacterMovement() {

@@ -1,8 +1,13 @@
-public class FishSeller : Interactable
+public class FishSeller : Conversable
 {
-    public static bool sawCat, givenFish;
+    public bool sawCat, givenFish;
     public Item fish;
     public Conversation convo1, convo2;
+    public Inventory inventory;
+
+    void Start() {
+        inventory = GameManager.instance.inventory;
+    }
 
     void Update()
     {
@@ -13,17 +18,16 @@ public class FishSeller : Interactable
     {
         if (givenFish)
         {
-            DialogueManager.StartConversation(convo1);
-            return;
+            dialogueManager.StartConversation(convo1);
         }
         if (sawCat && Eri.talked)
         {
-            DialogueManager.StartConversation(convo2);
-            Inventory.instance.Add(fish);
+            dialogueManager.StartConversation(convo2);
+            inventory.Add(fish);
             givenFish = true;
             return;
         }
 
-        DialogueManager.StartConversation(convo1);
+        dialogueManager.StartConversation(convo1);
     }
 }

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07fd9bf9ca7674ccf9fbb58cbe9468e4, type: 3}
+  m_Name: CastleServantA_3
+  m_EditorClassIdentifier: 
+  allLines:
+  - speaker: {fileID: 11400000, guid: 5f96e5339a25749dcab96a3dc80c1fa9, type: 2}
+    dialogue: Well...
+  - speaker: {fileID: 11400000, guid: 5f96e5339a25749dcab96a3dc80c1fa9, type: 2}
+    dialogue: Most of the rooms in the castle are quite underutilized.
+  - speaker: {fileID: 11400000, guid: 5f96e5339a25749dcab96a3dc80c1fa9, type: 2}
+    dialogue: You can find paintings in some of them. They are the artworks of the
+      landlord's wife's.
+  - speaker: {fileID: 11400000, guid: c2bdc014840524535b29ed26da06ef2a, type: 2}
+    dialogue: The landlord's wife? Is she in the castle now?
+  - speaker: {fileID: 11400000, guid: 5f96e5339a25749dcab96a3dc80c1fa9, type: 2}
+    dialogue: 'No...she passed away recently. '
+  - speaker: {fileID: 11400000, guid: 5f96e5339a25749dcab96a3dc80c1fa9, type: 2}
+    dialogue: (Coughs) It's none of your concern.
+  - speaker: {fileID: 11400000, guid: c2bdc014840524535b29ed26da06ef2a, type: 2}
+    dialogue: I'm sorry.

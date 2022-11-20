@@ -1,33 +1,33 @@
 using UnityEngine;
 
-public class Eri : Interactable
+public class Eri : Conversable
 {
     public static bool talked;
     public Item hairPin;
     public Conversation convo1, convo2;
     public GameObject timeline;
+    public Inventory inventory;
 
-    private void Update()
-    {
-        TryInteract();
+    void Start() {
+        inventory = GameManager.instance.inventory;
     }
 
     public override void Interact()
     {
-        if (Inventory.instance.Contains(hairPin))
+        if (inventory.Contains(hairPin))
         {
             timeline.SetActive(true);
-            Inventory.instance.Remove(hairPin);
+            inventory.Remove(hairPin);
             return;
         }
 
         if (talked)
         {
-            DialogueManager.StartConversation(convo2);
+            dialogueManager.StartConversation(convo2);
             return;
         }
 
-        DialogueManager.StartConversation(convo1);
+        dialogueManager.StartConversation(convo1);
         talked = true;
     }
 }

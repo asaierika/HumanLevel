@@ -1,17 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour
 {
     // true when the player triggers the collider of the interactable object 
     // false when the player exits
     public bool playerInRange;
 
-    public void TryInteract()
+    void Update() {
+        TryInteract();
+    }
+
+    public virtual void TryInteract()
     {
-        
-        if (GameManager.instance.playerFrozen)
+        if (GameManager.instance.playerFrozen || DialogueManager.inDialogue)
             // when the player is frozen, eg inventory is open or in dialogue,
             // the player cannot interact with interactable objects 
             return;
@@ -23,8 +24,7 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    public virtual void Interact()
-    { }
+    public abstract void Interact();
  
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -44,10 +44,10 @@ public class Interactable : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision with " + collision.gameObject.name);
+        // Debug.Log("Collision with " + collision.gameObject.name);
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player in range");
+            // Debug.Log("Player in range");
             playerInRange = true;
         }
     }

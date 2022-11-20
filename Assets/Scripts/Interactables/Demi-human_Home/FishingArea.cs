@@ -3,22 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // the area at which Kizuna can fish
-public class FishingArea : Interactable
+public class FishingArea : Conversable
 {
     public Item phonenixFish;
     public Item fishingRod;
     public Conversation convo;
     public GameEvent startFishing;
     public GameEvent endFishing;
+    public Inventory inventory;
     private static bool isFishing;
     private static bool isFished;
+
+    void Start() {
+        inventory = GameManager.instance.inventory;
+    }
 
     void Update()
     {
         if (isFished)
         this.enabled = false;
 
-        if (!Inventory.instance.Contains(fishingRod))
+        if (!inventory.Contains(fishingRod))
         return;
 
         TryInteract();
@@ -39,14 +44,14 @@ public class FishingArea : Interactable
         // at the same time.
         yield return new WaitForSeconds(0.1f);
        
-        if (Inventory.instance.Contains(phonenixFish))
+        if (inventory.Contains(phonenixFish))
         {
             isFishing = false;
             isFished = true;
         } 
         else
         {
-            DialogueManager.StartConversation(convo);
+            dialogueManager.StartConversation(convo);
             startFishing.TriggerEvent();
             isFishing = false;
         } 
