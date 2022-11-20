@@ -21,7 +21,11 @@ public class PlayerSpawner : MonoBehaviour
             hasDefaultSpawnPosition = false;
         } else if (PlayerMovement.inContinuousLocations) {
             Debug.Log("Spawning to maintain continous movement");
-            player.transform.position = map.GetStartingPosition(GameManager.instance.lastScene, UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+            try {
+                player.transform.position = map.GetStartingPosition(GameManager.instance.lastScene, UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+            } catch(UnityException error) {
+                Debug.Log(error.Message);
+            }
         }
     }
 }
