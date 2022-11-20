@@ -12,11 +12,6 @@ public class Eri : Conversable
         inventory = GameManager.instance.inventory;
     }
 
-    private void Update()
-    {
-        TryInteract();
-    }
-
     public override void Interact()
     {
         if (inventory.Contains(hairPin))

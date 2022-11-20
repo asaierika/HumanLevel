@@ -12,11 +12,6 @@ public class Lever : Interactable
     public bool isInTargetPosition;
     public enum Position { LEFT, RIGHT };
     public PairEvent eventPair;
-
-
-    void Update() {
-        TryInteract();
-    }
     
     public override void Interact() {
         if (currPosition == Position.LEFT) {

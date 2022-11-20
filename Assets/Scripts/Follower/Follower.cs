@@ -11,13 +11,16 @@ public abstract class Follower : MonoBehaviour
     public bool playerInRange;
     protected enum Direction { Horizontal, Vertical }
     protected Direction direction = Direction.Horizontal;
-    public VectorValue startingPosition;
+    // public VectorValue startingPosition;
 
     protected Rigidbody2D rb;
     protected RaycastHit2D hitX;
     protected RaycastHit2D hitY;
     protected BoxCollider2D boxCollider;
     protected Animator animator;
+    protected float timer;
+    // To prevent follower from switching direction to frequently.
+    public float minimumInterval = 0.1f;
    
 
     // Start is called before the first frame update
@@ -34,7 +37,7 @@ public abstract class Follower : MonoBehaviour
 
     protected virtual void FixedUpdate() {
         if (!FollowingManager.instance.isFollowing)
-        return;
+            return;
 
         if (playerInRange)
         {
@@ -48,80 +51,72 @@ public abstract class Follower : MonoBehaviour
     }
 
     protected virtual void Initialize() {
-        rb = this.GetComponent<Rigidbody2D>();
-        boxCollider = this.GetComponent<BoxCollider2D>();
-        animator = this.GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
+        animator = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player").transform;
-        // if (FollowingManager.instance.isFollowing)
-        // {
-        //     //FollowingManager.instance.instance.SwitchScene(startingPosition.initialValue);
-        // }
     }
 
     // TODO: Deal with concave obstacles.
     protected void Trace() {
-        Vector3 direction = player.position - transform.position;
-        direction.Normalize();
-        movement = direction;
+        if (timer < 0) {
+            timer = minimumInterval;
+            Vector3 direction = player.position - transform.position;
+            direction.Normalize();
+            movement = direction;
 
-        hitX = Physics2D.BoxCast(transform.position + new Vector3(boxCollider.offset.x, boxCollider.offset.y, 0f), boxCollider.size, 0, new Vector2(movement.x, 0), 
-            0.1f, LayerMask.GetMask("Blocking"));
-        hitY = Physics2D.BoxCast(transform.position + new Vector3(boxCollider.offset.x, boxCollider.offset.y, 0f), boxCollider.size, 0, new Vector2(0, movement.y), 
-            0.1f, LayerMask.GetMask("Blocking"));
-        
-        if (hitX.collider != null)
-        {
-            this.direction = Direction.Vertical;
-            return;
-        }
-        if (hitY.collider != null)
-        {
-            this.direction = Direction.Horizontal;
-            return;
-        }
+            hitX = Physics2D.BoxCast(transform.position + new Vector3(boxCollider.offset.x, boxCollider.offset.y, 0f), boxCollider.size, 0, new Vector2(movement.x, 0), 
+                0.1f, LayerMask.GetMask("Blocking"));
+            hitY = Physics2D.BoxCast(transform.position + new Vector3(boxCollider.offset.x, boxCollider.offset.y, 0f), boxCollider.size, 0, new Vector2(0, movement.y), 
+                0.1f, LayerMask.GetMask("Blocking"));
+            
+            if (hitX.collider != null)
+            {
+                this.direction = Direction.Vertical;
+                return;
+            }
+            if (hitY.collider != null)
+            {
+                this.direction = Direction.Horizontal;
+                return;
+            }
 
-        if (Math.Abs(movement.x) < Math.Abs(movement.y))
-        {
-            this.direction = Direction.Vertical;
-        }
-        else 
-        {
-            this.direction = Direction.Horizontal;
+            if (Math.Abs(movement.x) < Math.Abs(movement.y))
+            {
+                this.direction = Direction.Vertical;
+            }
+            else 
+            {
+                this.direction = Direction.Horizontal;
+            }
+        } else {
+            timer -= Time.fixedDeltaTime;
         }
     }
 
 
     protected void Move() {
-        
-        if (this.direction == Direction.Horizontal) 
-        {
+        if (this.direction == Direction.Horizontal) {
             if (Mathf.Abs(movement.x) < 0.01f)
-            return;
+                return;
 
-            if (movement.x > 0)
-            {
+            if (movement.x > 0) {
                 rb.MovePosition((Vector2) transform.position 
                     + new Vector2(1 * moveSpeed * Time.deltaTime, 0));
             }
-            else if (movement.x < 0)
-            {
+            else if (movement.x < 0) {
                 rb.MovePosition((Vector2) transform.position 
                     + new Vector2(-1 * moveSpeed * Time.deltaTime, 0));
             } 
             return;
-        } 
-        else if (this.direction == Direction.Vertical)
-        {
+        }  else if (this.direction == Direction.Vertical) {
             if (Mathf.Abs(movement.y) < 0.01f)
-            return;
+                return;
 
-            if (movement.y > 0)
-            {
+            if (movement.y > 0) {
                 rb.MovePosition((Vector2) transform.position 
                     + new Vector2(0, 1 * moveSpeed * Time.deltaTime));
-            }
-            else if (movement.y < 0)
-            {
+            } else if (movement.y < 0) {
                 rb.MovePosition((Vector2) transform.position 
                     + new Vector2(0, -1 * moveSpeed * Time.deltaTime));
             } 

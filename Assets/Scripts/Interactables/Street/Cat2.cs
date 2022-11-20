@@ -4,14 +4,10 @@ public class Cat2 : Conversable
     public Item fish, hairPin;
     public bool fed;
     public Inventory inventory;
+    public FishSeller seller;
 
     void Start() {
         inventory = GameManager.instance.inventory;
-    }
-
-    void Update()
-    {
-        TryInteract();
     }
 
     public override void Interact()
@@ -31,6 +27,6 @@ public class Cat2 : Conversable
         }
 
         dialogueManager.StartConversation(convo1);
-        FishSeller.sawCat = true;
+        seller.sawCat = true;
     }
 }

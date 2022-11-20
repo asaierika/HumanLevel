@@ -48,35 +48,30 @@ public class ChoiceManager : MonoBehaviour
         buttons[1].GetComponentInChildren<Text>().text = choice2.choice;
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(firstButton);
-        
-        
-        //StartCoroutine(closeUI());
     }
 
     public void SetChoice(int i)
     {
-        // Debug.Log(i);
         choiceIndex = i;
 
         if (choiceIndex == 0)
         {
-        choice1.TriggerEvent();
+            choice1.TriggerEvent();
         }
         else if (choiceIndex == 1)
         {
-        choice2.TriggerEvent();
+            choice2.TriggerEvent();
         }
 
         choiceIndex = -1;
-        StartCoroutine(closeUI());
-        //GameEvents.instance.CloseUI();
-        //isActive = false;
+        closeUI();
         return;
     }
 
-    IEnumerator closeUI()
+    public void closeUI()
     {
-        yield return new WaitForSeconds(0.01f);
+        // yield return new WaitForSeconds(0.01f);
+        Debug.Log("Choice made closing UI.");
         choiceHolder.SetActive(false);
         uiStatus.CloseUI();
     }

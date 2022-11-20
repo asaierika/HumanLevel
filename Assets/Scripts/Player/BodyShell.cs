@@ -6,9 +6,6 @@ public class BodyShell : Interactable
 {
     public GameEvent switchToDemi;
 
-    void Update() {
-        TryInteract();
-    }
     public override void Interact() {
         switchToDemi.TriggerEvent();
     }

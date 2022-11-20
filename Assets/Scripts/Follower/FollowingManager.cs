@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 public class FollowingManager : MonoBehaviour
 {
     public static FollowingManager instance;
-    public bool isFollowing;
     public GameObject follower;
-    public VectorValue position;
+    // Chasing status of the given follower.
+    public bool isFollowing;
+    // public VectorValue position;
+    public Map castleMap;
     // Delay before the follwing gameobject appears in scene and continues to chase after player.
-    public float spawnDelay = 0.5f;
+    public float spawnDelay = 1f;
 
     private void Awake()
     {
@@ -20,18 +22,22 @@ public class FollowingManager : MonoBehaviour
         }
        
         DontDestroyOnLoad(gameObject);
-
         instance = this;
     }
 
-    void Start()
+    void OnEnable()
     {
+        StartFollowing();
         SceneManager.sceneLoaded += delegate { Spawn(); };
     }
 
     public void StartFollowing()
     {
         isFollowing = true;
+    }
+
+    void OnDisable() {
+        SceneManager.sceneLoaded -= delegate { Spawn(); };
     }
 
     public void Spawn()
@@ -44,12 +50,12 @@ public class FollowingManager : MonoBehaviour
 
     IEnumerator SpawnFollower()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(spawnDelay);
         GameObject existingFollower = GameObject.FindWithTag("Follower");
         if (existingFollower == null) {
-            GameObject spawnedFollower = Instantiate(follower, position.initialValue, Quaternion.identity);
-            spawnedFollower.SetActive(true);
+            // GameObject spawnedFollower = Instantiate(follower, position.initialValue, Quaternion.identity);
+            GameObject spawnedFollower = Instantiate(follower, castleMap.GetStartingPosition(GameManager.instance.lastScene, UnityEngine.SceneManagement.SceneManager.GetActiveScene().name), 
+                    Quaternion.identity);
         }
-       
     }
 }

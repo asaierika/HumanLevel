@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && inDialogue)
+        if (Input.GetKeyDown(KeyCode.N) && inDialogue)
         {
             ReadNext();
         }
@@ -31,19 +31,21 @@ public class DialogueManager : MonoBehaviour
         speakerName.text = "";
         dialogue.text = "";
 
-        ReadNext();     
+        ReadNext();    
         inDialogue = true;  
     }
 
     public void ReadNext()
     {
-        if (currIndex >= currentConvo.allLines.Length)
+        if (currIndex == currentConvo.allLines.Length)
         {    
+            Debug.Log("Total lines is " + currentConvo.allLines.Length + " No more lines at " + currIndex);
             uiStatus.CloseUI();
-            StartCoroutine(EndDialogue());       
+            EndDialogue();      
         }
         else 
         {
+            Debug.Log("Reading next line " + currIndex);
             speakerName.text = currentConvo.allLines[currIndex].speaker.speakerName;
             dialogue.text = currentConvo.allLines[currIndex].dialogue;
             speakerSprite.sprite = currentConvo.allLines[currIndex].speaker.speakerSprite;
@@ -51,15 +53,11 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    // For some reason, need to wait for some time 
-    // before setting inDialogue to false and call 
-    // CloseUI, otherwise a new dialogue would be 
-    // triggered as the player stands in the trigger
-    // zone of the interactable and presses 'z'. 
-    IEnumerator EndDialogue() {
-        yield return new WaitForSeconds(0.01f);
+    // EXPLANATION: Perviously when "Z" is pressed at the last line of conversation,
+    // the TryInteract() method will catch the signal whilst inDialogue might have already been set to false.
+    public void EndDialogue() {
+        Debug.Log("Ending conversation.");
         inDialogue = false;
-        
-        dialogBox.SetActive(false);   
+        dialogBox.SetActive(false);
     }
 }

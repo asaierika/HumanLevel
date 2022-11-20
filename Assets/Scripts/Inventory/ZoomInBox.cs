@@ -11,6 +11,7 @@ public class ZoomInBox : MonoBehaviour
     public Image itemImage;
     public Text description;
 
+    // FIXME: Exit zoom view. Does zooming on the object result in usage?
     public void Show(Item item)
     {
         itemImage.sprite = item.itemImage;

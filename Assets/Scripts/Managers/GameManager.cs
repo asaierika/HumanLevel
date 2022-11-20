@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public Inventory inventory;
     public bool playerFrozen;
     public bool playerInitialised;
+    // TODO: Delegate all scene transition to one class
+    public string lastScene;
 
     private void Awake()
     {

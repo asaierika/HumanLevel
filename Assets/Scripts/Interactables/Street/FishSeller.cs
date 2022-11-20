@@ -1,6 +1,6 @@
 public class FishSeller : Conversable
 {
-    public static bool sawCat, givenFish;
+    public bool sawCat, givenFish;
     public Item fish;
     public Conversation convo1, convo2;
     public Inventory inventory;
@@ -19,7 +19,6 @@ public class FishSeller : Conversable
         if (givenFish)
         {
             dialogueManager.StartConversation(convo1);
-            return;
         }
         if (sawCat && Eri.talked)
         {

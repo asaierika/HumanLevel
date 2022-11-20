@@ -9,11 +9,6 @@ public class Block : Conversable
 {
     public Conversation convo;
 
-    void Update()
-    {
-        TryInteract();
-    }
-
     public override void Interact()
     {
         dialogueManager.StartConversation(convo);

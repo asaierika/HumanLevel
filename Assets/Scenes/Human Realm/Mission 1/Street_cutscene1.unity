@@ -620,6 +620,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kizuna
       objectReference: {fileID: 0}
+    - target: {fileID: 8096930301819664403, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8488101351404026668, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
       propertyPath: uiStatus
       value: 

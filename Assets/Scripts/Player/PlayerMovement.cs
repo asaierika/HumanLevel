@@ -3,20 +3,23 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 1f;
-    public VectorValue startingPosition;
+    // public VectorValue startingPosition;
+    // Whether different scenes come together to form a continuous map e.g. Castle.
+    public static bool inContinuousLocations;
     public Rigidbody2D rb;
     public Animator animator;
     public bool characterFrozen;
     public UiStatus uiStatus;
 
+    public static void AlterLocationType(bool isContinuousType) {
+        inContinuousLocations = isContinuousType;
+    }
+
     private void Start()
-    {
-        if (GameManager.instance.playerInitialised) {
-            transform.position = startingPosition.initialValue;
-        }
-        
+    {   
         rb = rb == null ? GetComponent<Rigidbody2D>() : rb;
         animator = animator == null ? GetComponent<Animator>() : animator;
+        uiStatus = uiStatus == null ? GameObject.FindObjectOfType<UiStatus>() : uiStatus;
 
         uiStatus.onOpenUI += FreezeMovement;
         uiStatus.onCloseUI += RestoreMovement;        

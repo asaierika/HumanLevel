@@ -1221,6 +1221,10 @@ PrefabInstance:
       propertyPath: uiStatus
       value: 
       objectReference: {fileID: 688052928}
+    - target: {fileID: 8867398082821932017, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+      propertyPath: uiStatus
+      value: 
+      objectReference: {fileID: 688052928}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
 --- !u!50 &1069855502 stripped
@@ -1391,55 +1395,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6496187629067207479, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
+      propertyPath: sceneName
+      value: Hall_Before_Chase
+      objectReference: {fileID: 0}
+    - target: {fileID: 6496187629067207479, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
       propertyPath: playerPosition.x
-      value: -2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6496187629067207479, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
       propertyPath: playerPosition.y
-      value: 1
+      value: 0.35
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6496187629067207479, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
---- !u!1 &1200448669 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6496187629067207467, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
-  m_PrefabInstance: {fileID: 1200448668}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1200448671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6496187629067207478, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
   m_PrefabInstance: {fileID: 1200448668}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1200448672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200448669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10187b4f5d29f453b9fa30a9ccb39baa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  filter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  sceneName: Hall_Before_Chase
-  playerPosition: {x: -2, y: 0.35}
-  playerStorage: {fileID: 11400000, guid: 51ddb9c301e284da4b8421225e7d5eb3, type: 2}
 --- !u!1 &1205285207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2257,16 +2230,12 @@ PrefabInstance:
       value: Room A
       objectReference: {fileID: 0}
     - target: {fileID: 6496187629067207479, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
-      propertyPath: playerStorage
-      value: 
-      objectReference: {fileID: 11400000, guid: 51ddb9c301e284da4b8421225e7d5eb3, type: 2}
-    - target: {fileID: 6496187629067207479, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
       propertyPath: playerPosition.x
-      value: -0.1
+      value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: 6496187629067207479, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}
       propertyPath: playerPosition.y
-      value: -2.9
+      value: -3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93a5f2b5c70684ff8abdffc2b3d6ceb8, type: 3}

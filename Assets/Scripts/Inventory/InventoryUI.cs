@@ -21,15 +21,15 @@ public class InventoryUI : MonoBehaviour
     {
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
         inventory = GameManager.instance.inventory;
-        Debug.Log("Inventory reference obtained " + (inventory == GameManager.instance.inventory) + " at " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        // Debug.Log("Inventory reference obtained " + (inventory == GameManager.instance.inventory) + " at " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         inventory.onNewItemAddedCallback += ShowItemHint;
         inventory.onItemUsedCallback += ZoomToShowItem;
     }
 
     void OnEnable() {
-        Debug.Log("Inventory UI enabled at " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        // Debug.Log("Inventory UI enabled at " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         if (inventory != null) {
-            Debug.Log("Inventory UI enabled and setting callbacks");
+            // Debug.Log("Inventory UI enabled and setting callbacks");
             inventory.onNewItemAddedCallback += ShowItemHint;
             inventory.onItemUsedCallback += ZoomToShowItem;
         }
@@ -41,7 +41,7 @@ public class InventoryUI : MonoBehaviour
             Disable();
         }
 
-        Debug.Log("Decommission inventory UI at " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        // Debug.Log("Decommission inventory UI at " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         // BUG: The check null is only required for the corridor scene. Why is OnDisable being called without Start(). 
         if (inventory != null) {
             inventory.onNewItemAddedCallback -= ShowItemHint;

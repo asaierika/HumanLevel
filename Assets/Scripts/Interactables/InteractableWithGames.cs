@@ -11,10 +11,6 @@ public class InteractableWithGames : Interactable
     public MiniGame game;
     public CharacterInteractableManager interactableManager;
     public SwitchCharacter.Who whoTriggered;
-    
-    void Update() {
-        TryInteract();
-    }
 
     public override void Interact() {
         // Debug.Log("Player engaged game interactable " + name);

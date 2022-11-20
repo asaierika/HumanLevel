@@ -194,6 +194,10 @@ PrefabInstance:
       propertyPath: uiStatus
       value: 
       objectReference: {fileID: 852925581}
+    - target: {fileID: 8867398082821932017, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+      propertyPath: uiStatus
+      value: 
+      objectReference: {fileID: 852925581}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
 --- !u!1 &143976166
@@ -241,6 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Street_cutscene1
+  sceneStart: {fileID: 0}
 --- !u!1 &198247211
 GameObject:
   m_ObjectHideFlags: 0

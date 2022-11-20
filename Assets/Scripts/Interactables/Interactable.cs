@@ -6,7 +6,11 @@ public abstract class Interactable : MonoBehaviour
     // false when the player exits
     public bool playerInRange;
 
-    public void TryInteract()
+    void Update() {
+        TryInteract();
+    }
+
+    public virtual void TryInteract()
     {
         if (GameManager.instance.playerFrozen || DialogueManager.inDialogue)
             // when the player is frozen, eg inventory is open or in dialogue,

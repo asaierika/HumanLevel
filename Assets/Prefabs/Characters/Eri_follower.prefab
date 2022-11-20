@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1.5
   playerInRange: 0
-  startingPosition: {fileID: 11400000, guid: 51ddb9c301e284da4b8421225e7d5eb3, type: 2}
   convo: {fileID: 11400000, guid: 2846f5e454d984be7a8677b5b3ae02d6, type: 2}
   choice1: {fileID: 11400000, guid: f0e90153c48ce47c29e677b4863d3efc, type: 2}
   choice2: {fileID: 11400000, guid: 74e1fc96b20444ee298704384ebb2f2c, type: 2}
+  chaseEnded: {fileID: 11400000, guid: 43e6b027d1fd142be85bb4d928b65298, type: 2}

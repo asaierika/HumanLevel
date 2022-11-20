@@ -206,6 +206,10 @@ PrefabInstance:
       propertyPath: uiStatus
       value: 
       objectReference: {fileID: 852925580}
+    - target: {fileID: 8867398082821932017, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+      propertyPath: uiStatus
+      value: 
+      objectReference: {fileID: 852925580}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
 --- !u!50 &2748196 stripped
@@ -292,7 +296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314ed8e56051340118798e67a53aa895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Hall
+  sceneName: Hall_Before_Chase
+  sceneStart: {fileID: 0}
 --- !u!1 &198247211
 GameObject:
   m_ObjectHideFlags: 0

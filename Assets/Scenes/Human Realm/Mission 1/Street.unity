@@ -424,7 +424,7 @@ MonoBehaviour:
   choiceManager: {fileID: 333007191}
   hairPin: {fileID: 11400000, guid: 8475d1be88d2c41e6b0a00d3729be3ce, type: 2}
   convo1: {fileID: 11400000, guid: 105c5c52ce1374e59b60ce6dd5fe99be, type: 2}
-  convo2: {fileID: 11400000, guid: d56733a1d86114280a2237640fc94efc, type: 2}
+  convo2: {fileID: 11400000, guid: 66e7f355c640e411db726cf6ecd6d367, type: 2}
   timeline: {fileID: 1564464910}
   inventory: {fileID: 1655564078}
 --- !u!1001 &333007190
@@ -437,6 +437,10 @@ PrefabInstance:
     - target: {fileID: 1160407569407465096, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751859771657590355, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3214466593771076071, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
       propertyPath: m_RootOrder
@@ -647,6 +651,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3762183057619747449, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4175073323694080010, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -699,7 +707,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kizuna
       objectReference: {fileID: 0}
+    - target: {fileID: 8096930301819664403, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8488101351404026668, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+      propertyPath: uiStatus
+      value: 
+      objectReference: {fileID: 333007193}
+    - target: {fileID: 8867398082821932017, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
       propertyPath: uiStatus
       value: 
       objectReference: {fileID: 333007193}
@@ -950,6 +966,8 @@ MonoBehaviour:
   playerInRange: 0
   dialogueManager: {fileID: 333007192}
   choiceManager: {fileID: 333007191}
+  sawCat: 0
+  givenFish: 0
   fish: {fileID: 11400000, guid: 76adc1d34b05143a0a8dba9a4c7f2443, type: 2}
   convo1: {fileID: 11400000, guid: 4adee5d640ffc413884505d1b96d7ee5, type: 2}
   convo2: {fileID: 11400000, guid: d974d7d4442ca470dae3c8f0759a9338, type: 2}
@@ -1646,6 +1664,7 @@ MonoBehaviour:
   hairPin: {fileID: 11400000, guid: 8475d1be88d2c41e6b0a00d3729be3ce, type: 2}
   fed: 0
   inventory: {fileID: 1655564078}
+  seller: {fileID: 773060679}
 --- !u!1001 &5564909393137355908
 PrefabInstance:
   m_ObjectHideFlags: 0

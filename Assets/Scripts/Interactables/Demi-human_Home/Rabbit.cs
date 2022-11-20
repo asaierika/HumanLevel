@@ -7,11 +7,6 @@ public class Rabbit : Conversable
     public Conversation convo1, convo2;
     public static bool talked;
 
-    void Update()
-    {
-        TryInteract();
-    }
-
     public override void Interact()
     {
         if (!talked)
