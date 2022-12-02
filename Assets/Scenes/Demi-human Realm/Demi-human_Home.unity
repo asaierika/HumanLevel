@@ -857,7 +857,6 @@ MonoBehaviour:
   phoenixFish: {fileID: 451040741}
   startFishing: {fileID: 11400000, guid: c92223c145ffb47fd9c4a14bfc002cd9, type: 2}
   convo: {fileID: 11400000, guid: c606061ef3af4460091a662224bc732b, type: 2}
-  dialogueManager: {fileID: 761566802}
   phoenixFishItem: {fileID: 11400000, guid: 4ecec4223e8834f77b36c6a9d126b860, type: 2}
   fishingRod: {fileID: 11400000, guid: cbe110b64d978429bbd1138d70ca1cc6, type: 2}
 --- !u!70 &451040746

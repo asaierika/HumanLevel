@@ -11,6 +11,6 @@ public class Block : Conversable
 
     public override void Interact()
     {
-        dialogueManager.StartConversation(convo);
+        DialogueManager.instance.StartConversation(convo);
     }
 }

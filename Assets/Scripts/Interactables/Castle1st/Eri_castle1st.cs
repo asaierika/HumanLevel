@@ -10,8 +10,8 @@ public class Eri_castle1st : Conversable
 
     public override void Interact()
     {
-        dialogueManager.StartConversation(convo);
-        choiceManager.StartChoice(choice1, choice2);
+        DialogueManager.instance.StartConversation(convo);
+        ChoiceManager.instance.StartChoice(choice1, choice2);
     }
 
     public void Choice1()

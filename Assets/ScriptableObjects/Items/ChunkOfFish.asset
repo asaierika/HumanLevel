@@ -16,4 +16,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 0e22ea06d934a4730b61e785118ae470, type: 3}
   amount: 1
   itemImage: {fileID: 21300000, guid: 0e22ea06d934a4730b61e785118ae470, type: 3}
-  description: 
+  description: A small chunk of fish.

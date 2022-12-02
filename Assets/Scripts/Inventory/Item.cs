@@ -12,7 +12,7 @@ public class Item : ScriptableObject
 
     // Item effects
     public virtual bool Use() {
-        amount = Math.Max(0, amount - 1);
+        //amount = Math.Max(0, amount - 1);
         return amount == 0;
     }
 }

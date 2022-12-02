@@ -18,16 +18,17 @@ public class FishSeller : Conversable
     {
         if (givenFish)
         {
-            dialogueManager.StartConversation(convo1);
+            DialogueManager.instance.StartConversation(convo1);
+            return;
         }
         if (sawCat && Eri.talked)
         {
-            dialogueManager.StartConversation(convo2);
+            DialogueManager.instance.StartConversation(convo2);
             inventory.Add(fish);
             givenFish = true;
             return;
         }
 
-        dialogueManager.StartConversation(convo1);
+        DialogueManager.instance.StartConversation(convo1);
     }
 }
