@@ -3,12 +3,18 @@ using UnityEngine;
 
 public class SwitchMode : MonoBehaviour
 {
-    public static event Action<Vector2> OnSwitchToSpirit;
+    public static SwitchMode instance;
+    public event Action OnSwitchToSpirit;
     public GameEvent switchToSpirit;
     public GameObject player;
     private Mode mode = Mode.DemiHuman;
     private enum Mode { DemiHuman, Spirit }
 
+    void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -18,7 +24,7 @@ public class SwitchMode : MonoBehaviour
             if (mode == Mode.DemiHuman) {
                 switchToSpirit.TriggerEvent();
                 mode = Mode.Spirit;
-                OnSwitchToSpirit?.Invoke(player.transform.position);
+                OnSwitchToSpirit?.Invoke();
             }
         }
     }

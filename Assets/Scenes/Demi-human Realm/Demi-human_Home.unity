@@ -1296,7 +1296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013305270}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7219238, y: 0.18035889, z: -0.06929625}
+  m_LocalPosition: {x: -0.29, y: 1.05, z: -0.06929625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1504,6 +1504,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
+--- !u!114 &1239006002 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9090316670615857145, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
+  m_PrefabInstance: {fileID: 1239006001}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83408fb4b1e834255aa9a10feafa861a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1240525080 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8034104241100993159, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
@@ -1521,7 +1532,6 @@ GameObject:
   - component: {fileID: 1329810885}
   - component: {fileID: 1329810884}
   - component: {fileID: 1329810883}
-  - component: {fileID: 1329810886}
   - component: {fileID: 1329810889}
   - component: {fileID: 1329810888}
   - component: {fileID: 1329810891}
@@ -1541,7 +1551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329810881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.75, y: 2.57, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1627,18 +1637,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subject: {fileID: 1329810881}
---- !u!114 &1329810886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329810881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 186cba0f4f9ee4de7b48702c51773fc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &1329810888
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1705,7 +1703,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   animator: {fileID: 0}
   characterFrozen: 0
-  uiStatus: {fileID: 0}
+  uiStatus: {fileID: 1239006002}
 --- !u!1 &1431398731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2421,15 +2419,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8145872428924945140, guid: ce5d5dc2f86014063b785e51b33e47ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.72190803
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8145872428924945140, guid: ce5d5dc2f86014063b785e51b33e47ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1296124
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8145872428924945140, guid: ce5d5dc2f86014063b785e51b33e47ad, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.06929625
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8145872428924945140, guid: ce5d5dc2f86014063b785e51b33e47ad, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2508,4 +2506,4 @@ MonoBehaviour:
   rb: {fileID: 0}
   animator: {fileID: 0}
   characterFrozen: 0
-  uiStatus: {fileID: 0}
+  uiStatus: {fileID: 1239006002}
