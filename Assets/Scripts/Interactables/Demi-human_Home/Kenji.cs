@@ -54,8 +54,8 @@ public class Kenji : Conversable
             DialogueManager.instance.StartConversation(convo4);
             return;
         }
-        inventory.Remove(fishingRod);
-        inventory.Remove(phoenixFish);
+        inventory.UseItem(fishingRod);
+        inventory.UseItem(phoenixFish);
         DialogueManager.instance.StartConversation(convo5);
     }
 }

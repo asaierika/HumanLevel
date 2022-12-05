@@ -17,7 +17,7 @@ public class Eri : Conversable
         if (inventory.Contains(hairPin))
         {
             timeline.SetActive(true);
-            inventory.Remove(hairPin);
+            inventory.UseItem(hairPin);
             return;
         }
 

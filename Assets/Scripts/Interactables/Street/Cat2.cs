@@ -22,7 +22,7 @@ public class Cat2 : Conversable
             DialogueManager.instance.StartConversation(convo2);
             fed = true;
             inventory.Add(hairPin);
-            inventory.Remove(fish);
+            inventory.UseItem(fish);
             return;
         }
 

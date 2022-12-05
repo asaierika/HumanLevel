@@ -591,13 +591,13 @@ MonoBehaviour:
   dialogueManager: {fileID: 761566802}
   choiceManager: {fileID: 1543858770}
   kenjiStanding: {fileID: -551678137, guid: 7f93df915012b4c53a0df53471769f70, type: 3}
-  fishingRod: {fileID: 11400000, guid: cbe110b64d978429bbd1138d70ca1cc6, type: 2}
+  fishingRod: {fileID: 11400000, guid: 3e40a5208df3c4178ae05c08f6690f49, type: 2}
   convo1: {fileID: 11400000, guid: 20aed0a06ef7348c499278d6f9f8fb94, type: 2}
   convo2: {fileID: 11400000, guid: 34af2018d04c34d37ba300750f27ce94, type: 2}
   convo3: {fileID: 11400000, guid: af588c0bdd25b4c04b3851c56059344b, type: 2}
   convo4: {fileID: 11400000, guid: 8ad1deedb1bfc423db50225c24252945, type: 2}
   convo5: {fileID: 11400000, guid: c13be86f123424ab79ea9dad70a59451, type: 2}
-  phoenixFish: {fileID: 11400000, guid: 4ecec4223e8834f77b36c6a9d126b860, type: 2}
+  phoenixFish: {fileID: 11400000, guid: b877607cbc11244288c442d83f8eb447, type: 2}
   inventory: {fileID: 0}
 --- !u!70 &381552786
 CapsuleCollider2D:

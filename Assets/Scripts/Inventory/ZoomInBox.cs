@@ -24,6 +24,5 @@ public class ZoomInBox : MonoBehaviour
         {
             zoomInBox.SetActive(true);
         }
-        
     }
 }
