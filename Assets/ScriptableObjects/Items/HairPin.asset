@@ -16,4 +16,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 30e114405115041ada4d240d95fe3e88, type: 3}
   amount: 1
   itemImage: {fileID: 21300000, guid: 30e114405115041ada4d240d95fe3e88, type: 3}
-  discription: A flower-shaped hair pin.
+  description: A flower-shaped hairpin.

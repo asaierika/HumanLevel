@@ -16,4 +16,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 390a6ac2799984487add65749f741936, type: 3}
   amount: 1
   itemImage: {fileID: 21300000, guid: 390a6ac2799984487add65749f741936, type: 3}
-  discription: A plain-looking fishing rod obtained from Kenji.
+  description: A fishing rod obtained from Kenji.

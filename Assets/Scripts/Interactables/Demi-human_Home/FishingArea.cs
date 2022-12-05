@@ -51,7 +51,7 @@ public class FishingArea : Conversable
         } 
         else
         {
-            dialogueManager.StartConversation(convo);
+            DialogueManager.instance.StartConversation(convo);
             startFishing.TriggerEvent();
             isFishing = false;
         } 

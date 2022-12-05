@@ -5,7 +5,7 @@ public class Cat1 : Conversable
     public override void Interact()
     {
         // specific things to do when the player is interacting with the object      
-        dialogueManager.StartConversation(convo);
+        DialogueManager.instance.StartConversation(convo);
 
     }
 }

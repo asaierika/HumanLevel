@@ -11,11 +11,11 @@ public class Rabbit : Conversable
     {
         if (!talked)
         {
-            dialogueManager.StartConversation(convo1);        
+            DialogueManager.instance.StartConversation(convo1);        
             talked = true;
             return;
         }
 
-        dialogueManager.StartConversation(convo2);
+        DialogueManager.instance.StartConversation(convo2);
     }
 }

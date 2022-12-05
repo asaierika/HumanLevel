@@ -14,19 +14,19 @@ public class Cat2 : Conversable
     {
         if (fed)
         {
-            dialogueManager.StartConversation(convo3);            
+            DialogueManager.instance.StartConversation(convo3);            
             return;
         }
         if (inventory.Contains(fish))
         {
-            dialogueManager.StartConversation(convo2);
+            DialogueManager.instance.StartConversation(convo2);
             fed = true;
             inventory.Add(hairPin);
             inventory.Remove(fish);
             return;
         }
 
-        dialogueManager.StartConversation(convo1);
+        DialogueManager.instance.StartConversation(convo1);
         seller.sawCat = true;
     }
 }

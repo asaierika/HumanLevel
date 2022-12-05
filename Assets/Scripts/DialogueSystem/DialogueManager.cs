@@ -5,6 +5,19 @@ using UnityEngine.UI;
 // Placed under a singleton parent
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager instance;
+
+    private void Awake() 
+    {
+        if (DialogueManager.instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
+    
     public GameObject dialogBox;
     public Text speakerName, dialogue;
     public Image speakerSprite;
