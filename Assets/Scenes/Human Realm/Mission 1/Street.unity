@@ -422,7 +422,7 @@ MonoBehaviour:
   playerInRange: 0
   dialogueManager: {fileID: 333007192}
   choiceManager: {fileID: 333007191}
-  hairPin: {fileID: 11400000, guid: 8475d1be88d2c41e6b0a00d3729be3ce, type: 2}
+  hairPin: {fileID: 11400000, guid: 3add88c471fdc4dc9b6c0367ab3f7738, type: 2}
   convo1: {fileID: 11400000, guid: 105c5c52ce1374e59b60ce6dd5fe99be, type: 2}
   convo2: {fileID: 11400000, guid: 66e7f355c640e411db726cf6ecd6d367, type: 2}
   timeline: {fileID: 1564464910}
@@ -486,6 +486,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8980083015111652898, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
+      propertyPath: nameOfItem
+      value: 
+      objectReference: {fileID: 1132542607}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
 --- !u!114 &333007191 stripped
@@ -968,7 +972,7 @@ MonoBehaviour:
   choiceManager: {fileID: 333007191}
   sawCat: 0
   givenFish: 0
-  fish: {fileID: 11400000, guid: 76adc1d34b05143a0a8dba9a4c7f2443, type: 2}
+  fish: {fileID: 11400000, guid: dbc99cdc7e1e240a4a27613207856112, type: 2}
   convo1: {fileID: 11400000, guid: 4adee5d640ffc413884505d1b96d7ee5, type: 2}
   convo2: {fileID: 11400000, guid: d974d7d4442ca470dae3c8f0759a9338, type: 2}
   inventory: {fileID: 1655564078}
@@ -1108,6 +1112,17 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1132542607 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5150572245206301964, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
+  m_PrefabInstance: {fileID: 333007190}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1451998513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1660,8 +1675,8 @@ MonoBehaviour:
   convo1: {fileID: 11400000, guid: bba7de976769c44b4bf9507a730a18fc, type: 2}
   convo2: {fileID: 11400000, guid: 5f2e942c201e24e188c3bb83283b22aa, type: 2}
   convo3: {fileID: 11400000, guid: 6e4cd60038dac49368c8e0cb9d40bf31, type: 2}
-  fish: {fileID: 11400000, guid: 76adc1d34b05143a0a8dba9a4c7f2443, type: 2}
-  hairPin: {fileID: 11400000, guid: 8475d1be88d2c41e6b0a00d3729be3ce, type: 2}
+  fish: {fileID: 11400000, guid: dbc99cdc7e1e240a4a27613207856112, type: 2}
+  hairPin: {fileID: 11400000, guid: 3add88c471fdc4dc9b6c0367ab3f7738, type: 2}
   fed: 0
   inventory: {fileID: 1655564078}
   seller: {fileID: 773060679}

@@ -30,20 +30,20 @@ public class Kenji : Conversable
     {
         if (!Rabbit.talked)
         {
-            dialogueManager.StartConversation(convo1);
+            DialogueManager.instance.StartConversation(convo1);
             return;
         } 
         
         if (!talked1) 
         {
-            dialogueManager.StartConversation(convo2);
+            DialogueManager.instance.StartConversation(convo2);
             talked1 = true;
             return;
         }
 
         if (!talked2)
         {
-            dialogueManager.StartConversation(convo3);
+            DialogueManager.instance.StartConversation(convo3);
             talked2 = true;
             inventory.Add(fishingRod);
             return;
@@ -51,11 +51,11 @@ public class Kenji : Conversable
 
         if (!inventory.Contains(phoenixFish))
         {
-            dialogueManager.StartConversation(convo4);
+            DialogueManager.instance.StartConversation(convo4);
             return;
         }
-        inventory.Remove(fishingRod);
-        inventory.Remove(phoenixFish);
-        dialogueManager.StartConversation(convo5);
+        inventory.UseItem(fishingRod);
+        inventory.UseItem(phoenixFish);
+        DialogueManager.instance.StartConversation(convo5);
     }
 }

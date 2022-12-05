@@ -1,7 +1,9 @@
-using System;
 using UnityEngine;
 
-[CreateAssetMenu]
+/**
+* Non-perishable items e.g. map.
+*/
+[CreateAssetMenu(menuName = "Non-perishable item")]
 public class Item : ScriptableObject
 {
     public string nameOfItem;
@@ -12,7 +14,6 @@ public class Item : ScriptableObject
 
     // Item effects
     public virtual bool Use() {
-        amount = Math.Max(0, amount - 1);
-        return amount == 0;
+        return false;
     }
 }

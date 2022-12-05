@@ -5,6 +5,19 @@ using UnityEngine.UI;
 // Placed under a singleton parent
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager instance;
+
+    private void Awake() 
+    {
+        if (DialogueManager.instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
+    
     public GameObject dialogBox;
     public Text speakerName, dialogue;
     public Image speakerSprite;
@@ -39,13 +52,13 @@ public class DialogueManager : MonoBehaviour
     {
         if (currIndex == currentConvo.allLines.Length)
         {    
-            Debug.Log("Total lines is " + currentConvo.allLines.Length + " No more lines at " + currIndex);
+            // Debug.Log("Total lines is " + currentConvo.allLines.Length + " No more lines at " + currIndex);
             uiStatus.CloseUI();
             EndDialogue();      
         }
         else 
         {
-            Debug.Log("Reading next line " + currIndex);
+            // Debug.Log("Reading next line " + currIndex);
             speakerName.text = currentConvo.allLines[currIndex].speaker.speakerName;
             dialogue.text = currentConvo.allLines[currIndex].dialogue;
             speakerSprite.sprite = currentConvo.allLines[currIndex].speaker.speakerSprite;
@@ -56,7 +69,7 @@ public class DialogueManager : MonoBehaviour
     // EXPLANATION: Perviously when "Z" is pressed at the last line of conversation,
     // the TryInteract() method will catch the signal whilst inDialogue might have already been set to false.
     public void EndDialogue() {
-        Debug.Log("Ending conversation.");
+        // Debug.Log("Ending conversation.");
         inDialogue = false;
         dialogBox.SetActive(false);
     }

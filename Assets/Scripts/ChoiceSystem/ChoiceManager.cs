@@ -5,6 +5,19 @@ using UnityEngine.EventSystems;
 
 public class ChoiceManager : MonoBehaviour
 {
+    public static ChoiceManager instance;
+
+    private void Awake() 
+    {
+        if (ChoiceManager.instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
+
     private Choice choice1;
     private Choice choice2;
     public GameObject choiceHolder;
@@ -22,14 +35,7 @@ public class ChoiceManager : MonoBehaviour
             StartCoroutine(Choose());
             isActive = false;
         }
-
-        GetChoice();
     }
-
-    private void GetChoice()
-    {
-        
-    } 
     
     public void StartChoice(Choice choice1, Choice choice2)
     {

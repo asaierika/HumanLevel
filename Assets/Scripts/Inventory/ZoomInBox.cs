@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class ZoomInBox : MonoBehaviour
 {
-    public static ZoomInBox instance;
-
     public GameObject zoomInBox;
     public Image itemImage;
+    public Text nameOfItem;
     public Text description;
 
     // FIXME: Exit zoom view. Does zooming on the object result in usage?
@@ -16,8 +15,8 @@ public class ZoomInBox : MonoBehaviour
     {
         itemImage.sprite = item.itemImage;
         description.text = item.description;
+        nameOfItem.text = item.nameOfItem;
 
-        
         if (zoomInBox.activeInHierarchy)
         {
             zoomInBox.SetActive(false);
@@ -25,6 +24,5 @@ public class ZoomInBox : MonoBehaviour
         {
             zoomInBox.SetActive(true);
         }
-        
     }
 }

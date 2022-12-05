@@ -48,18 +48,6 @@ public class Inventory : MonoBehaviour
         onItemChangedCallback?.Invoke();
     }
 
-    public bool Contains(string itemName)
-    {
-        for (int i = 0; i < items.Count; i++)
-        {
-            if (items[i].nameOfItem == itemName)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public bool Contains(Item item)
     {
         for (int i = 0; i < items.Count; i++)

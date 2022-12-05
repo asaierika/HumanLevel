@@ -19,7 +19,7 @@ public abstract class Interactable : MonoBehaviour
 
         // when the player is in the range of the interactable object and
         // at the same time the player press "Z", Interact() is called
-        if (Input.GetKeyDown(KeyCode.Z) && playerInRange) {
+        if (Input.GetKeyDown(KeyCode.Z) && playerInRange && !GameManager.instance.playerFrozen) {
             Interact();
         }
     }
