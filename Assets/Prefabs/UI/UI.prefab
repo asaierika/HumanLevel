@@ -1682,7 +1682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomInBox: {fileID: 8980083014123215992}
   itemImage: {fileID: 8980083014106425754}
-  name: {fileID: 5150572245206301964}
+  nameOfItem: {fileID: 5150572245206301964}
   description: {fileID: 8980083013506675252}
 --- !u!1001 &1184993247899101647
 PrefabInstance:
