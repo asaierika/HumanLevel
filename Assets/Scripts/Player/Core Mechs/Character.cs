@@ -7,7 +7,7 @@ public class Character : MonoBehaviour
 
     // Called when a character switch event is emitted
     public void SetPlayable() {
-        if (SwitchCharacter.who == identity) {
+        if (SwitchCharacter.instance.identity == identity) {
             isActive = true;
             gameObject.GetComponent<PlayerMovement>().enabled = true;
         } else {

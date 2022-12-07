@@ -172,8 +172,8 @@ MonoBehaviour:
   playerInRange: 0
   dialogueManager: {fileID: 761566802}
   choiceManager: {fileID: 1543858770}
-  phonenixFish: {fileID: 11400000, guid: 4ecec4223e8834f77b36c6a9d126b860, type: 2}
-  fishingRod: {fileID: 11400000, guid: cbe110b64d978429bbd1138d70ca1cc6, type: 2}
+  phonenixFish: {fileID: 11400000, guid: b877607cbc11244288c442d83f8eb447, type: 2}
+  fishingRod: {fileID: 11400000, guid: 3e40a5208df3c4178ae05c08f6690f49, type: 2}
   convo: {fileID: 11400000, guid: 3757d297cd4704caeb1dd8d2a089d719, type: 2}
   startFishing: {fileID: 11400000, guid: c92223c145ffb47fd9c4a14bfc002cd9, type: 2}
   endFishing: {fileID: 11400000, guid: bdf92df2ff7fa430abc7a75585e80931, type: 2}
@@ -462,18 +462,6 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1329810881}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 8145872429545785045}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
@@ -485,6 +473,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1329810881}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 451040744}
         m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
@@ -1135,7 +1135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   switchToSpirit: {fileID: 11400000, guid: 2a0afbd5abff24b4cb197be7e49a294a, type: 2}
-  player: {fileID: 1013305270}
+  mode: 0
 --- !u!114 &929367104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,6 +1150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   switchToKizuna: {fileID: 11400000, guid: fc13dd2c2708e43968a5598688e058d1, type: 2}
   switchToPartner: {fileID: 11400000, guid: 35e6ba130e4df429fa9b8adaa91e9f84, type: 2}
+  identity: 0
 --- !u!1 &929563142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,7 +1281,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1013305271}
-  - component: {fileID: 1013305272}
   m_Layer: 0
   m_Name: Kizuna
   m_TagString: Untagged
@@ -1295,8 +1295,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013305270}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.29, y: 1.05, z: -0.06929625}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1305,19 +1305,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1013305272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1013305270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d580fc06e2bdc4b1285e017e4ec3747f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subject: {fileID: 1329810881}
 --- !u!1001 &1137713213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1529,13 +1516,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1329810882}
-  - component: {fileID: 1329810885}
-  - component: {fileID: 1329810884}
   - component: {fileID: 1329810883}
   - component: {fileID: 1329810889}
   - component: {fileID: 1329810888}
-  - component: {fileID: 1329810891}
   - component: {fileID: 1329810892}
+  - component: {fileID: 1329810894}
   m_Layer: 0
   m_Name: Kizuna-spirit
   m_TagString: Untagged
@@ -1553,7 +1538,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1013305271}
   m_RootOrder: 1
@@ -1610,33 +1595,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1329810884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329810881}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42801377084bc4ce38a0d5feb79063ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInRange: 0
-  switchToDemi: {fileID: 11400000, guid: e1f70317279ad4f079cf1da0bc68743e, type: 2}
---- !u!114 &1329810885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329810881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d580fc06e2bdc4b1285e017e4ec3747f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subject: {fileID: 1329810881}
 --- !u!70 &1329810888
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1661,7 +1619,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329810881}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1674,19 +1632,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1329810891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329810881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16c7c62ed4b6f4d2a9ec943433ae606d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switchToDemi: {fileID: 11400000, guid: e1f70317279ad4f079cf1da0bc68743e, type: 2}
 --- !u!114 &1329810892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1704,6 +1649,22 @@ MonoBehaviour:
   animator: {fileID: 0}
   characterFrozen: 0
   uiStatus: {fileID: 1239006002}
+--- !u!114 &1329810894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329810881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d580fc06e2bdc4b1285e017e4ec3747f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spirit: {fileID: 1329810881}
+  body: {fileID: 8145872429545785033}
+  spawnPositionOffset: {x: 0, y: 1}
+  switchToDemi: {fileID: 11400000, guid: e1f70317279ad4f079cf1da0bc68743e, type: 2}
 --- !u!1 &1431398731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2435,15 +2396,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8145872428924945140, guid: ce5d5dc2f86014063b785e51b33e47ad, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8145872428924945140, guid: ce5d5dc2f86014063b785e51b33e47ad, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8145872428924945140, guid: ce5d5dc2f86014063b785e51b33e47ad, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8145872428924945140, guid: ce5d5dc2f86014063b785e51b33e47ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2467,6 +2428,16 @@ PrefabInstance:
 --- !u!1 &8145872429545785033 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8145872428924945137, guid: ce5d5dc2f86014063b785e51b33e47ad, type: 3}
+  m_PrefabInstance: {fileID: 8145872429545785032}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &8145872429545785034 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 8145872428924945143, guid: ce5d5dc2f86014063b785e51b33e47ad, type: 3}
+  m_PrefabInstance: {fileID: 8145872429545785032}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8145872429545785035 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8145872428924945138, guid: ce5d5dc2f86014063b785e51b33e47ad, type: 3}
   m_PrefabInstance: {fileID: 8145872429545785032}
   m_PrefabAsset: {fileID: 0}
 --- !u!212 &8145872429545785038 stripped
@@ -2503,7 +2474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  rb: {fileID: 0}
-  animator: {fileID: 0}
+  rb: {fileID: 8145872429545785034}
+  animator: {fileID: 8145872429545785035}
   characterFrozen: 0
   uiStatus: {fileID: 1239006002}

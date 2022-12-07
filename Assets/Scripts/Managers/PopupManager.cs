@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+* Each playable character will have their own popup manager.
+*/
 public class PopupManager : MonoBehaviour
 {
-    public SwitchCharacter.Who identity;
+    public SwitchCharacter.Who owner;
     public GameEvent terminatingSignal;
     public GameObject popup;
     public bool hasPopup;
     public CharacterInteractableManager interactableManager;
 
     void Update() {
-        if (SwitchCharacter.who == identity && hasPopup && Input.GetKeyDown(KeyCode.Escape)) {
+        if (SwitchCharacter.instance.identity == owner && hasPopup && Input.GetKeyDown(KeyCode.Escape)) {
             if (terminatingSignal != null) {
                 // If there are tasks to be completed before the popup is closed
                 terminatingSignal.TriggerEvent();
@@ -23,7 +26,7 @@ public class PopupManager : MonoBehaviour
     // One player can only have one popup active at a given moment
     public void ClosePopup() {
         popup.SetActive(false);
-        interactableManager.RemovePossession(identity, popup.GetComponent<MiniGame>());
+        interactableManager.RemovePossession(owner, popup.GetComponent<MiniGame>());
         this.popup = null;
         this.hasPopup = false;
         this.terminatingSignal = null;

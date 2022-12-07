@@ -6,21 +6,27 @@ public class SwitchCharacter : MonoBehaviour
 {
     public GameEvent switchToKizuna;
     public GameEvent switchToPartner;
-    public static Who who = Who.Kizuna;
+    public static SwitchCharacter instance; 
+    public Who identity = Who.Kizuna;
 
     // Third option to support mini game interactables who have not been triggered
     public enum Who { Kizuna, Partner, None }
 
+    void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q)) {
             Debug.Log("Character switch detected");
-            if (who == Who.Kizuna) {
-                who = Who.Partner;
+            if (identity == Who.Kizuna) {
+                identity = Who.Partner;
                 switchToPartner.TriggerEvent();
             } else {
-                who = Who.Kizuna;
+                identity = Who.Kizuna;
                 switchToKizuna.TriggerEvent();
             }
         } 

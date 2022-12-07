@@ -30,7 +30,7 @@ public class ChoiceManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isActive && !DialogueManager.inDialogue)
+        if (isActive && !DialogueManager.instance.inDialogue)
         {
             StartCoroutine(Choose());
             isActive = false;

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// TESTCODE: All null reference guards should eventually be removed, as every playable character are expected to be animated.
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 1f;
@@ -50,7 +51,9 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("moving", true);
             }
         } else {
-            animator?.SetBool("moving", false);
+            if (animator != null) {
+                animator.SetBool("moving", false);
+            }
         }
         
     }
