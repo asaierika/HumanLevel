@@ -23,7 +23,7 @@ public class DialogueManager : MonoBehaviour
     public Image speakerSprite;
     private int currIndex;
     private Conversation currentConvo;
-    public static bool inDialogue = false;
+    public bool inDialogue = false;
     public UiStatus uiStatus;
 
     private void Update()

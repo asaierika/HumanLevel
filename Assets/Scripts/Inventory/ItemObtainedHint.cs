@@ -13,7 +13,7 @@ public class ItemObtainedHint : MonoBehaviour
     public List<Item> items;
 
     private void Update() {
-        if (items.Count != 0 && isActive && !DialogueManager.inDialogue)
+        if (items.Count != 0 && isActive && !DialogueManager.instance.inDialogue)
         {
             isActive = false;
             StartCoroutine(Display());

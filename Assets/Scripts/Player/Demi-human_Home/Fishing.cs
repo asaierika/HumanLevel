@@ -12,7 +12,8 @@ public class Fishing : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-         if (!DialogueManager.inDialogue)
+        // FIXME: Seems off to have event called every frame as it loses the purpose of event architecture.
+         if (!DialogueManager.instance.inDialogue)
         {
             endFishing.TriggerEvent();
         }

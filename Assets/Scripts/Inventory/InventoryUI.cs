@@ -52,7 +52,7 @@ public class InventoryUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Inventory") && !DialogueManager.inDialogue)
+        if (Input.GetButtonDown("Inventory") && !DialogueManager.instance.inDialogue)
         {
             if (!panel.activeInHierarchy)
             {

@@ -11,7 +11,7 @@ public class CharacterInteractableManager : MonoBehaviour
         possessions.Add(SwitchCharacter.Who.Partner, new HashSet<MiniGame>());
     }
     public void EnablePossessions() {
-        if (SwitchCharacter.who == SwitchCharacter.Who.Kizuna) {
+        if (SwitchCharacter.instance.identity == SwitchCharacter.Who.Kizuna) {
             foreach (MiniGame game in possessions[SwitchCharacter.Who.Kizuna]) {
                 game.isCorrectCharacter = true;
                 foreach (SpriteRenderer renderer in game.renderers) {
@@ -42,11 +42,11 @@ public class CharacterInteractableManager : MonoBehaviour
         }
     }
 
-    public void AddPossession(SwitchCharacter.Who who, MiniGame game) {
-        possessions[who].Add(game);
+    public void AddPossession(SwitchCharacter.Who identity, MiniGame game) {
+        possessions[identity].Add(game);
     }
 
-     public void RemovePossession(SwitchCharacter.Who who, MiniGame game) {
-        possessions[who].Remove(game);
+     public void RemovePossession(SwitchCharacter.Who identity, MiniGame game) {
+        possessions[identity].Remove(game);
     }
 }
