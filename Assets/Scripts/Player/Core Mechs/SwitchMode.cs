@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+// TODO: For SwitchMode and SwitchCharacter core events can reference @repo unity_mobile_app @class EventManager for reference.
 public class SwitchMode : MonoBehaviour
 {
     public static SwitchMode instance;

@@ -22,7 +22,7 @@ public class SwitchCharacter : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q)) {
             Debug.Log("Character switch detected");
-            if (identity == Who.Kizuna) {
+            if (identity == Who.Kizuna && SwitchMode.instance.mode != SwitchMode.Mode.Spirit) {
                 identity = Who.Partner;
                 switchToPartner.TriggerEvent();
             } else {
