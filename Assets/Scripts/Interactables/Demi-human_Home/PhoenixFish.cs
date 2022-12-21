@@ -4,7 +4,6 @@ public class PhoenixFish : Follower_simple
 {
     public GameObject phoenixFish;
     public GameEvent startFishing;
-    public Conversation convo;
     private Inventory inventory;
     public Item phoenixFishItem;
     public Item fishingRod;
@@ -45,8 +44,6 @@ public class PhoenixFish : Follower_simple
         if (!inventory.Contains(fishingRod))
         return;
 
-        DialogueManager.instance.StartConversation(convo);
-        startFishing.TriggerEvent();
         inventory.Add(phoenixFishItem);
         phoenixFish.SetActive(false);
     }
