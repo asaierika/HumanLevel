@@ -5,8 +5,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Inventory inventory;
-    public bool playerFrozen;
-    public bool playerInitialised;
     // TODO: Delegate all scene transition to one class
     public string lastScene;
 

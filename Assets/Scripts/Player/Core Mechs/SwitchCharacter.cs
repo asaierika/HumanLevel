@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SwitchCharacter : MonoBehaviour
 {
-    public GameEvent switchToKizuna;
-    public GameEvent switchToPartner;
     public static SwitchCharacter instance; 
     public Who identity = Who.Kizuna;
 
@@ -24,10 +22,10 @@ public class SwitchCharacter : MonoBehaviour
             Debug.Log("Character switch detected");
             if (identity == Who.Kizuna && SwitchMode.instance.mode != SwitchMode.Mode.Spirit) {
                 identity = Who.Partner;
-                switchToPartner.TriggerEvent();
+                EventManager.InvokeEvent(EventManager.Event.SWITCH_TO_PARTNER);
             } else {
                 identity = Who.Kizuna;
-                switchToKizuna.TriggerEvent();
+                EventManager.InvokeEvent(EventManager.Event.SWITCH_TO_KIZUNA);
             }
         } 
     }

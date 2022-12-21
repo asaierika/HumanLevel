@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Used to keep track of who interacted with which interactable to allow player to resume their interaction even when they do a 
+// character switch.
 public class CharacterInteractableManager : MonoBehaviour
 {
     public Dictionary<SwitchCharacter.Who, HashSet<MiniGame>> possessions = new Dictionary<SwitchCharacter.Who, HashSet<MiniGame>>();

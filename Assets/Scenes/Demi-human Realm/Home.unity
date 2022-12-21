@@ -350,7 +350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &152096060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,8 +742,6 @@ GameObject:
   - component: {fileID: 451040743}
   - component: {fileID: 451040746}
   - component: {fileID: 451040745}
-  - component: {fileID: 451040748}
-  - component: {fileID: 451040747}
   - component: {fileID: 451040749}
   - component: {fileID: 451040750}
   m_Layer: 4
@@ -857,8 +855,8 @@ MonoBehaviour:
   phoenixFish: {fileID: 451040741}
   startFishing: {fileID: 11400000, guid: c92223c145ffb47fd9c4a14bfc002cd9, type: 2}
   convo: {fileID: 11400000, guid: c606061ef3af4460091a662224bc732b, type: 2}
-  phoenixFishItem: {fileID: 11400000, guid: 4ecec4223e8834f77b36c6a9d126b860, type: 2}
-  fishingRod: {fileID: 11400000, guid: cbe110b64d978429bbd1138d70ca1cc6, type: 2}
+  phoenixFishItem: {fileID: 11400000, guid: b877607cbc11244288c442d83f8eb447, type: 2}
+  fishingRod: {fileID: 11400000, guid: 3e40a5208df3c4178ae05c08f6690f49, type: 2}
 --- !u!70 &451040746
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -875,64 +873,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.045098305, y: 0.033732533}
   m_Size: {x: 1.4398088, y: 1.4852731}
   m_Direction: 0
---- !u!114 &451040747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451040741}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa4d57a56d66f4d2cb9fda1d023f7468, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvents:
-  - {fileID: 11400000, guid: e1f70317279ad4f079cf1da0bc68743e, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 451040744}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &451040748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451040741}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa4d57a56d66f4d2cb9fda1d023f7468, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvents:
-  - {fileID: 11400000, guid: 2a0afbd5abff24b4cb197be7e49a294a, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 451040744}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!50 &451040749
 Rigidbody2D:
   serializedVersion: 4
@@ -1134,7 +1074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 566aec7fae25644daa23cd39425efd20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchToSpirit: {fileID: 11400000, guid: 2a0afbd5abff24b4cb197be7e49a294a, type: 2}
+  spiritFilter: {fileID: 1240525080}
   mode: 0
 --- !u!114 &929367104
 MonoBehaviour:
@@ -1148,8 +1088,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925f8c3d123074e3bae21c9e1e0e9e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchToKizuna: {fileID: 11400000, guid: fc13dd2c2708e43968a5598688e058d1, type: 2}
-  switchToPartner: {fileID: 11400000, guid: 35e6ba130e4df429fa9b8adaa91e9f84, type: 2}
   identity: 0
 --- !u!1 &929563142
 GameObject:
@@ -2159,6 +2097,25 @@ PrefabInstance:
       objectReference: {fileID: 1239006002}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
+--- !u!1 &2633835362033729004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2633835362094690909, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
+  m_PrefabInstance: {fileID: 2633835362033729003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2633835362033729005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633835362033729004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d8d248b89bc4472afa089e3d0e0fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyMovement: {fileID: 8145872429545785045}
+  spirit: {fileID: 1329810881}
 --- !u!114 &8145872429545785041 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6162807334807042874, guid: 1098387d998d144d492a6b923746a1dc, type: 3}

@@ -10,6 +10,16 @@ public class PhoenixFish : Follower_simple
     public Item fishingRod;
     private SpriteRenderer spriteR;
 
+    void OnEnable() {
+        EventManager.StartListening(EventManager.Event.SWITCH_TO_SPIRIT, Show);
+        EventManager.StartListening(EventManager.Event.SWITCH_TO_DEMIHUMAN, Hide);
+    }
+
+    void OnDisable() {
+        EventManager.StopListening(EventManager.Event.SWITCH_TO_SPIRIT, Show);
+        EventManager.StopListening(EventManager.Event.SWITCH_TO_DEMIHUMAN, Hide);
+    }
+
     void Start() 
     {
         Initialize();
@@ -51,12 +61,12 @@ public class PhoenixFish : Follower_simple
         phoenixFish.SetActive(false);
     }
 
-    public void Show()
+    public void Show(object o = null)
     {
         spriteR.enabled = true;
     }
 
-    public void Hide()
+    public void Hide(object o = null)
     {
         spriteR.enabled = false;
     }
