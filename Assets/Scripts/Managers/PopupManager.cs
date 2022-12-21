@@ -7,14 +7,14 @@ using UnityEngine;
 */
 public class PopupManager : MonoBehaviour
 {
-    public SwitchCharacter.Who owner;
+    public CharacterSwitcher.Who owner;
     public GameEvent terminatingSignal;
     public GameObject popup;
     public bool hasPopup;
     public CharacterInteractableManager interactableManager;
 
     void Update() {
-        if (SwitchCharacter.instance.identity == owner && hasPopup && Input.GetKeyDown(KeyCode.Escape)) {
+        if (CharacterSwitcher.instance.identity == owner && hasPopup && Input.GetKeyDown(KeyCode.Escape)) {
             if (terminatingSignal != null) {
                 // If there are tasks to be completed before the popup is closed
                 terminatingSignal.TriggerEvent();

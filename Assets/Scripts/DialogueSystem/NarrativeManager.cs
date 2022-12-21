@@ -11,7 +11,6 @@ public class NarrativeManager : MonoBehaviour
     public Text dialogue;
     private int currIndex;
     private Conversation currentConvo;
-    public UiStatus uiStatus;
     public static bool inDialogue = false;
 
     private void Awake()
@@ -31,7 +30,7 @@ public class NarrativeManager : MonoBehaviour
 
     public void StartConversation(Conversation convo)
     {
-        uiStatus.OpenUI();
+        UiStatus.OpenUI();
         inDialogue = true;
         dialogBox.transform.localScale = Vector3.one;
         currIndex = 0;
@@ -46,7 +45,7 @@ public class NarrativeManager : MonoBehaviour
         {
             dialogBox.transform.localScale = Vector3.zero;
             inDialogue = false;
-            uiStatus.CloseUI();
+            UiStatus.CloseUI();
         }
         else
         {

@@ -6,36 +6,36 @@ using UnityEngine;
 // character switch.
 public class CharacterInteractableManager : MonoBehaviour
 {
-    public Dictionary<SwitchCharacter.Who, HashSet<MiniGame>> possessions = new Dictionary<SwitchCharacter.Who, HashSet<MiniGame>>();
+    public Dictionary<CharacterSwitcher.Who, HashSet<MiniGame>> possessions = new Dictionary<CharacterSwitcher.Who, HashSet<MiniGame>>();
 
     void Awake() {
-        possessions.Add(SwitchCharacter.Who.Kizuna, new HashSet<MiniGame>());
-        possessions.Add(SwitchCharacter.Who.Partner, new HashSet<MiniGame>());
+        possessions.Add(CharacterSwitcher.Who.Kizuna, new HashSet<MiniGame>());
+        possessions.Add(CharacterSwitcher.Who.Partner, new HashSet<MiniGame>());
     }
     public void EnablePossessions() {
-        if (SwitchCharacter.instance.identity == SwitchCharacter.Who.Kizuna) {
-            foreach (MiniGame game in possessions[SwitchCharacter.Who.Kizuna]) {
+        if (CharacterSwitcher.instance.identity == CharacterSwitcher.Who.Kizuna) {
+            foreach (MiniGame game in possessions[CharacterSwitcher.Who.Kizuna]) {
                 game.isCorrectCharacter = true;
                 foreach (SpriteRenderer renderer in game.renderers) {
                     renderer.enabled = true;
                 }
             }
 
-            foreach (MiniGame game in possessions[SwitchCharacter.Who.Partner]) {
+            foreach (MiniGame game in possessions[CharacterSwitcher.Who.Partner]) {
                 game.isCorrectCharacter = false;
                 foreach (SpriteRenderer renderer in game.renderers) {
                     renderer.enabled = false;
                 }
             }
         } else {
-            foreach (MiniGame game in possessions[SwitchCharacter.Who.Kizuna]) {
+            foreach (MiniGame game in possessions[CharacterSwitcher.Who.Kizuna]) {
                 game.isCorrectCharacter = false;
                 foreach (SpriteRenderer renderer in game.renderers) {
                     renderer.enabled = false;
                 }
             }
 
-            foreach (MiniGame game in possessions[SwitchCharacter.Who.Partner]) {
+            foreach (MiniGame game in possessions[CharacterSwitcher.Who.Partner]) {
                 game.isCorrectCharacter = true;
                 foreach (SpriteRenderer renderer in game.renderers) {
                     renderer.enabled = true;
@@ -44,11 +44,11 @@ public class CharacterInteractableManager : MonoBehaviour
         }
     }
 
-    public void AddPossession(SwitchCharacter.Who identity, MiniGame game) {
+    public void AddPossession(CharacterSwitcher.Who identity, MiniGame game) {
         possessions[identity].Add(game);
     }
 
-     public void RemovePossession(SwitchCharacter.Who identity, MiniGame game) {
+     public void RemovePossession(CharacterSwitcher.Who identity, MiniGame game) {
         possessions[identity].Remove(game);
     }
 }

@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
 
-// TODO: For SwitchMode and SwitchCharacter core events can reference @repo unity_mobile_app @class EventManager for reference.
+// TODO: For ModeSwitcher and CharacterSwitcher core events can reference @repo unity_mobile_app @class EventManager for reference.
 // TODO: Tag spirit objects and SetActive() via tags instead not manual assignment
-public class SwitchMode : MonoBehaviour
+public class ModeSwitcher : MonoBehaviour
 {
-    public static SwitchMode instance;
+    public static ModeSwitcher instance;
     public GameObject spiritFilter;
     public Mode mode = Mode.DemiHuman;
     public enum Mode { DemiHuman, Spirit }
@@ -18,7 +18,7 @@ public class SwitchMode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SwitchCharacter.instance.identity == SwitchCharacter.Who.Kizuna && Input.GetKeyDown(KeyCode.R) 
+        if (CharacterSwitcher.instance.identity == CharacterSwitcher.Who.Kizuna && Input.GetKeyDown(KeyCode.R) 
             && !DialogueManager.instance.inDialogue) {
             Debug.Log("Mode switch detected");
             if (mode == Mode.DemiHuman) {
