@@ -11,14 +11,14 @@ public class InteractableWithGames : Interactable
     public GameEvent[] popupOpen;
     public MiniGame game;
     public CharacterInteractableManager interactableManager;
-    public SwitchCharacter.Who whoTriggered;
+    public CharacterSwitcher.Who whoTriggered;
 
     public override void Interact() {
         // Debug.Log("Player engaged game interactable " + name);
         interactableManager.AddPossession(whoTriggered, game);
         game.SetOwner(whoTriggered);
         openMiniGame.TriggerEvent();
-        if (whoTriggered == SwitchCharacter.Who.Kizuna) {
+        if (whoTriggered == CharacterSwitcher.Who.Kizuna) {
             popupOpen[0].TriggerEvent();
         } else {
             popupOpen[1].TriggerEvent();
@@ -39,7 +39,7 @@ public class InteractableWithGames : Interactable
     {
         if (collision.gameObject.CompareTag("Player") &&
                 collision.gameObject.GetComponent<Character>().IsActive) {
-            whoTriggered = SwitchCharacter.Who.None;
+            whoTriggered = CharacterSwitcher.Who.None;
             playerInRange = false;
         }
     }
@@ -58,7 +58,7 @@ public class InteractableWithGames : Interactable
     {
         if (collision.gameObject.CompareTag("Player") &&
                 collision.gameObject.GetComponent<Character>().IsActive) {
-            whoTriggered = SwitchCharacter.Who.None;
+            whoTriggered = CharacterSwitcher.Who.None;
             playerInRange = false;
         }
     }

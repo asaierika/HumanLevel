@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2633835362094690908}
+  - component: {fileID: 2633835362033729005}
   m_Layer: 0
   m_Name: Kizuna Demi
   m_TagString: Untagged
@@ -33,6 +34,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2633835362033729005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633835362094690909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d8d248b89bc4472afa089e3d0e0fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyMovement: {fileID: 6162807334807042878}
+  spirit: {fileID: 2633835362885218346}
 --- !u!1 &2633835362687924690
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,4 +469,3 @@ MonoBehaviour:
   spirit: {fileID: 2633835362885218346}
   body: {fileID: 2633835362687924690}
   spawnPositionOffset: {x: 0, y: 1}
-  switchToDemi: {fileID: 11400000, guid: e1f70317279ad4f079cf1da0bc68743e, type: 2}

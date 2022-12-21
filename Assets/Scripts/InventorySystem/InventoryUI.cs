@@ -12,7 +12,6 @@ public class InventoryUI : MonoBehaviour
 
     Inventory inventory;
     InventorySlot[] slots;
-    public UiStatus uiStatus;
 
     public GameObject firstSlot;
 
@@ -88,7 +87,7 @@ public class InventoryUI : MonoBehaviour
         panel.SetActive(true);
 
         // Freeze the movement of the player
-        uiStatus.OpenUI();
+        UiStatus.OpenUI();
 
         //Set the first selected object to be the first slot
         if (inventory.Size() != 0)
@@ -103,7 +102,7 @@ public class InventoryUI : MonoBehaviour
         inventory.onItemChangedCallback -= UpdateUI;
         panel.SetActive(false);
         // Restore the movement of the player
-        uiStatus.CloseUI();
+        UiStatus.CloseUI();
     }
 
     public void ZoomToShowItem(Item item) {

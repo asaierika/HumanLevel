@@ -25,7 +25,6 @@ public class ChoiceManager : MonoBehaviour
     public GameObject firstButton;
     private int choiceIndex = -1;
     private bool isActive;
-    public UiStatus uiStatus;
 
     // Update is called once per frame
     void Update()
@@ -46,7 +45,7 @@ public class ChoiceManager : MonoBehaviour
 
     IEnumerator Choose()
     {
-        uiStatus.OpenUI();
+        UiStatus.OpenUI();
         yield return new WaitForSeconds(0.01f);
         choiceHolder.SetActive(true);
         buttons = choiceHolder.GetComponentsInChildren<Button>();
@@ -79,6 +78,6 @@ public class ChoiceManager : MonoBehaviour
         // yield return new WaitForSeconds(0.01f);
         Debug.Log("Choice made closing UI.");
         choiceHolder.SetActive(false);
-        uiStatus.CloseUI();
+        UiStatus.CloseUI();
     }
 }

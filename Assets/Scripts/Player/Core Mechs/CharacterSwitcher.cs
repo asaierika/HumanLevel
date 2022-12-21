@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwitchCharacter : MonoBehaviour
+public class CharacterSwitcher : MonoBehaviour
 {
-    public static SwitchCharacter instance; 
+    public static CharacterSwitcher instance; 
     public Who identity = Who.Kizuna;
 
     // Third option to support mini game interactables who have not been triggered
@@ -20,7 +20,7 @@ public class SwitchCharacter : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q)) {
             Debug.Log("Character switch detected");
-            if (identity == Who.Kizuna && SwitchMode.instance.mode != SwitchMode.Mode.Spirit) {
+            if (identity == Who.Kizuna && ModeSwitcher.instance.mode != ModeSwitcher.Mode.Spirit) {
                 identity = Who.Partner;
                 EventManager.InvokeEvent(EventManager.Event.SWITCH_TO_PARTNER);
             } else {

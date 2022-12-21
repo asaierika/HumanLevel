@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public bool characterFrozen;
-    public UiStatus uiStatus;
+    public UiStatus UiStatus;
 
     public static void AlterLocationType(bool isContinuousType) {
         inContinuousLocations = isContinuousType;
@@ -20,10 +20,9 @@ public class PlayerMovement : MonoBehaviour
     {   
         rb = rb == null ? GetComponent<Rigidbody2D>() : rb;
         animator = animator == null ? GetComponent<Animator>() : animator;
-        uiStatus = uiStatus == null ? GameObject.FindObjectOfType<UiStatus>() : uiStatus;
 
-        uiStatus.onOpenUI += FreezeAllMovement;
-        uiStatus.onCloseUI += RestoreAllMovement;        
+        UiStatus.onOpenUI += FreezeAllMovement;
+        UiStatus.onCloseUI += RestoreAllMovement;        
     }
 
     private void FixedUpdate()

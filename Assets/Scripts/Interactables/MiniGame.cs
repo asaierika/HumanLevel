@@ -8,7 +8,7 @@ using UnityEngine;
 */
 public class MiniGame : MonoBehaviour
 {
-    public SwitchCharacter.Who owner;
+    public CharacterSwitcher.Who owner;
     // Use to make game invisible when switching to another character.
     public SpriteRenderer[] renderers;
     // One manager for Kizuna, one for Partner
@@ -24,17 +24,17 @@ public class MiniGame : MonoBehaviour
     void OnEnable() {
         Debug.Log(owner);
         if (terminateSignal == null) {
-            if (owner == SwitchCharacter.Who.Kizuna) {
+            if (owner == CharacterSwitcher.Who.Kizuna) {
                 popupManagers[0].SetActivePopup(gameObject);
-            } else if (owner == SwitchCharacter.Who.Partner) {
+            } else if (owner == CharacterSwitcher.Who.Partner) {
                 popupManagers[1].SetActivePopup(gameObject);
             } else {
                 throw new UnityException("Invalid owner for minigame " + name);
             }
         } else {
-            if (owner == SwitchCharacter.Who.Kizuna) {
+            if (owner == CharacterSwitcher.Who.Kizuna) {
                 popupManagers[0].SetActivePopup(gameObject, terminateSignal);
-            } else if (owner == SwitchCharacter.Who.Partner) {
+            } else if (owner == CharacterSwitcher.Who.Partner) {
                 popupManagers[1].SetActivePopup(gameObject, terminateSignal);
             } else {
                 throw new UnityException("Invalid owner for minigame " + name);
@@ -43,11 +43,11 @@ public class MiniGame : MonoBehaviour
     }
 
     // void OnDisable() {
-    //     this.owner = SwitchCharacter.Who.None;
+    //     this.owner = CharacterSwitcher.Who.None;
     // }
 
     // Always called before the mini game popup is enabled
-    public void SetOwner(SwitchCharacter.Who owner) {
+    public void SetOwner(CharacterSwitcher.Who owner) {
         this.owner = owner;
     }
 }
