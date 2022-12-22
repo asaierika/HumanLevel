@@ -7,12 +7,12 @@ public class FishingArea : Interactable
 {
     public Item phonenixFish;
     public Item fishingRod;
-    public Conversation convo;
+    public Conversation convo1, convo2;
     public GameEvent startFishing;
     public GameEvent endFishing;
     public Inventory inventory;
-    private static bool isFishing;
     private static bool isFished;
+    private float fishingDuration = 1f;
 
     void Start() {
         inventory = GameManager.instance.inventory;
@@ -31,29 +31,36 @@ public class FishingArea : Interactable
 
      public override void Interact()
     {
-        isFishing = true;
         StartCoroutine(checkIfHaveFish());
     }
 
     IEnumerator checkIfHaveFish() 
     {
+        startFishing.TriggerEvent();
+        
         // checks if phoenix fish is in the inventory,
-        // wait for some time for the fish to be added 
-        // to the inventory before checking. Since the player
-        // may trigger the collider of the fish and this object
+        // if so, trigger the success conversation,
+        // if not trigger the failure conversation.
+        // Wait for some time for the fish to be added 
+        // when the player triggers the collider of the PhoenixFish
+        // to the inventory before checking, since the player
+        // may trigger the collider of the PhoenixFish and this object
         // at the same time.
+
         yield return new WaitForSeconds(0.1f);
        
         if (inventory.Contains(phonenixFish))
         {
-            isFishing = false;
+            DialogueManager.instance.StartConversation(convo2);
             isFished = true;
         } 
         else
         {
-            DialogueManager.instance.StartConversation(convo);
-            startFishing.TriggerEvent();
-            isFishing = false;
+            DialogueManager.instance.StartConversation(convo1);
         } 
+
+        yield return new WaitForSeconds(fishingDuration);
+        endFishing.TriggerEvent();
+
     }
 }

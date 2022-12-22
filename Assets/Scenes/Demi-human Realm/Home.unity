@@ -172,7 +172,8 @@ MonoBehaviour:
   playerInRange: 0
   phonenixFish: {fileID: 11400000, guid: b877607cbc11244288c442d83f8eb447, type: 2}
   fishingRod: {fileID: 11400000, guid: 3e40a5208df3c4178ae05c08f6690f49, type: 2}
-  convo: {fileID: 11400000, guid: 3757d297cd4704caeb1dd8d2a089d719, type: 2}
+  convo1: {fileID: 11400000, guid: 3757d297cd4704caeb1dd8d2a089d719, type: 2}
+  convo2: {fileID: 11400000, guid: c606061ef3af4460091a662224bc732b, type: 2}
   startFishing: {fileID: 11400000, guid: c92223c145ffb47fd9c4a14bfc002cd9, type: 2}
   endFishing: {fileID: 11400000, guid: bdf92df2ff7fa430abc7a75585e80931, type: 2}
   inventory: {fileID: 1478403498}
@@ -643,8 +644,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.045098305, y: 0.033732533}
-  m_Size: {x: 1.4398088, y: 1.4852731}
+  m_Offset: {x: -0.09370875, y: 0.033732533}
+  m_Size: {x: 1.8286929, y: 1.8286929}
   m_Direction: 0
 --- !u!50 &451040749
 Rigidbody2D:
