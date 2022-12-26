@@ -3,46 +3,42 @@ using UnityEngine;
 
 public class LightGate : MonoBehaviour 
 {
-    public Vector2[] route = new Vector2[2];
-    public TurnTable table;
+    public Pair<Vector2, Vector2> rightDoorPositions;
+    public Pair<Vector2, Vector2> leftDoorPositions;
+    public GameObject rightDoor;
+    public GameObject leftDoor;
+    public Lockable gateLock;
     public float closeSpeed;
     public float closeTightness;
-    public float sqrCloseTightness;
+    private float sqrCloseTightness;
     // Level completed the door will stay open
     public bool isOpen = false;
-    public bool tableEngaged= false;
+    // When in animation, the door is not responsive to associated object status e.g. turntable
+    private bool isResponsive = true;
 
     void Start() {
-        route[0] = new Vector2(transform.localPosition.x, transform.localPosition.y);
         sqrCloseTightness = closeTightness * closeTightness;
     }
 
-    void Update() {
-        if (tableEngaged && !isOpen) {
-            transform.localPosition = (route[1] - route[0]) * table.GetCompletionStatus() + route[0];
-        }
+    public void UpdatePosition(float progress) {
+        rightDoor.transform.localPosition = (rightDoorPositions.tail - rightDoorPositions.head) * progress + rightDoorPositions.head;
+        leftDoor.transform.localPosition = (leftDoorPositions.tail - leftDoorPositions.head) * progress + leftDoorPositions.head;
     }
 
-    public void ActivateClose() {
-        StartCoroutine(Close());
-    }
-
-    IEnumerator Close() {
-        while (Vector3.SqrMagnitude((Vector2) transform.localPosition - route[0]) > sqrCloseTightness) {
-            transform.localPosition += Vector3.Normalize(route[0] - route[1]) * closeSpeed * Time.deltaTime;
+    public IEnumerator Close() {
+        isResponsive = false;
+        while (Vector3.SqrMagnitude(rightDoor.transform.localPosition - leftDoor.transform.localPosition) > sqrCloseTightness) {
+            rightDoor.transform.localPosition += Vector3.Normalize(rightDoorPositions.head - rightDoorPositions.tail) * closeSpeed * Time.deltaTime;
+            leftDoor.transform.localPosition += Vector3.Normalize(leftDoorPositions.head - leftDoorPositions.tail) * closeSpeed * Time.deltaTime;
             yield return null;
         }
+        isResponsive = true;
     }
 
-    public void FixStatus() {
+    public bool IsFixed => gateLock.IsLocked;
+    public bool IsResponsive => isResponsive;
+
+    public void OpenComplete() {
         isOpen = true;
-    }
-
-    public void Activate() {
-        tableEngaged = true;
-    }
-
-    public void Deactivate() {
-        tableEngaged = false;
     }
 }

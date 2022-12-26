@@ -5,6 +5,8 @@ using UnityEngine;
 public class CharacterSwitcher : MonoBehaviour
 {
     public static CharacterSwitcher instance; 
+    public GameObject Kizuna;
+    public GameObject Partner;
     public Who identity = Who.Kizuna;
 
     // Third option to support mini game interactables who have not been triggered
@@ -20,13 +22,21 @@ public class CharacterSwitcher : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q)) {
             Debug.Log("Character switch detected");
-            if (identity == Who.Kizuna && ModeSwitcher.instance.mode != ModeSwitcher.Mode.Spirit) {
-                identity = Who.Partner;
-                EventManager.InvokeEvent(EventManager.Event.SWITCH_TO_PARTNER);
-            } else {
-                identity = Who.Kizuna;
-                EventManager.InvokeEvent(EventManager.Event.SWITCH_TO_KIZUNA);
-            }
+            SwitchCharacter();
         } 
+    }
+
+    private void SwitchCharacter() {
+        if (identity == Who.Kizuna && ModeSwitcher.instance.mode != ModeSwitcher.Mode.Spirit) {
+            identity = Who.Partner;
+            Partner.tag = "Player";
+            Kizuna.tag = "Party";
+            EventManager.InvokeEvent(EventManager.Event.SWITCH_TO_PARTNER);
+        } else {
+            identity = Who.Kizuna;
+            Partner.tag = "Party";
+            Kizuna.tag = "Party";
+            EventManager.InvokeEvent(EventManager.Event.SWITCH_TO_KIZUNA);
+        }
     }
 }

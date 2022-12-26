@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2633835362033729005}
   m_Layer: 0
   m_Name: Kizuna Demi
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,10 +61,9 @@ GameObject:
   - component: {fileID: 2633835362687924689}
   - component: {fileID: 2633835362687924692}
   - component: {fileID: 2633835362687924693}
-  - component: {fileID: 6162807334807042874}
   - component: {fileID: 6162807334807042878}
   m_Layer: 0
-  m_Name: Kizuna-demi
+  m_Name: Body
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -195,22 +194,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.016475648, y: -0.48866278}
   m_Size: {x: 0.26639473, y: 0.26639473}
   m_Direction: 0
---- !u!114 &6162807334807042874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2633835362687924690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3109e1fa48954c55af258cec62135a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startFishing: {fileID: 11400000, guid: c92223c145ffb47fd9c4a14bfc002cd9, type: 2}
-  endFishing: {fileID: 11400000, guid: bdf92df2ff7fa430abc7a75585e80931, type: 2}
-  kizuna: {fileID: 2633835362687924688}
-  fishingKizuna: {fileID: 2633835362785465504}
 --- !u!114 &6162807334807042878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,7 +309,7 @@ GameObject:
   - component: {fileID: 2633835362885218343}
   - component: {fileID: 2633835362885218341}
   m_Layer: 0
-  m_Name: Kizuna-spirit
+  m_Name: Spirit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

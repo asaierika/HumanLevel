@@ -1,14 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine.Events;
 
-// Aside from the Game Event scriptable object the class maintains core events such as mode and character switch.
+// Aside from the Game Event scriptable object,
+// the class maintains core events such as mode and character switch and game wide events, save game etc.
 public class EventManager
 {
     public enum Event {
         SWITCH_TO_SPIRIT,
         SWITCH_TO_DEMIHUMAN,
         SWITCH_TO_KIZUNA,
-        SWITCH_TO_PARTNER
+        SWITCH_TO_PARTNER,
+        MINIGAME_START,
+        MINIGAME_END,
     }
 
     private static Dictionary<Event, UnityEvent<object>> eventTable = new Dictionary<Event, UnityEvent<object>>();

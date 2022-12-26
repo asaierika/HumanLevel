@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     {
         EventManager.StartListening(EventManager.Event.SWITCH_TO_SPIRIT, DisableBodyWrapper);
         EventManager.StartListening(EventManager.Event.SWITCH_TO_DEMIHUMAN, EnableBodyWrapper);
+        EventManager.StartListening(EventManager.Event.MINIGAME_START, DisableBodyWrapper);
+        EventManager.StartListening(EventManager.Event.MINIGAME_END, EnableBodyWrapper);
         EventManager.StartListening(EventManager.Event.SWITCH_TO_SPIRIT, ActivateSpiritWrapper);
         EventManager.StartListening(EventManager.Event.SWITCH_TO_DEMIHUMAN, DeactivateSpiritWrapper);
     }
@@ -20,6 +22,8 @@ public class PlayerController : MonoBehaviour
     {
         EventManager.StopListening(EventManager.Event.SWITCH_TO_SPIRIT, DisableBodyWrapper);
         EventManager.StopListening(EventManager.Event.SWITCH_TO_DEMIHUMAN, EnableBodyWrapper);
+        EventManager.StopListening(EventManager.Event.MINIGAME_START, DisableBodyWrapper);
+        EventManager.StopListening(EventManager.Event.MINIGAME_END, EnableBodyWrapper);
         EventManager.StopListening(EventManager.Event.SWITCH_TO_SPIRIT, ActivateSpiritWrapper);
         EventManager.StopListening(EventManager.Event.SWITCH_TO_DEMIHUMAN, DeactivateSpiritWrapper);
     }

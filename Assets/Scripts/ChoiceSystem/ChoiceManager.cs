@@ -9,8 +9,7 @@ public class ChoiceManager : MonoBehaviour
 
     private void Awake() 
     {
-        if (ChoiceManager.instance != null)
-        {
+        if (ChoiceManager.instance != null) {
             Destroy(gameObject);
             return;
         }

@@ -9,8 +9,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake() 
     {
-        if (DialogueManager.instance != null)
-        {
+        if (DialogueManager.instance != null) {
             Destroy(gameObject);
             return;
         }

@@ -1,5 +1,5 @@
 namespace GameInterfaces {
     interface ICompletable {
-        float GetCompletionStatus();
+        float GetProgress();
     }
 }
