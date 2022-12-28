@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d060a42957ed41c598cd6683d460e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f517c49706554de8a7feae0f5dfc093, type: 3}
   m_Name: Hair Pin
   m_EditorClassIdentifier: 
   nameOfItem: Hair Pin
   icon: {fileID: 21300000, guid: 30e114405115041ada4d240d95fe3e88, type: 3}
   amount: 1
   itemImage: {fileID: 21300000, guid: 30e114405115041ada4d240d95fe3e88, type: 3}
-  description: A flower-shaped hairpin.
+  description: 
+  gameEvents: []

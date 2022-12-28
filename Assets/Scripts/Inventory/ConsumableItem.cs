@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Consumable")]
+[CreateAssetMenu(menuName = "Consumable Item")]
 public class ConsumableItem : Item
 {
     public override bool Use()

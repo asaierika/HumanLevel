@@ -7,6 +7,7 @@ TagManager:
   - DialogueManager
   - Floor
   - Follower
+  - Spirit
   layers:
   - Default
   - TransparentFX

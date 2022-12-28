@@ -23,30 +23,9 @@ public class InventoryUI : MonoBehaviour
         inventory = GameManager.instance.inventory;
         // Debug.Log("Inventory reference obtained " + (inventory == GameManager.instance.inventory) + " at " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         inventory.onNewItemAddedCallback += ShowItemHint;
-        inventory.onItemUsedCallback += ZoomToShowItem;
-    }
-
-    void OnEnable() {
-        // Debug.Log("Inventory UI enabled at " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-        if (inventory != null) {
-            // Debug.Log("Inventory UI enabled and setting callbacks");
-            inventory.onNewItemAddedCallback += ShowItemHint;
-            inventory.onItemUsedCallback += ZoomToShowItem;
-        }
-    }
-
-    void OnDisable() {
-        if (panel.activeInHierarchy) {
-            // Ensure UpdateUI is unregistered when panel is inactive.
-            Disable();
-        }
-
-        // Debug.Log("Decommission inventory UI at " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-        // BUG: The check null is only required for the corridor scene. Why is OnDisable being called without Start(). 
-        if (inventory != null) {
-            inventory.onNewItemAddedCallback -= ShowItemHint;
-            inventory.onItemUsedCallback -= ZoomToShowItem;
-        }
+        inventory.onItemZoomedInCallback += ZoomToShowItem;
+        // The inventory is closed every time a special item is used.
+        inventory.onSpecialItemUsedCallback += Disable;
     }
 
     // Update is called once per frame

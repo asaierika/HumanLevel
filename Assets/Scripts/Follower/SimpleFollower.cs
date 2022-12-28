@@ -4,10 +4,15 @@ using UnityEngine;
 using System;
 
 // simple follower that allows sliding
-public abstract class Follower_simple : Interactable
+public abstract class SimpleFollower : MonoBehaviour
 {
-    protected Transform player;
     public float moveSpeed = 1f; 
+    public bool playerInRange;
+    // Allows player to be modified in the inspector
+    // as the followed game object can be the spirit or partner.
+    // If not specified, the followed game object would be the one
+    // with a "Player" tag.
+    public Transform player;
     protected Rigidbody2D rb;
     protected Vector2 movement;
 
@@ -20,7 +25,6 @@ public abstract class Follower_simple : Interactable
     // Update is called once per frame
     void Update()
     {
-        TryInteract();
         Trace();
     }
 
@@ -30,8 +34,11 @@ public abstract class Follower_simple : Interactable
 
     protected void Initialize() {
         rb = this.GetComponent<Rigidbody2D>();
-        player = GameObject.FindWithTag("Player").transform;
 
+        if (player == null)
+        {
+            player = GameObject.FindWithTag("Player").transform;
+        }
     }
 
     // specifies how the follower object changes its
@@ -45,8 +52,23 @@ public abstract class Follower_simple : Interactable
         movement = direction;
     }
 
-
     protected void Move() {
         rb.MovePosition((Vector2) transform.position + (movement * moveSpeed * Time.deltaTime));
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag(player.tag))
+        {
+            playerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag(player.tag))
+        {
+            playerInRange = false;
+        } 
     }
 }

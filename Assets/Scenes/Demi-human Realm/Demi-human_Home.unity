@@ -172,12 +172,12 @@ MonoBehaviour:
   playerInRange: 0
   dialogueManager: {fileID: 761566802}
   choiceManager: {fileID: 1543858770}
-  phonenixFish: {fileID: 11400000, guid: b877607cbc11244288c442d83f8eb447, type: 2}
-  fishingRod: {fileID: 11400000, guid: 3e40a5208df3c4178ae05c08f6690f49, type: 2}
+  phonenixFish: {fileID: 11400000, guid: ce9859e2f57004cc585f86251650706e, type: 2}
+  fishingRod: {fileID: 11400000, guid: 5c4276096e31546568ae30c69ac00c43, type: 2}
   convo1: {fileID: 11400000, guid: 3757d297cd4704caeb1dd8d2a089d719, type: 2}
   convo2: {fileID: 11400000, guid: c606061ef3af4460091a662224bc732b, type: 2}
-  startFishing: {fileID: 11400000, guid: c92223c145ffb47fd9c4a14bfc002cd9, type: 2}
-  endFishing: {fileID: 11400000, guid: bdf92df2ff7fa430abc7a75585e80931, type: 2}
+  startFishing: {fileID: 11400000, guid: 85679ede2611f4e08b11bc5e4ea12776, type: 2}
+  endFishing: {fileID: 11400000, guid: f3f8ff3c35a704968b29e3bb4091f54a, type: 2}
   inventory: {fileID: 1478403498}
 --- !u!60 &11236886
 PolygonCollider2D:
@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 152096061}
   - component: {fileID: 152096060}
   - component: {fileID: 152096064}
+  - component: {fileID: 152096065}
   m_Layer: 0
   m_Name: EventListener
   m_TagString: Untagged
@@ -365,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvents:
-  - {fileID: 11400000, guid: bdf92df2ff7fa430abc7a75585e80931, type: 2}
+  - {fileID: 11400000, guid: f3f8ff3c35a704968b29e3bb4091f54a, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
@@ -551,7 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvents:
-  - {fileID: 11400000, guid: c92223c145ffb47fd9c4a14bfc002cd9, type: 2}
+  - {fileID: 11400000, guid: 85679ede2611f4e08b11bc5e4ea12776, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
@@ -578,6 +579,47 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &152096065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152096058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4d57a56d66f4d2cb9fda1d023f7468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvents:
+  - {fileID: 11400000, guid: 80cb6a1a8bfcd4499bce42dba61e1bc5, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 451040751}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: TryInteract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11236885}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: TryInteract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &381552784
 GameObject:
@@ -616,7 +658,7 @@ MonoBehaviour:
   dialogueManager: {fileID: 761566802}
   choiceManager: {fileID: 1543858770}
   kenjiStanding: {fileID: -551678137, guid: 7f93df915012b4c53a0df53471769f70, type: 3}
-  fishingRod: {fileID: 11400000, guid: 3e40a5208df3c4178ae05c08f6690f49, type: 2}
+  fishingRod: {fileID: 0}
   convo1: {fileID: 11400000, guid: 20aed0a06ef7348c499278d6f9f8fb94, type: 2}
   convo2: {fileID: 11400000, guid: 34af2018d04c34d37ba300750f27ce94, type: 2}
   convo3: {fileID: 11400000, guid: af588c0bdd25b4c04b3851c56059344b, type: 2}
@@ -766,9 +808,10 @@ GameObject:
   - component: {fileID: 451040744}
   - component: {fileID: 451040743}
   - component: {fileID: 451040746}
-  - component: {fileID: 451040745}
   - component: {fileID: 451040749}
   - component: {fileID: 451040750}
+  - component: {fileID: 451040752}
+  - component: {fileID: 451040751}
   m_Layer: 4
   m_Name: PhoenixFish
   m_TagString: Untagged
@@ -863,24 +906,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &451040745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451040741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f46ee74dd54c74bcc9eb4e350d3b0e88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInRange: 0
-  moveSpeed: 1
-  phoenixFish: {fileID: 451040741}
-  startFishing: {fileID: 11400000, guid: c92223c145ffb47fd9c4a14bfc002cd9, type: 2}
-  phoenixFishItem: {fileID: 11400000, guid: b877607cbc11244288c442d83f8eb447, type: 2}
-  fishingRod: {fileID: 11400000, guid: 3e40a5208df3c4178ae05c08f6690f49, type: 2}
 --- !u!70 &451040746
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -934,6 +959,37 @@ CapsuleCollider2D:
   m_Offset: {x: -0.06737137, y: 0.07859993}
   m_Size: {x: 0.43514442, y: 0.5025158}
   m_Direction: 0
+--- !u!114 &451040751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451040741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bde1fc67326f4b1395be153f45e5497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  startFishing: {fileID: 11400000, guid: 85679ede2611f4e08b11bc5e4ea12776, type: 2}
+  phoenixFishItem: {fileID: 11400000, guid: ce9859e2f57004cc585f86251650706e, type: 2}
+  fishingRod: {fileID: 11400000, guid: 5c4276096e31546568ae30c69ac00c43, type: 2}
+--- !u!114 &451040752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451040741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a46ace95d51284b7d86687e33a9f9329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+  playerInRange: 0
+  player: {fileID: 1329810882}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,7 +1543,7 @@ GameObject:
   - component: {fileID: 1329810894}
   m_Layer: 0
   m_Name: Kizuna-spirit
-  m_TagString: Untagged
+  m_TagString: Spirit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
