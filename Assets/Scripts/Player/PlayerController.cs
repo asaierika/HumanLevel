@@ -5,42 +5,60 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public PlayerMovement bodyMovement;
-    public GameObject spirit;
+    public ValidPlayerState.Who identity;
+    public GameObject spirit = null;
     // Start is called before the first frame update
     void OnEnable()
     {
-        EventManager.StartListening(EventManager.Event.SWITCH_TO_SPIRIT, DisableBodyWrapper);
-        EventManager.StartListening(EventManager.Event.SWITCH_TO_DEMIHUMAN, EnableBodyWrapper);
-        EventManager.StartListening(EventManager.Event.MINIGAME_START, DisableBodyWrapper);
-        EventManager.StartListening(EventManager.Event.MINIGAME_END, EnableBodyWrapper);
-        EventManager.StartListening(EventManager.Event.SWITCH_TO_SPIRIT, ActivateSpiritWrapper);
-        EventManager.StartListening(EventManager.Event.SWITCH_TO_DEMIHUMAN, DeactivateSpiritWrapper);
+        if (identity == ValidPlayerState.Who.KIZUNA) {
+            // No need deactivate spirit for switch_to_partner event as trznsition from spirit to partner is not possible
+            EventManager.StartListening(EventManager.Event.SWITCH_TO_PARTNER_DEMI, DisableBodyMovement);
+            EventManager.StartListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, EnableBodyMovement);
+            EventManager.StartListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, DeactivateSpirit);
+            EventManager.StartListening(EventManager.Event.SWITCH_TO_KIZUNA_SPIRIT, DisableBodyMovement);
+            EventManager.StartListening(EventManager.Event.SWITCH_TO_KIZUNA_SPIRIT, ActivateSpirit);
+            EventManager.StartListening(EventManager.Event.KIZUNA_MINIGAME_START, DisableBodyMovement);
+            EventManager.StartListening(EventManager.Event.KIZUNA_MINIGAME_END, EnableBodyMovement);
+        } else if (identity == ValidPlayerState.Who.PARTNER) {
+            EventManager.StartListening(EventManager.Event.SWITCH_TO_PARTNER_DEMI, EnableBodyMovement);
+            EventManager.StartListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, DisableBodyMovement);
+            EventManager.StartListening(EventManager.Event.PARTNER_MINIGAME_START, DisableBodyMovement);
+            EventManager.StartListening(EventManager.Event.PARTNER_MINIGAME_END, EnableBodyMovement);
+        }
     }
 
     // Update is called once per frame
     void OnDisable()
     {
-        EventManager.StopListening(EventManager.Event.SWITCH_TO_SPIRIT, DisableBodyWrapper);
-        EventManager.StopListening(EventManager.Event.SWITCH_TO_DEMIHUMAN, EnableBodyWrapper);
-        EventManager.StopListening(EventManager.Event.MINIGAME_START, DisableBodyWrapper);
-        EventManager.StopListening(EventManager.Event.MINIGAME_END, EnableBodyWrapper);
-        EventManager.StopListening(EventManager.Event.SWITCH_TO_SPIRIT, ActivateSpiritWrapper);
-        EventManager.StopListening(EventManager.Event.SWITCH_TO_DEMIHUMAN, DeactivateSpiritWrapper);
+        if (identity == ValidPlayerState.Who.PARTNER) {
+            EventManager.StopListening(EventManager.Event.SWITCH_TO_PARTNER_DEMI, DisableBodyMovement);
+            EventManager.StopListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, EnableBodyMovement);
+            EventManager.StopListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, DeactivateSpirit);
+            EventManager.StopListening(EventManager.Event.SWITCH_TO_KIZUNA_SPIRIT, DisableBodyMovement);
+            EventManager.StopListening(EventManager.Event.SWITCH_TO_KIZUNA_SPIRIT, ActivateSpirit);
+            EventManager.StopListening(EventManager.Event.KIZUNA_MINIGAME_START, DisableBodyMovement);
+            EventManager.StopListening(EventManager.Event.KIZUNA_MINIGAME_END, EnableBodyMovement);
+        } else if (identity == ValidPlayerState.Who.PARTNER) {
+            EventManager.StopListening(EventManager.Event.SWITCH_TO_PARTNER_DEMI, EnableBodyMovement);
+            EventManager.StopListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, DisableBodyMovement);
+            EventManager.StopListening(EventManager.Event.PARTNER_MINIGAME_START, DisableBodyMovement);
+            EventManager.StopListening(EventManager.Event.PARTNER_MINIGAME_END, EnableBodyMovement);
+        }
     }
 
-    void EnableBodyWrapper(object o = null) {
+    void EnableBodyMovement(object o = null) {
         bodyMovement.enabled = true;
     }
 
-    void DisableBodyWrapper(object o = null) {
+    void DisableBodyMovement(object o = null) {
         bodyMovement.enabled = false;
     }
 
-    void ActivateSpiritWrapper(object o = null) {
+    void ActivateSpirit(object o = null) {
         spirit.SetActive(true);
     }
 
-    void DeactivateSpiritWrapper(object o = null) {
+    void DeactivateSpirit(object o = null) {
         spirit.SetActive(false);
     }
 }

@@ -6,12 +6,17 @@ using UnityEngine.Events;
 public class EventManager
 {
     public enum Event {
-        SWITCH_TO_SPIRIT,
-        SWITCH_TO_DEMIHUMAN,
-        SWITCH_TO_KIZUNA,
-        SWITCH_TO_PARTNER,
-        MINIGAME_START,
-        MINIGAME_END,
+        SWITCH_TO_KIZUNA_DEMI,
+        SWITCH_TO_KIZUNA_SPIRIT,
+        SWITCH_TO_PARTNER_DEMI,
+        KIZUNA_MINIGAME_START,
+        KIZUNA_MINIGAME_END,
+        KIZUNA_MINIGAME_PAUSE,
+        KIZUNA_MINIGAME_RESUME,
+        PARTNER_MINIGAME_START,
+        PARTNER_MINIGAME_END,
+        PARTNER_MINIGAME_PAUSE,
+        PARTNER_MINIGAME_RESUME,
     }
 
     private static Dictionary<Event, UnityEvent<object>> eventTable = new Dictionary<Event, UnityEvent<object>>();

@@ -212,7 +212,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6748098707614136305, guid: 39dbdb6108ff44751a77d2d13cf73534, type: 3}
   m_PrefabInstance: {fileID: 1719169022}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &133542608
+--- !u!114 &133542604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,11 +221,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 133542603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566aec7fae25644daa23cd39425efd20, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b04b50cc45de4cdfbdc7cd06a6135a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spiritFilter: {fileID: 0}
-  mode: 0
+  currPlayerState:
+    identity: 0
+    mode: 0
+    stateMounted: 0
 --- !u!1 &157006148
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &308014142
 Transform:
   m_ObjectHideFlags: 0
@@ -470,30 +472,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34028da154c5400fa8cca2dccc4018d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnGameCompleted:
+  onGameCompleted:
     m_PersistentCalls:
       m_Calls: []
   table: {fileID: 1282546972}
-  angleSpeed: 20
-  acceptedAngleMargin: 20
+  lightGate: {fileID: 1753009406}
+  angleSpeed: 60
+  acceptedAngleMargin: 10
+  revertRotationSpeed: 80
   targetAngleSeq:
   - 135
   - 285
-  angleSeqInQuaternions: []
   directionSeq: 01000000ffffffff
-  stage: 0
-  mistake: 0
-  reachedWaypoint: 0
-  rotationComplete: 0
-  revertRotationSpeed: 80
   totalMovement: -1
   prefixMovementCost:
   - 0
   - 0
-  startRotation: {x: 0, y: 0, z: 0, w: 0}
-  lightGate: {fileID: 1753009406}
-  holdTable: {fileID: 0}
-  leaveTable: {fileID: 0}
 --- !u!1 &331920344
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,12 +957,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92069495632df4dfe8d04793a0e104d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMinigameID: 0
-  gameIdsToGameObjects:
+  kizunaActiveMinigameId: 0
+  partnerActiveMinigameId: 0
+  gameIdsToGame:
   - head: 1
-    tail: {fileID: 308014139}
+    tail: {fileID: 308014143}
   - head: 2
-    tail: {fileID: 1878341322}
+    tail: {fileID: 1878341327}
 --- !u!4 &557729011
 Transform:
   m_ObjectHideFlags: 0
@@ -1489,21 +1484,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251705c7949c940e6bf97bea05617902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1181282782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4175073323643522762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49c6323d2146146f68a90bdfb52b9623, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isActive: 0
-  identity: 1
-  character: {fileID: 4175073323643522762}
 --- !u!114 &1181282789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2192,7 +2172,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1181282782}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Playable, Assembly-CSharp
         m_MethodName: SetPlayable
         m_Mode: 1
@@ -2655,7 +2635,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRange: 0
   gameID: 1
-  whoTriggered: 2
 --- !u!1 &1458185029
 GameObject:
   m_ObjectHideFlags: 0
@@ -3056,33 +3035,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39dbdb6108ff44751a77d2d13cf73534, type: 3}
---- !u!114 &1719169028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133542603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 925f8c3d123074e3bae21c9e1e0e9e8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Kizuna: {fileID: 0}
-  Partner: {fileID: 0}
-  identity: 0
---- !u!114 &1719169029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133542603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13a5cae660e994ac29b09fad8ebe0a38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1753009404
 GameObject:
   m_ObjectHideFlags: 0
@@ -3148,6 +3100,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2633835362033729005, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
+      propertyPath: identity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2633835362094690908, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3198,7 +3154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2633835362094690909, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
@@ -3398,6 +3354,7 @@ GameObject:
   - component: {fileID: 1878341326}
   - component: {fileID: 1878341325}
   - component: {fileID: 1878341324}
+  - component: {fileID: 1878341327}
   m_Layer: 5
   m_Name: Dragon Puzzle
   m_TagString: Untagged
@@ -3487,6 +3444,21 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1878341327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878341322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4deaeec3be464267a6dc388cd66bbf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGameCompleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1880715868
 GameObject:
   m_ObjectHideFlags: 0
@@ -3831,8 +3803,8 @@ GameObject:
   - component: {fileID: 4175073323643522767}
   - component: {fileID: 3366443423624879280}
   - component: {fileID: 1532684973}
-  - component: {fileID: 1181282782}
   - component: {fileID: 1181282789}
+  - component: {fileID: 4175073323643522768}
   m_Layer: 0
   m_Name: Tezuo
   m_TagString: Partner
@@ -3948,3 +3920,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4175073323643522768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175073323643522762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d8d248b89bc4472afa089e3d0e0fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyMovement: {fileID: 1181282789}
+  identity: 2
+  spirit: {fileID: 0}

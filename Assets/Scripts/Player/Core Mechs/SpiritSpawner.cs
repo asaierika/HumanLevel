@@ -16,7 +16,7 @@ public class SpiritSpawner : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) {
-            ModeSwitcher.instance.ToggleMode();
+            StateManager.instance.SwitchMode();
         }
     }
 }

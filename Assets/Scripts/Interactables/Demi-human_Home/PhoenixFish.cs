@@ -10,13 +10,13 @@ public class PhoenixFish : Follower_simple
     private SpriteRenderer spriteR;
 
     void OnEnable() {
-        EventManager.StartListening(EventManager.Event.SWITCH_TO_SPIRIT, Show);
-        EventManager.StartListening(EventManager.Event.SWITCH_TO_DEMIHUMAN, Hide);
+        EventManager.StartListening(EventManager.Event.SWITCH_TO_KIZUNA_SPIRIT, Show);
+        EventManager.StartListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, Hide);
     }
 
     void OnDisable() {
-        EventManager.StopListening(EventManager.Event.SWITCH_TO_SPIRIT, Show);
-        EventManager.StopListening(EventManager.Event.SWITCH_TO_DEMIHUMAN, Hide);
+        EventManager.StopListening(EventManager.Event.SWITCH_TO_KIZUNA_SPIRIT, Show);
+        EventManager.StopListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, Hide);
     }
 
     void Start() 

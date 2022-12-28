@@ -5,32 +5,26 @@ using UnityEngine;
 public class TurnTable : Minigame
 {
     public GameObject table;
+    public LightGate lightGate;
     public float angleSpeed;
     public float acceptedAngleMargin;
-    public float[] targetAngleSeq;
-    public Quaternion[] angleSeqInQuaternions;
-    public int[] directionSeq;
-    public int stage = 0;
-    public bool mistake = false;
-    // Whether a waypoint have been reached
-    public bool reachedWaypoint = false;
-    public bool rotationComplete = false;
     public float revertRotationSpeed;
+    [SerializeField][Header("Rotation Waypoints")]
+    private float[] targetAngleSeq;
+    [SerializeField][Header("1 For Counter-Clockwise, Vice Versa")]
+    private int[] directionSeq;
+    private int stage = 0;
+    private bool mistake = false;
+    // Whether a waypoint have been reached
+    private bool reachedWaypoint = false;
+    private bool rotationComplete = false;
     [SerializeField]
     private float totalMovement = -1;
     [SerializeField]
     private float[] prefixMovementCost;
-    [SerializeField]
-    private Quaternion startRotation;
-    public LightGate lightGate;
-    public Choice holdTable, leaveTable;
 
     void Awake() {
         GetTotalMovement();
-        angleSeqInQuaternions = new Quaternion[targetAngleSeq.Length];
-        for (int i = 0; i < targetAngleSeq.Length; i++) {
-            angleSeqInQuaternions[i] = new Quaternion(0, 0, targetAngleSeq[i], 1);
-        }
     }
     
     void Update()
@@ -80,24 +74,22 @@ public class TurnTable : Minigame
     }
 
     public override void OnKeyboardExit() {
-        if (!lightGate.IsFixed) {
-            // Choice given only if the light gate is not locked.
-            ChoiceManager.instance.StartChoice(holdTable, leaveTable);
-        }
-        MinigameManager.instance.ExitMinigame();
+        // if (!lightGate.IsFixed) {
+        //     // Choice given only if the light gate is not locked.
+        //     ChoiceManager.instance.StartChoice(holdTable, leaveTable);
+        // }
+        // MinigameManager.instance.ExitMinigame();
     }
 
 
     IEnumerator LerpToStart() {
-        Debug.Log("Reverting " + Math.Abs(Quaternion.Angle(table.transform.rotation, startRotation)));
+        Debug.Log("Reverting");
         while (Math.Abs(table.transform.rotation.eulerAngles.z) > 2.5f) {
             // Debug.Log("Z angle " + table.transform.rotation.eulerAngles.z);
             table.transform.rotation *= Quaternion.AngleAxis(revertRotationSpeed * Time.deltaTime * Math.Sign(table.transform.rotation.eulerAngles.z - 180), Vector3.forward);
             yield return null;
         }
-
-        // Debug.Log("Revert completed");
-        // Debug.Log("Z angle " + transform.rotation.eulerAngles.z);
+        
         // Turntable resets after player made a mistake
         stage = 0;
         mistake = false;
