@@ -21,11 +21,6 @@ public class InventoryUI : MonoBehaviour
     {
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
         inventory = GameManager.instance.inventory;
-        // Debug.Log("Inventory reference obtained " + (inventory == GameManager.instance.inventory) + " at " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-        inventory.onNewItemAddedCallback += ShowItemHint;
-        inventory.onItemZoomedInCallback += ZoomToShowItem;
-        // The inventory is closed every time a special item is used.
-        inventory.onSpecialItemUsedCallback += Disable;
     }
 
     // Update is called once per frame
@@ -52,6 +47,7 @@ public class InventoryUI : MonoBehaviour
         {
             if (i < inventory.items.Count)
             {
+                Debug.Log(inventory.items.Count);
                 slots[i].SetItem(inventory.items[i]);
             } else
             {
@@ -63,6 +59,10 @@ public class InventoryUI : MonoBehaviour
     void Enable()
     {
         inventory.onItemChangedCallback += UpdateUI;
+        inventory.onNewItemAddedCallback += ShowItemHint;
+        inventory.onItemZoomedInCallback += ZoomToShowItem;
+        // The inventory is closed every time a special item is used.
+        inventory.onSpecialItemUsedCallback += Disable;
         UpdateUI();
         panel.SetActive(true);
 
@@ -80,6 +80,9 @@ public class InventoryUI : MonoBehaviour
     public void Disable()
     {
         inventory.onItemChangedCallback -= UpdateUI;
+        inventory.onNewItemAddedCallback -= ShowItemHint;
+        inventory.onItemZoomedInCallback -= ZoomToShowItem;
+        inventory.onSpecialItemUsedCallback -= Disable;
         panel.SetActive(false);
         // Restore the movement of the player
         uiStatus.CloseUI();
