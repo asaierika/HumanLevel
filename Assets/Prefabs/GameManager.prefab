@@ -48,6 +48,7 @@ MonoBehaviour:
   inventory: {fileID: 7197749977167515107}
   playerFrozen: 0
   playerInitialised: 0
+  lastScene: 
 --- !u!1 &7545052548337138819
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,5 +93,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3ff85e019d14ebbb6de68fed9961a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capacity: 6
+  capacity: 8
   items: []

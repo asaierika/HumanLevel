@@ -13,8 +13,7 @@ public class Inventory : MonoBehaviour
     public onItemZoomedIn onItemZoomedInCallback;
     public OnSpecialItemUsed onSpecialItemUsedCallback;
 
-
-    public int capacity = 6;
+    public int capacity = 8;
 
     public List<Item> items = new List<Item>();
 

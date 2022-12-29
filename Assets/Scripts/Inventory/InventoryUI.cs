@@ -21,6 +21,10 @@ public class InventoryUI : MonoBehaviour
     {
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
         inventory = GameManager.instance.inventory;
+        if (slots.Length != inventory.capacity)
+        {
+            Debug.LogError("The number of inventory slots should match the capacity of inventory");
+        }
     }
 
     // Update is called once per frame
