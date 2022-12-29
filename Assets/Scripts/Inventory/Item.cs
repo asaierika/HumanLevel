@@ -10,5 +10,10 @@ public abstract class Item : ScriptableObject
 
     // The behaviour of the item when the player chooses
     // the item in the inventory.
-    public abstract bool Use();
+    public virtual bool Use() 
+    {
+        GameManager.instance.itemUseButtonActivated = true;
+
+        return amount == 0;
+    }
 }

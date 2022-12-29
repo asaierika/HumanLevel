@@ -17,6 +17,8 @@ public class SpecialItem : Item
 
     public override bool Use()
     {
+        base.Use();
+        
         gameEvent.TriggerEvent();
 
         return amount == 0;

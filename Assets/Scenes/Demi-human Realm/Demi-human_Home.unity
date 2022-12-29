@@ -176,9 +176,9 @@ MonoBehaviour:
   fishingRod: {fileID: 11400000, guid: 5c4276096e31546568ae30c69ac00c43, type: 2}
   convo1: {fileID: 11400000, guid: 3757d297cd4704caeb1dd8d2a089d719, type: 2}
   convo2: {fileID: 11400000, guid: c606061ef3af4460091a662224bc732b, type: 2}
+  convo3: {fileID: 11400000, guid: 98e5875455eb9468ea07433b8b901978, type: 2}
   startFishing: {fileID: 11400000, guid: 85679ede2611f4e08b11bc5e4ea12776, type: 2}
   endFishing: {fileID: 11400000, guid: f3f8ff3c35a704968b29e3bb4091f54a, type: 2}
-  inventory: {fileID: 1478403498}
 --- !u!60 &11236886
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -237,7 +237,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.6367171, y: 3.7278621}
+    - - {x: -3.65606, y: 3.570802}
       - {x: -4.9291887, y: 3.4233265}
       - {x: -7.2483153, y: 3.3509731}
       - {x: -7.8198113, y: 3.111308}
@@ -247,7 +247,7 @@ PolygonCollider2D:
       - {x: -8.511695, y: 2.927932}
       - {x: -7.873442, y: 2.645097}
       - {x: -6.96008, y: 2.913953}
-      - {x: -1.6033182, y: 3.2283013}
+      - {x: -3.7572837, y: 3.1834269}
 --- !u!1 &14521444
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,8 +598,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 451040751}
-        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-        m_MethodName: TryInteract
+        m_TargetAssemblyTypeName: PhoenixFish, Assembly-CSharp
+        m_MethodName: UseFishingRod
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -610,8 +610,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 11236885}
-        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-        m_MethodName: TryInteract
+        m_TargetAssemblyTypeName: FishingArea, Assembly-CSharp
+        m_MethodName: UseFishingRod
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -810,7 +810,6 @@ GameObject:
   - component: {fileID: 451040746}
   - component: {fileID: 451040749}
   - component: {fileID: 451040750}
-  - component: {fileID: 451040752}
   - component: {fileID: 451040751}
   m_Layer: 4
   m_Name: PhoenixFish
@@ -968,27 +967,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 451040741}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bde1fc67326f4b1395be153f45e5497, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInRange: 0
-  phoenixFishItem: {fileID: 11400000, guid: ce9859e2f57004cc585f86251650706e, type: 2}
-  fishingRod: {fileID: 11400000, guid: 5c4276096e31546568ae30c69ac00c43, type: 2}
---- !u!114 &451040752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451040741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a46ace95d51284b7d86687e33a9f9329, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a39fd217fb354ea4a3abfaceb43fb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
   playerInRange: 0
-  player: {fileID: 1329810882}
+  player: {fileID: 0}
+  phoenixFishItem: {fileID: 11400000, guid: ce9859e2f57004cc585f86251650706e, type: 2}
+  fishingRod: {fileID: 11400000, guid: 5c4276096e31546568ae30c69ac00c43, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,6 +1433,10 @@ PrefabInstance:
     - target: {fileID: 3214466593771076071, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277854619783446046, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
+      propertyPath: m_Text
+      value: '> Press ''Z'' to continue'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}

@@ -9,8 +9,8 @@ using UnityEngine;
 public class SpecialItemGameEvent : GameEvent
 {
     public override void TriggerEvent() {
-        GameManager.instance.inventory.onSpecialItemUsedCallback?.Invoke();
-
+        // Event triggered should call the use item function in the respective Interactable object
         base.TriggerEvent();
+        GameManager.instance.inventory.onSpecialItemUsedCallback?.Invoke();
     }
 }

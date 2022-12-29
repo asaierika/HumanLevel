@@ -1,13 +1,18 @@
 using UnityEngine;
 
-public class PhoenixFish_SimpleFollower : SimpleFollower
+public class PhoenixFish : SimpleFollower
 {
     private SpriteRenderer spriteR;
+    private Inventory inventory;
+    public Item phoenixFishItem;
+    public Item fishingRod;
+
 
     void Start() 
     {
         Initialize();
         spriteR = gameObject.GetComponent<SpriteRenderer>();
+        inventory = GameManager.instance.inventory;
     }
 
     void Update()
@@ -23,6 +28,14 @@ public class PhoenixFish_SimpleFollower : SimpleFollower
         {
             Move();
             Change();
+        }
+    }
+    public void UseFishingRod()
+    {
+        if (playerInRange)
+        {
+            inventory.Add(phoenixFishItem);
+            gameObject.SetActive(false);
         }
     }
 
