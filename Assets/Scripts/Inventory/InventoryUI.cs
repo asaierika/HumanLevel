@@ -25,6 +25,7 @@ public class InventoryUI : MonoBehaviour
         {
             Debug.LogError("The number of inventory slots should match the capacity of inventory");
         }
+        inventory.onNewItemAddedCallback += ShowItemHint;
     }
 
     // Update is called once per frame
@@ -63,7 +64,6 @@ public class InventoryUI : MonoBehaviour
     void Enable()
     {
         inventory.onItemChangedCallback += UpdateUI;
-        inventory.onNewItemAddedCallback += ShowItemHint;
         inventory.onItemZoomedInCallback += ZoomToShowItem;
         // The inventory is closed every time a special item is used.
         inventory.onSpecialItemUsedCallback += Disable;
@@ -84,7 +84,6 @@ public class InventoryUI : MonoBehaviour
     public void Disable()
     {
         inventory.onItemChangedCallback -= UpdateUI;
-        inventory.onNewItemAddedCallback -= ShowItemHint;
         inventory.onItemZoomedInCallback -= ZoomToShowItem;
         inventory.onSpecialItemUsedCallback -= Disable;
         panel.SetActive(false);
