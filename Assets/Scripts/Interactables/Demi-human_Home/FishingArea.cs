@@ -36,10 +36,10 @@ public class FishingArea : Conversable
 
     public void UseFishingRod()
     {
-        if (playerInRange)
-        {
-            StartCoroutine(checkIfHaveFish());
-        }
+        if (!playerInRange)
+        return;
+
+        StartCoroutine(checkIfHaveFish());
     }
 
     IEnumerator checkIfHaveFish() 

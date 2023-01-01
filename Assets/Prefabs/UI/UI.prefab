@@ -2500,7 +2500,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1846348148904974320, guid: b8299381e3ad04710bc7ef81debdcab6, type: 3}
       propertyPath: m_Text
-      value: '> Press ''N'' to continue'
+      value: '> Press ''Z'' to continue'
       objectReference: {fileID: 0}
     - target: {fileID: 7264432378007551932, guid: b8299381e3ad04710bc7ef81debdcab6, type: 3}
       propertyPath: m_Pivot.x

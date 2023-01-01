@@ -4,7 +4,7 @@ public class Eri : Conversable
 {
     public static bool talked;
     public Item hairPin;
-    public Conversation convo1, convo2;
+    public Conversation convo1, convo2, convo3;
     public GameObject timeline;
     public Inventory inventory;
 
@@ -16,8 +16,7 @@ public class Eri : Conversable
     {
         if (inventory.Contains(hairPin))
         {
-            timeline.SetActive(true);
-            inventory.UseItem(hairPin);
+            DialogueManager.instance.StartConversation(convo3);
             return;
         }
 
@@ -29,5 +28,14 @@ public class Eri : Conversable
 
         DialogueManager.instance.StartConversation(convo1);
         talked = true;
+    }
+
+    public void UseHairPin()
+    {
+        if (!playerInRange)
+        return;
+        
+        timeline.SetActive(true);
+        inventory.Remove(hairPin);
     }
 }

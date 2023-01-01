@@ -32,11 +32,11 @@ public class PhoenixFish : SimpleFollower
     }
     public void UseFishingRod()
     {
-        if (playerInRange)
-        {
-            inventory.Add(phoenixFishItem);
-            gameObject.SetActive(false);
-        }
+        if (!playerInRange)
+        return;
+        
+        inventory.Add(phoenixFishItem);
+        gameObject.SetActive(false);
     }
 
     protected override void Change() {

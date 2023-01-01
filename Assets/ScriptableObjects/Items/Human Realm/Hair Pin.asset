@@ -16,5 +16,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 30e114405115041ada4d240d95fe3e88, type: 3}
   amount: 1
   itemImage: {fileID: 21300000, guid: 30e114405115041ada4d240d95fe3e88, type: 3}
-  description: 
-  gameEvents: []
+  description: Eri's hair pin.
+  gameEvent: {fileID: 11400000, guid: 731bb0c7c09e24a8eb5ae2703191f7a8, type: 2}
