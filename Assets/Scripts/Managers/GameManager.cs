@@ -43,8 +43,8 @@ public class GameManager : MonoBehaviour
             {
                 dialogButtonActivated = true;
             } 
-            
-            if (!dialogButtonActivated)
+
+            if (!itemUseButtonActivated && !dialogButtonActivated)
             {
                 interactButtonActivated = true;
             }
