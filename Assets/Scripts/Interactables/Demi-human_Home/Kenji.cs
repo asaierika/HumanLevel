@@ -11,10 +11,12 @@ public class Kenji : Conversable
     public Conversation convo1, convo2, convo3, convo4, convo5;
     public Item phoenixFish;
     public Inventory inventory;
+    private Animator animator;
 
     void Start() {
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         inventory = GameManager.instance.inventory;
+        animator = animator == null ? GetComponent<Animator>() : animator;
     }
 
     void Update()
@@ -22,7 +24,7 @@ public class Kenji : Conversable
         TryInteract();
         if (talked1)
         {
-            spriteR.sprite = kenjiStanding;
+            animator.SetBool("fishing", false);
         }
     }
 

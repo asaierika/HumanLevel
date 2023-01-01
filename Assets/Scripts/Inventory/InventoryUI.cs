@@ -52,7 +52,6 @@ public class InventoryUI : MonoBehaviour
         {
             if (i < inventory.items.Count)
             {
-                Debug.Log(inventory.items.Count);
                 slots[i].SetItem(inventory.items[i]);
             } else
             {
