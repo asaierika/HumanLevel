@@ -294,8 +294,6 @@ MonoBehaviour:
   convo3: {fileID: 11400000, guid: ec07872741c824e24a478e21ea5d0201, type: 2}
   choice1: {fileID: 11400000, guid: 8dd1afe55e59b4d7eba1eb73b0f2bb34, type: 2}
   choice2: {fileID: 11400000, guid: 672a5ef8c0fa24b89b52b8dfcfc0e44d, type: 2}
-  dialogueManager: {fileID: 688052929}
-  choiceManager: {fileID: 688052927}
 --- !u!114 &111991791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1019,17 +1017,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe4da878960304b4f943a4eadd8c5bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &688052928 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9090316670615857145, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
-  m_PrefabInstance: {fileID: 688052926}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83408fb4b1e834255aa9a10feafa861a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &688052929 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 551229312640529246, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
@@ -1220,11 +1207,11 @@ PrefabInstance:
     - target: {fileID: 8488101351404026668, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
       propertyPath: uiStatus
       value: 
-      objectReference: {fileID: 688052928}
+      objectReference: {fileID: 0}
     - target: {fileID: 8867398082821932017, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
       propertyPath: uiStatus
       value: 
-      objectReference: {fileID: 688052928}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
 --- !u!50 &1069855502 stripped

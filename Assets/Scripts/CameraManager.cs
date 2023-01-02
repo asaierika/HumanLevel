@@ -14,7 +14,7 @@ public class CameraManager : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindWithTag("Player").transform;
+        player = player == null ? GameObject.FindWithTag("Player").transform : player;
     }
 
     private void LateUpdate()

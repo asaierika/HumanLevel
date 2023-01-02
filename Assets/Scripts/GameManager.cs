@@ -13,11 +13,12 @@ public class GameManager : MonoBehaviour
     //  submitButtonDetect in GamaManager that is set to true every time
     // the submit button is pressed, and set to false when one of the sript
     // detects it.
-    // Currently, the submit button is used by Item.Use(),
-    // DialogueManager.Update() and Interactable.TryInteract().
+    // Currently, the submit button is used by Item.Use(), DialogueManager.Update() 
+    // and Interactable.TryInteract() and ChoiceManager.SetChoice().
     public bool itemUseButtonActivated;
     public bool interactButtonActivated;
     public bool dialogButtonActivated;
+    public bool choiceButtonActivated;
 
     private void Awake()
     {
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    // Priority: itemUseButtonActivated > dialogButtonActivated > interactButtonActivated
+    // Priority: itemUseButtonActivated > dialogButtonActivated = choiceButtonActivated > interactButtonActivated
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))
@@ -42,7 +43,7 @@ public class GameManager : MonoBehaviour
                 dialogButtonActivated = true;
             } 
 
-            if (!itemUseButtonActivated && !dialogButtonActivated)
+            if (!itemUseButtonActivated && !dialogButtonActivated && !choiceButtonActivated)
             {
                 interactButtonActivated = true;
             }
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
             itemUseButtonActivated = false;
             interactButtonActivated = false;
             dialogButtonActivated = false;
+            choiceButtonActivated = false;
         }
     }
 }

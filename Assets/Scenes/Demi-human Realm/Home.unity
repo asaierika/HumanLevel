@@ -2056,9 +2056,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kizuna
       objectReference: {fileID: 0}
-    - target: {fileID: 2633835362785465510, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
