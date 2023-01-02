@@ -29,60 +29,59 @@ public class TurnTable : Minigame
     
     void Update()
     {
-        if (!lightGate.IsFixed && !rotationComplete) {
-            if (!mistake && lightGate.IsResponsive) {
-                if (Math.Abs(table.transform.rotation.eulerAngles.z - targetAngleSeq[stage]) <= acceptedAngleMargin) {
-                    if (!reachedWaypoint) {
-                        Debug.Log("Dest " + stage + " reached");
-                        reachedWaypoint = true;
-                        if (stage == targetAngleSeq.Length - 1) {
-                            rotationComplete = true;
-                            return;
-                        }
-                    }
+        if (!lightGate.IsFixed && !rotationComplete
+                && !mistake && lightGate.IsResponsive) {
+            if (Math.Abs(table.transform.rotation.eulerAngles.z - targetAngleSeq[stage]) <= acceptedAngleMargin) {
+                if (!reachedWaypoint) {
+                    Debug.Log("Dest " + stage + " reached");
+                    reachedWaypoint = true;
+                    rotationComplete = stage == targetAngleSeq.Length - 1;
+                    return;
                 }
-
-                int rotateDir = (int) Input.GetAxisRaw("Vertical");
-                if (reachedWaypoint) {
-                    if (rotateDir == directionSeq[stage + 1]) {
-                        Debug.Log("Start stage " + stage);
-                        // Only make player move to the next dest if they change towards the direction
-                        reachedWaypoint = false;
-                        stage++;
-                    } else if (Math.Abs(table.transform.rotation.eulerAngles.z - targetAngleSeq[stage]) > acceptedAngleMargin) {
-                        Debug.Log("Overturn");
-                        // If player overturns the current dest region they are in
-                        mistake = true;
-                        StartCoroutine(LerpToStart());
-                        StartCoroutine(lightGate.Close());
-                    }
-                } else {
-                    if (rotateDir / directionSeq[stage] == -1) {
-                        Debug.Log("Wrong Direction");
-                        mistake = true;
-                        StartCoroutine(LerpToStart());
-                        StartCoroutine(lightGate.Close());
-                        return;
-                    } 
-                }
-
-                float angleVelocity = angleSpeed * rotateDir * Time.deltaTime;
-                table.transform.rotation *= Quaternion.AngleAxis(angleVelocity, Vector3.forward);
-                lightGate.UpdatePosition(GetProgress());
             }
+
+            int rotateDir = (int) Input.GetAxisRaw("Vertical");
+            if (reachedWaypoint) {
+                if (rotateDir == directionSeq[stage + 1]) {
+                    Debug.Log("Start stage " + stage);
+                    // Only make player move to the next dest if they change towards the direction
+                    reachedWaypoint = false;
+                    stage++;
+                } else if (Math.Abs(table.transform.rotation.eulerAngles.z - targetAngleSeq[stage]) > acceptedAngleMargin) {
+                    Debug.Log("Overturn");
+                    // If player overturns the current dest region they are in
+                    mistake = true;
+                    StartCoroutine(LerpToStart());
+                    StartCoroutine(lightGate.Close());
+                }
+            } else {
+                if (rotateDir / directionSeq[stage] == -1) {
+                    Debug.Log("Wrong Direction");
+                    mistake = true;
+                    StartCoroutine(LerpToStart());
+                    StartCoroutine(lightGate.Close());
+                    return;
+                } 
+            }
+
+            float angleVelocity = angleSpeed * rotateDir * Time.deltaTime;
+            table.transform.rotation *= Quaternion.AngleAxis(angleVelocity, Vector3.forward);
+            lightGate.UpdatePosition(GetProgress());
         }
     }
 
     public override void OnKeyboardExit() {
-        // if (!lightGate.IsFixed) {
-        //     // Choice given only if the light gate is not locked.
-        //     ChoiceManager.instance.StartChoice(holdTable, leaveTable);
-        // }
-        // MinigameManager.instance.ExitMinigame();
+        if (!lightGate.IsFixed) {
+            StartCoroutine(LerpToStart(true));
+            StartCoroutine(lightGate.Close());
+        } else {
+            // Immediate exit since the turntable is fixed in place.
+            MinigameManager.instance.ExitMinigame();
+        }
     }
 
 
-    IEnumerator LerpToStart() {
+    IEnumerator LerpToStart(bool isExit = false) {
         Debug.Log("Reverting");
         while (Math.Abs(table.transform.rotation.eulerAngles.z) > 2.5f) {
             // Debug.Log("Z angle " + table.transform.rotation.eulerAngles.z);
@@ -95,6 +94,9 @@ public class TurnTable : Minigame
         mistake = false;
         reachedWaypoint = false;
         rotationComplete = false;
+        // Buffer for smooth animation
+        yield return new WaitForSeconds(0.5f);
+        if (isExit) MinigameManager.instance.ExitMinigame();
     }
 
     private void GetTotalMovement() {

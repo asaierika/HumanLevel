@@ -11,7 +11,6 @@ public abstract class Minigame : MonoBehaviour, ICompletable
     public UnityEvent<object> onGameCompleted;
     public ValidPlayerState.Who gameOwner {get; set; }
     public abstract float GetProgress();
-    // All minigames should handle forced exit from player.
     public abstract void OnKeyboardExit();
 
     void OnEnable() {

@@ -28,14 +28,14 @@ public abstract class Interactable : MonoBehaviour
  
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) {
+        if (IsPlayer(collision.gameObject)) {
             playerInRange = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) {
+        if (IsPlayer(collision.gameObject)) {
             playerInRange = false;
         }
     }
@@ -43,15 +43,20 @@ public abstract class Interactable : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Debug.Log("Collision with " + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Player")) {
+        if (IsPlayer(collision.gameObject)) {
             playerInRange = true;
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) {
+        if (IsPlayer(collision.gameObject)) {
             playerInRange = false;
         }
+    }
+
+    private bool IsPlayer(GameObject otherObject) {
+        return (otherObject.CompareTag("Player") && StateManager.instance.CurrPlayerState.Identity == ValidPlayerState.Who.KIZUNA)
+                || (otherObject.CompareTag("Partner") && StateManager.instance.CurrPlayerState.Identity == ValidPlayerState.Who.PARTNER);
     }
 }

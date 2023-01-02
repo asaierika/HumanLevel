@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyMovement: {fileID: 6162807334807042878}
+  identity: 1
   spirit: {fileID: 2633835362885218346}
 --- !u!1 &2633835362687924690
 GameObject:

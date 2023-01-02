@@ -5,6 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public PlayerMovement bodyMovement;
+    // The number of locks that is imposed on movement. 
+    // E.g. Kizuna minigame start + switch to partner results in two locks that can only be unlocked via minigame end and switch to kizuna.
+    // All toggle mechanisms should ensure that reflexive transitions are not possible. There should not be two consecutive occurence of the same event.
+    // Else, a dictionary lock must be used instead.
+    // NOTE: For character whose default movement is disabled, lock should be set to 1.
+    [SerializeField]
+    private int movementLocks;
     public ValidPlayerState.Who identity;
     public GameObject spirit = null;
     // Start is called before the first frame update
@@ -47,10 +54,12 @@ public class PlayerController : MonoBehaviour
     }
 
     void EnableBodyMovement(object o = null) {
-        bodyMovement.enabled = true;
+        movementLocks -= 1;
+        bodyMovement.enabled = movementLocks == 0;
     }
 
     void DisableBodyMovement(object o = null) {
+        movementLocks += 1;
         bodyMovement.enabled = false;
     }
 
