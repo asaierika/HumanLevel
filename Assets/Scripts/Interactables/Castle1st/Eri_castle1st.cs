@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class Eri_castle1st : Conversable
+public class Eri_castle1st : Interactable
 {
     public Conversation convo;
     public Choice choice1, choice2;

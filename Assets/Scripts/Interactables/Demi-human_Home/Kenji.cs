@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kenji : Conversable
+public class Kenji : Interactable
 {
     private SpriteRenderer spriteR;
     public Sprite kenjiStanding;

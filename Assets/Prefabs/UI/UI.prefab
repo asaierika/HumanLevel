@@ -110,7 +110,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3214466593771076071}
-  - component: {fileID: 9090316670615857145}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -138,18 +137,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9090316670615857145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160407569407465096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83408fb4b1e834255aa9a10feafa861a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2071807392385993713
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +253,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choiceHolder: {fileID: 5104342249656276218}
   firstButton: {fileID: 2743073793636522559}
-  uiStatus: {fileID: 9090316670615857145}
 --- !u!1 &4626174988046416722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,7 +1493,7 @@ MonoBehaviour:
   speakerName: {fileID: 1751859770863699104}
   dialogue: {fileID: 1751859771847743121}
   speakerSprite: {fileID: 1751859772641477702}
-  uiStatus: {fileID: 9090316670615857145}
+  inDialogue: 0
 --- !u!1 &8980083014782895805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,7 +1614,6 @@ MonoBehaviour:
   itemHint: {fileID: 4452022610928984927}
   itemsParent: {fileID: 8980083013750032187}
   panel: {fileID: 8980083013950689317}
-  uiStatus: {fileID: 9090316670615857145}
   firstSlot: {fileID: 7304773209818651810}
 --- !u!1 &8980083015111652896
 GameObject:
@@ -1682,7 +1667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomInBox: {fileID: 8980083014123215992}
   itemImage: {fileID: 8980083014106425754}
-  nameOfItem: {fileID: 5150572245206301964}
+  nameOfItem: {fileID: 0}
   description: {fileID: 8980083013506675252}
 --- !u!1001 &1184993247899101647
 PrefabInstance:

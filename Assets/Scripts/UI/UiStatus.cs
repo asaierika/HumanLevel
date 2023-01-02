@@ -1,24 +1,20 @@
-using UnityEngine;
 using System;
 
-public class UiStatus : MonoBehaviour
+public class UiStatus
 {
-    public event Action onOpenUI;
+    public static event Action onOpenUI;
+    public static event Action onCloseUI;
 
-    public void OpenUI()
+    public static void OpenUI()
     {
-        if (onOpenUI != null)
-        {
+        if (onOpenUI != null) {
             onOpenUI();
         }
     }
 
-    public event Action onCloseUI;
-
-    public void CloseUI()
+    public static void CloseUI()
     {
-        if (onCloseUI != null)
-        {
+        if (onCloseUI != null) {
             onCloseUI();
         }
     }

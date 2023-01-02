@@ -6,29 +6,17 @@ public class SpiritSpawner : MonoBehaviour
     public GameObject spirit;
     public GameObject body;
     public Vector2 spawnPositionOffset;
-    public GameEvent switchToDemi;
 
     void OnEnable() {
         Debug.Log("Spirit enabled");
-        SwitchMode.instance.OnSwitchToSpirit += SpawnSpirit;
-    }
-    
-    public void SpawnSpirit() {
-        Debug.Log(spirit.name);
         spirit.transform.localPosition = new Vector2(body.transform.localPosition.x + spawnPositionOffset.x, body.transform.localPosition.y + spawnPositionOffset.y);
     }
 
+    // Spirit returned to body
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            switchToDemi.TriggerEvent();
-            SwitchMode.instance.mode = SwitchMode.Mode.DemiHuman;
+        if (collision.CompareTag("Player")) {
+            StateManager.instance.SwitchMode();
         }
-    }
-
-    void OnDisable() {
-        Debug.Log("Spirit disabled");
-        SwitchMode.instance.OnSwitchToSpirit -= SpawnSpirit;
     }
 }

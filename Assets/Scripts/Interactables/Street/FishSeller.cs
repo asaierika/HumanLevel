@@ -1,4 +1,4 @@
-public class FishSeller : Conversable
+public class FishSeller : Interactable
 {
     public bool sawCat, givenFish;
     public Item fish;

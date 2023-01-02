@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rabbit : Conversable
+public class Rabbit : Interactable
 {
     public Conversation convo1, convo2;
     public static bool talked;

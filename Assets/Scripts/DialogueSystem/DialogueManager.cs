@@ -9,8 +9,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake() 
     {
-        if (DialogueManager.instance != null)
-        {
+        if (DialogueManager.instance != null) {
             Destroy(gameObject);
             return;
         }
@@ -24,7 +23,6 @@ public class DialogueManager : MonoBehaviour
     private int currIndex;
     private Conversation currentConvo;
     public bool inDialogue = false;
-    public UiStatus uiStatus;
 
     private void Update()
     {
@@ -37,7 +35,7 @@ public class DialogueManager : MonoBehaviour
     public void StartConversation(Conversation convo)
     {
         dialogBox.SetActive(true);
-        uiStatus.OpenUI();
+        UiStatus.OpenUI();
         
         currIndex = 0;
         currentConvo = convo;
@@ -53,7 +51,7 @@ public class DialogueManager : MonoBehaviour
         if (currIndex == currentConvo.allLines.Length)
         {    
             // Debug.Log("Total lines is " + currentConvo.allLines.Length + " No more lines at " + currIndex);
-            uiStatus.CloseUI();
+            UiStatus.CloseUI();
             EndDialogue();      
         }
         else 

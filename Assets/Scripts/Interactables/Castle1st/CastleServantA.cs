@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CastleServantA : Conversable
+public class CastleServantA : Interactable
 {
     public Conversation convo1, convo2, convo3;
     public Choice choice1, choice2;

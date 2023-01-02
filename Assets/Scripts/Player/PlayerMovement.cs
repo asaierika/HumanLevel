@@ -3,14 +3,13 @@ using UnityEngine;
 // TESTCODE: All null reference guards should eventually be removed, as every playable character are expected to be animated.
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 1f;
-    // public VectorValue startingPosition;
-    // Whether different scenes come together to form a continuous map e.g. Castle.
+    // Whether player transition between scenes should be simulated as continuous. e.g. Eri chase Kizuna in castle scene
     public static bool inContinuousLocations;
+    public static bool PLAYER_FROZEN = false;
+    public float moveSpeed = 1f;
     public Rigidbody2D rb;
     public Animator animator;
     public bool characterFrozen;
-    public UiStatus uiStatus;
 
     public static void AlterLocationType(bool isContinuousType) {
         inContinuousLocations = isContinuousType;
@@ -20,10 +19,9 @@ public class PlayerMovement : MonoBehaviour
     {   
         rb = rb == null ? GetComponent<Rigidbody2D>() : rb;
         animator = animator == null ? GetComponent<Animator>() : animator;
-        uiStatus = uiStatus == null ? GameObject.FindObjectOfType<UiStatus>() : uiStatus;
 
-        uiStatus.onOpenUI += FreezeMovement;
-        uiStatus.onCloseUI += RestoreMovement;        
+        UiStatus.onOpenUI += FreezeAllMovement;
+        UiStatus.onCloseUI += RestoreAllMovement;        
     }
 
     private void FixedUpdate()
@@ -31,15 +29,11 @@ public class PlayerMovement : MonoBehaviour
         // Logically, when playerFrozen characterFrozen == true, but
         // for convenience both might not evaluate to true simultaneously
         // hence the condition clause below.
-        if (characterFrozen || GameManager.instance.playerFrozen)
-        {
-            return;
-        }
+        if (characterFrozen || PLAYER_FROZEN) return;
         
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-  
         if (x != 0 || y != 0)
         {
             TryMove(new Vector2(x, y));
@@ -65,14 +59,14 @@ public class PlayerMovement : MonoBehaviour
 
     // Called when all characters the user could have control of should be frozen.
     // eg. Inventory, dialogue
-    public void FreezeMovement() {
-        GameManager.instance.playerFrozen = true;
+    public void FreezeAllMovement() {
+        PLAYER_FROZEN = true;
         animator?.SetBool("moving", false);
     }
 
     // Converse of FreezeMovement
-    public void RestoreMovement() {
-        GameManager.instance.playerFrozen = false;
+    public void RestoreAllMovement() {
+        PLAYER_FROZEN = false;
     }
 
     public void FreezeCharacterMovement() {
