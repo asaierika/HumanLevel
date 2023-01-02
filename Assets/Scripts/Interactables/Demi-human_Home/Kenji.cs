@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kenji : Conversable
+public class Kenji : Interactable
 {
     private SpriteRenderer spriteR;
     public Sprite kenjiStanding;
@@ -10,7 +10,7 @@ public class Kenji : Conversable
     public static bool talked1, talked2;
     public Conversation convo1, convo2, convo3, convo4, convo5;
     public Item phoenixFish;
-    public Inventory inventory;
+    private Inventory inventory;
     private Animator animator;
 
     void Start() {
@@ -30,34 +30,30 @@ public class Kenji : Conversable
 
     public override void Interact()
     {
-        if (!Rabbit.talked)
-        {
+        if (!Rabbit.talked) {
             DialogueManager.instance.StartConversation(convo1);
             return;
         } 
         
-        if (!talked1) 
-        {
+        if (!talked1) {
             DialogueManager.instance.StartConversation(convo2);
             talked1 = true;
             return;
         }
 
-        if (!talked2)
-        {
+        if (!talked2) {
             DialogueManager.instance.StartConversation(convo3);
             talked2 = true;
             inventory.Add(fishingRod);
             return;
         }
 
-        if (!inventory.Contains(phoenixFish))
-        {
+        if (!inventory.Contains(phoenixFish)) {
             DialogueManager.instance.StartConversation(convo4);
             return;
         }
-        inventory.UseItem(fishingRod);
-        inventory.UseItem(phoenixFish);
+        inventory.Remove(fishingRod);
+        inventory.Remove(phoenixFish);
         DialogueManager.instance.StartConversation(convo5);
     }
 }

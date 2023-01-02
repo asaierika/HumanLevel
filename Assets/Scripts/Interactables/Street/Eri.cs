@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Eri : Conversable
+public class Eri : Interactable
 {
     public static bool talked;
     public Item hairPin;

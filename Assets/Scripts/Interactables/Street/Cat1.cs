@@ -1,4 +1,4 @@
-public class Cat1 : Conversable
+public class Cat1 : Interactable
 {
     public Conversation convo;
 

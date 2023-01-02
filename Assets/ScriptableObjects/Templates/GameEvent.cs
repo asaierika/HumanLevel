@@ -5,9 +5,8 @@ using UnityEngine;
 public class GameEvent : ScriptableObject
 {
     private List<EventListener> listeners = new List<EventListener>();
-
+    
     public virtual void TriggerEvent() {
-        Debug.Log("Event " + name + " triggered");
 
         foreach (EventListener listener in listeners) {
             Debug.Log(listener.gameObject.name + " response triggered");

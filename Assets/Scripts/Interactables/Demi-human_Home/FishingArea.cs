@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // the area at which Kizuna can fish
-public class FishingArea : Conversable
+public class FishingArea : Interactable
 {
     public Item phonenixFish;
     public Item fishingRod;

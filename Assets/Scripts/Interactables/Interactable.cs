@@ -12,7 +12,7 @@ public abstract class Interactable : MonoBehaviour
 
     public virtual void TryInteract()
     {
-        if (GameManager.instance.playerFrozen || DialogueManager.instance.inDialogue)
+        if (PlayerMovement.PLAYER_FROZEN || DialogueManager.instance.inDialogue)
             // when the player is frozen, eg inventory is open or in dialogue,
             // the player cannot interact with interactable objects 
             return;
@@ -29,16 +29,14 @@ public abstract class Interactable : MonoBehaviour
  
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
+        if (collision.CompareTag("Player")) {
             playerInRange = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
+        if (collision.CompareTag("Player")) {
             playerInRange = false;
         }
     }
@@ -46,17 +44,14 @@ public abstract class Interactable : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Debug.Log("Collision with " + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            // Debug.Log("Player in range");
+        if (collision.gameObject.CompareTag("Player")) {
             playerInRange = true;
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
+        if (collision.gameObject.CompareTag("Player")) {
             playerInRange = false;
         }
     }
