@@ -6,8 +6,8 @@ using UnityEngine;
 public class ValidPlayerState
 {
     public static ValidPlayerState KizunaDemi ;
-    public static ValidPlayerState KizunaSpirit = new ValidPlayerState(Who.KIZUNA, Form.SPIRIT, EventManager.Event.SWITCH_TO_KIZUNA_SPIRIT);
-    public static ValidPlayerState PartnerDemi = new ValidPlayerState(Who.PARTNER, Form.DEMIHUMAN, EventManager.Event.SWITCH_TO_PARTNER_DEMI);
+    public static ValidPlayerState KizunaSpirit;
+    public static ValidPlayerState PartnerDemi;
     [SerializeField]
     private Who identity;
     public Who Identity { 

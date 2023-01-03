@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2633835362094690908}
-  - component: {fileID: 2633835362033729005}
+  - component: {fileID: 6405533142269853800}
   m_Layer: 0
   m_Name: Kizuna Demi
   m_TagString: Player
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2633835362033729005
+--- !u!114 &6405533142269853800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,10 +43,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2633835362094690909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8d8d248b89bc4472afa089e3d0e0fc0, type: 3}
+  m_Script: {fileID: 11500000, guid: 860735dfc6f2e46579689c815de5c0af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bodyMovement: {fileID: 6162807334807042878}
+  movement: {fileID: 4527317226322970298}
   spirit: {fileID: 2633835362885218346}
 --- !u!1 &2633835362687924690
 GameObject:
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 2633835362687924689}
   - component: {fileID: 2633835362687924692}
   - component: {fileID: 2633835362687924693}
-  - component: {fileID: 6162807334807042878}
+  - component: {fileID: 4527317226322970298}
   m_Layer: 0
   m_Name: Body
   m_TagString: Player
@@ -194,7 +194,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0.016475648, y: -0.48866278}
   m_Size: {x: 0.26639473, y: 0.26639473}
   m_Direction: 0
---- !u!114 &6162807334807042878
+--- !u!114 &4527317226322970298
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,12 +203,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2633835362687924690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0922348a6a069456bb946065417ccb0b, type: 3}
+  m_Script: {fileID: 11500000, guid: 63d43d987027545a78d945af12b19741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  rb: {fileID: 2633835362687924692}
-  animator: {fileID: 2633835362687924689}
+  rb: {fileID: 0}
+  animator: {fileID: 0}
   characterFrozen: 0
 --- !u!1 &2633835362785465504
 GameObject:
@@ -306,8 +306,8 @@ GameObject:
   - component: {fileID: 2633835362885218344}
   - component: {fileID: 2633835362885218338}
   - component: {fileID: 2633835362885218339}
-  - component: {fileID: 2633835362885218343}
   - component: {fileID: 2633835362885218341}
+  - component: {fileID: 5802465523736228284}
   m_Layer: 0
   m_Name: Spirit
   m_TagString: Untagged
@@ -419,22 +419,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.07795125, y: 0}
   m_Size: {x: 1.9354151, y: 2.0133657}
   m_Direction: 0
---- !u!114 &2633835362885218343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2633835362885218346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0922348a6a069456bb946065417ccb0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  rb: {fileID: 0}
-  animator: {fileID: 0}
-  characterFrozen: 0
 --- !u!114 &2633835362885218341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,3 +434,19 @@ MonoBehaviour:
   spirit: {fileID: 2633835362885218346}
   body: {fileID: 2633835362687924690}
   spawnPositionOffset: {x: 0, y: 1}
+--- !u!114 &5802465523736228284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633835362885218346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e824d844b4541c78fadc76ad0eb656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  characterFrozen: 0

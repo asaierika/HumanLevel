@@ -23,8 +23,7 @@ public class CutsceneDialogue : MonoBehaviour
 
     private void Update()
     {
-        if (finished && !PlayerMovement.PLAYER_FROZEN)
-        {
+        if (finished && !CharacterMovement.playerFrozen) {
             timeline.playableGraph.GetRootPlayable(0).SetSpeed(1);
             finished = false;
         }

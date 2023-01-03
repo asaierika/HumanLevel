@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -55,6 +54,14 @@ public class MinigameManager : MonoBehaviour
         }
     }
 
+    public bool KizunaInMinigame() {
+        return kizunaActiveMinigameId != MinigameID.NONE;
+    }
+
+    public bool PartnerInMinigame() {
+        return partnerActiveMinigameId != MinigameID.NONE;
+    }
+
     private void InitMinigameTable() {
         foreach (Pair<MinigameID, Minigame> gameIDToGame in gameIdsToGame) {
             minigameTable.Add(gameIDToGame.head, gameIDToGame.tail);
@@ -66,70 +73,95 @@ public class MinigameManager : MonoBehaviour
 
         switch (playingCharacter) {
             case ValidPlayerState.Who.KIZUNA:
-                EventManager.InvokeEvent(EventManager.Event.KIZUNA_MINIGAME_START);
                 if (kizunaActiveMinigameId != MinigameID.NONE) {
+                    // Player should not able to move when in minigame session.
                     Debug.LogError("There cannot be two minigames active simultaneously");
+                    return;
                 }
+
+                if (minigameID == partnerActiveMinigameId) {
+                    Debug.Log($"Partner is already engaged in {minigameID}");
+                    return;
+                }
+
                 minigameTable[minigameID].gameObject.SetActive(true);
                 kizunaActiveMinigameId = minigameID;
+                EventManager.InvokeEvent(EventManager.Event.KIZUNA_MINIGAME_START);
+                EventManager.StartListening(EventManager.Event.SWITCH_TO_PARTNER_DEMI, TryPauseKizunaMinigame);
                 return;
             case ValidPlayerState.Who.PARTNER:
-                EventManager.InvokeEvent(EventManager.Event.PARTNER_MINIGAME_START);
                 if (partnerActiveMinigameId != MinigameID.NONE) {
                     Debug.LogError("There cannot be two minigames active simultaneously");
+                    return;
                 }
+
+                if (minigameID == kizunaActiveMinigameId) {
+                    Debug.Log($"Kizuna is already engaged in {minigameID}");
+                    return;
+                }
+
                 minigameTable[minigameID].gameObject.SetActive(true);
                 partnerActiveMinigameId = minigameID;
+                EventManager.InvokeEvent(EventManager.Event.PARTNER_MINIGAME_START);
+                EventManager.StartListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, TryPausePartnerMinigame);
                 return;
         }
 
         Debug.LogError("Invalid character state");
+    }
+
+    public void TryPauseKizunaMinigame(object inputParam = null) {
+        if (kizunaActiveMinigameId == MinigameID.NONE) {
+            Debug.Log("There are no active minigame session for Kizuna");
+            return;
+        }
+
+        EventManager.InvokeEvent(EventManager.Event.KIZUNA_MINIGAME_PAUSE);
+        EventManager.StopListening(EventManager.Event.SWITCH_TO_PARTNER_DEMI, TryPauseKizunaMinigame);
+        EventManager.StartListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, TryResumeKizunaMinigame);
+        minigameTable[kizunaActiveMinigameId].gameObject.SetActive(false);
+        return;
     }
 
     // Invoked when character switch occurs before minigame is exited or completed
-    public void PauseMinigame() {
-        ValidPlayerState.Who pausingCharacter = StateManager.instance.GetCurrentIdentity();
-
-        switch (pausingCharacter) {
-            case ValidPlayerState.Who.KIZUNA:
-                EventManager.InvokeEvent(EventManager.Event.KIZUNA_MINIGAME_PAUSE);
-                if (kizunaActiveMinigameId != MinigameID.NONE) {
-                    Debug.LogError("There cannot be two minigames active simultaneously");
-                }
-                minigameTable[kizunaActiveMinigameId].gameObject.SetActive(false);
-                return;
-            case ValidPlayerState.Who.PARTNER:
-                EventManager.InvokeEvent(EventManager.Event.PARTNER_MINIGAME_PAUSE);
-                if (partnerActiveMinigameId != MinigameID.NONE) {
-                    Debug.LogError("There cannot be two minigames active simultaneously");
-                }
-                minigameTable[partnerActiveMinigameId].gameObject.SetActive(false);
-                return;
+    public void TryPausePartnerMinigame(object inputParam = null) {
+        if (partnerActiveMinigameId == MinigameID.NONE) {
+            Debug.Log("There are no active minigame session for partner");
+            return;
         }
+
+        EventManager.InvokeEvent(EventManager.Event.PARTNER_MINIGAME_PAUSE);
+        EventManager.StopListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, TryPausePartnerMinigame);
+        EventManager.StartListening(EventManager.Event.SWITCH_TO_PARTNER_DEMI, TryResumePartnerMinigame);
+        minigameTable[partnerActiveMinigameId].gameObject.SetActive(false);
+        return;
     }
 
     // Invoked when there is an ongoing minigame for the character that is being switched to
-    public void ResumeMinigame(object inputParam = null) {
-        ValidPlayerState.Who resumingCharacter = StateManager.instance.GetCurrentIdentity();
-
-        switch (resumingCharacter) {
-            case ValidPlayerState.Who.KIZUNA:
-                EventManager.InvokeEvent(EventManager.Event.KIZUNA_MINIGAME_RESUME);
-                if (kizunaActiveMinigameId != MinigameID.NONE) {
-                    Debug.LogError("There cannot be two minigames active simultaneously");
-                }
-                minigameTable[kizunaActiveMinigameId].gameObject.SetActive(true);
-                return;
-            case ValidPlayerState.Who.PARTNER:
-                EventManager.InvokeEvent(EventManager.Event.PARTNER_MINIGAME_RESUME);
-                if (partnerActiveMinigameId != MinigameID.NONE) {
-                    Debug.LogError("There cannot be two minigames active simultaneously");
-                }
-                minigameTable[partnerActiveMinigameId].gameObject.SetActive(true);
-                return;
+    public void TryResumeKizunaMinigame(object inputParam = null) {
+        if (kizunaActiveMinigameId == MinigameID.NONE) {
+            Debug.Log("There is no active minigame session for Kizuna to be resumed");
+            return;
         }
 
-        Debug.LogError("Invalid character state");
+        EventManager.InvokeEvent(EventManager.Event.KIZUNA_MINIGAME_RESUME);
+        EventManager.StopListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, TryResumeKizunaMinigame);
+        EventManager.StartListening(EventManager.Event.SWITCH_TO_PARTNER_DEMI, TryPauseKizunaMinigame);
+        minigameTable[kizunaActiveMinigameId].gameObject.SetActive(true);
+        return;
+    }
+
+    public void TryResumePartnerMinigame(object inputParam = null) {
+        if (partnerActiveMinigameId == MinigameID.NONE) {
+            Debug.Log("There is no active minigame session for partner to be resumed");
+            return;
+        }
+
+        EventManager.InvokeEvent(EventManager.Event.PARTNER_MINIGAME_RESUME);
+        EventManager.StopListening(EventManager.Event.SWITCH_TO_PARTNER_DEMI, TryResumePartnerMinigame);
+        EventManager.StartListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, TryPausePartnerMinigame);
+        minigameTable[partnerActiveMinigameId].gameObject.SetActive(true);
+        return;
     }
 
     public void ExitMinigame(object inputParam = null) {
@@ -137,14 +169,15 @@ public class MinigameManager : MonoBehaviour
 
         switch (exitingCharacter) {
             case ValidPlayerState.Who.KIZUNA:
-                EventManager.InvokeEvent(EventManager.Event.KIZUNA_MINIGAME_END);
+                Debug.Log($"Exiting {kizunaActiveMinigameId}");
                 minigameTable[kizunaActiveMinigameId].gameObject.SetActive(false);
                 kizunaActiveMinigameId = MinigameID.NONE;
+                EventManager.InvokeEvent(EventManager.Event.KIZUNA_MINIGAME_END);
                 return;
             case ValidPlayerState.Who.PARTNER:
-                EventManager.InvokeEvent(EventManager.Event.PARTNER_MINIGAME_END);
                 minigameTable[partnerActiveMinigameId].gameObject.SetActive(false);
                 partnerActiveMinigameId = MinigameID.NONE;
+                EventManager.InvokeEvent(EventManager.Event.PARTNER_MINIGAME_END);
                 return;
         }
 

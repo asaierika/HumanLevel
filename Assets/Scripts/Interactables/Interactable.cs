@@ -12,14 +12,14 @@ public abstract class Interactable : MonoBehaviour
 
     public virtual void TryInteract()
     {
-        if (PlayerMovement.PLAYER_FROZEN || DialogueManager.instance.inDialogue)
+        if (CharacterMovement.playerFrozen)
             // when the player is frozen, eg inventory is open or in dialogue,
             // the player cannot interact with interactable objects 
             return;
 
         // when the player is in the range of the interactable object and
         // at the same time the player press "Z", Interact() is called
-        if (Input.GetKeyDown(KeyCode.Z) && playerInRange && !PlayerMovement.PLAYER_FROZEN) {
+        if (Input.GetKeyDown(KeyCode.Z) && playerInRange && !CharacterMovement.playerFrozen) {
             Interact();
         }
     }
@@ -28,14 +28,14 @@ public abstract class Interactable : MonoBehaviour
  
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) {
+        if (IsPlayer(collision.gameObject)) {
             playerInRange = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) {
+        if (IsPlayer(collision.gameObject)) {
             playerInRange = false;
         }
     }
@@ -43,15 +43,20 @@ public abstract class Interactable : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Debug.Log("Collision with " + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Player")) {
+        if (IsPlayer(collision.gameObject)) {
             playerInRange = true;
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) {
+        if (IsPlayer(collision.gameObject)) {
             playerInRange = false;
         }
+    }
+
+    private bool IsPlayer(GameObject otherObject) {
+        return (otherObject.CompareTag("Player") && StateManager.instance.CurrPlayerState.Identity == ValidPlayerState.Who.KIZUNA)
+                || (otherObject.CompareTag("Partner") && StateManager.instance.CurrPlayerState.Identity == ValidPlayerState.Who.PARTNER);
     }
 }
