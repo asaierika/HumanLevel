@@ -1183,7 +1183,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Use \" \u2190 \u2192\" to select items and press \"Z\" to interact      "
+  m_Text: "Press \" \u2190 \u2192\" to select and press \"J\" to use the item"
 --- !u!1 &8980083013950689317
 GameObject:
   m_ObjectHideFlags: 0
@@ -2484,7 +2484,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1846348148904974320, guid: b8299381e3ad04710bc7ef81debdcab6, type: 3}
       propertyPath: m_Text
-      value: '> Press ''Z'' to continue'
+      value: '> Press ''J'' to continue'
       objectReference: {fileID: 0}
     - target: {fileID: 7264432378007551932, guid: b8299381e3ad04710bc7ef81debdcab6, type: 3}
       propertyPath: m_Pivot.x

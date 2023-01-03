@@ -62,7 +62,7 @@ public class ChoiceManager : MonoBehaviour
         }
 
         choiceIndex = -1;
-        GameManager.instance.choiceButtonActivated = true;
+        InputManager.instance.choiceButtonActivated = true;
         choiceHolder.SetActive(false);
     }
 }

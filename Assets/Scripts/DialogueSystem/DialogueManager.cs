@@ -26,7 +26,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.dialogButtonActivated && inDialogue)
+        if (InputManager.instance.dialogButtonActivated && inDialogue)
         {
             ReadNext();
         }

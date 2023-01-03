@@ -1350,10 +1350,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7277854619783446046, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
-      propertyPath: m_Text
-      value: '> Press ''Z'' to continue'
-      objectReference: {fileID: 0}
     - target: {fileID: 8034104241100993159, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -12,7 +12,7 @@ public abstract class Item : ScriptableObject
     // the item in the inventory.
     public virtual bool Use() 
     {
-        GameManager.instance.itemUseButtonActivated = true;
+        InputManager.instance.itemUseButtonActivated = true;
 
         return amount == 0;
     }
