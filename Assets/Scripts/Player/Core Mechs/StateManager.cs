@@ -28,7 +28,8 @@ public class StateManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q)) {
             SwitchCharacter();
         } else if (Input.GetKeyDown(KeyCode.R)) {
-            SwitchMode();
+            // Keyboard switch not allowed in spirit mode
+            if (currPlayerState.Mode != ValidPlayerState.Form.SPIRIT) SwitchMode();
         }
     }
 
@@ -37,7 +38,7 @@ public class StateManager : MonoBehaviour
         if (!temporaryUnavailableStates.Contains(nextPlayerState) && nextPlayerState != CurrPlayerState) {
             CurrPlayerState = nextPlayerState;
             Debug.Log($"New State {CurrPlayerState}");
-            EventManager.InvokeEvent(CurrPlayerState.StateMounted);
+            EventManager.InvokeEvent(CurrPlayerState.StateMounted, currPlayerState);
         }
     }
 
@@ -46,7 +47,7 @@ public class StateManager : MonoBehaviour
         if (!temporaryUnavailableStates.Contains(nextPlayerState) && nextPlayerState != CurrPlayerState) {
             CurrPlayerState = nextPlayerState;
             Debug.Log($"New State {CurrPlayerState}");
-            EventManager.InvokeEvent(CurrPlayerState.StateMounted);
+            EventManager.InvokeEvent(CurrPlayerState.StateMounted, currPlayerState);
         }
     }
 

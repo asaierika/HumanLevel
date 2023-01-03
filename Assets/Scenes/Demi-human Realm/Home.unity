@@ -628,7 +628,6 @@ MonoBehaviour:
   moveSpeed: 1
   phoenixFish: {fileID: 451040741}
   startFishing: {fileID: 11400000, guid: c92223c145ffb47fd9c4a14bfc002cd9, type: 2}
-  convo: {fileID: 11400000, guid: c606061ef3af4460091a662224bc732b, type: 2}
   phoenixFishItem: {fileID: 11400000, guid: b877607cbc11244288c442d83f8eb447, type: 2}
   fishingRod: {fileID: 11400000, guid: 3e40a5208df3c4178ae05c08f6690f49, type: 2}
 --- !u!70 &451040746
@@ -820,38 +819,6 @@ MonoBehaviour:
   maxX: 2.71
   minY: -4.4
   maxY: 4.33
---- !u!1 &929367100 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6748098707614136305, guid: 39dbdb6108ff44751a77d2d13cf73534, type: 3}
-  m_PrefabInstance: {fileID: 1137713213}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &929367103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 929367100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566aec7fae25644daa23cd39425efd20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spiritFilter: {fileID: 1240525080}
-  mode: 0
---- !u!114 &929367104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 929367100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 925f8c3d123074e3bae21c9e1e0e9e8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  identity: 0
 --- !u!1 &929563142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,11 +1142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1240525080 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8034104241100993159, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
-  m_PrefabInstance: {fileID: 1239006001}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1478403498 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7197749977167515107, guid: 39dbdb6108ff44751a77d2d13cf73534, type: 3}
@@ -1837,5 +1799,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kizuna
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2633835362033729005, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
+    - {fileID: 2633835362885218343, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
+    - {fileID: 6162807334807042878, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1098387d998d144d492a6b923746a1dc, type: 3}

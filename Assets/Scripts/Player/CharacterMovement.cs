@@ -1,35 +1,45 @@
 using UnityEngine;
 
 // TESTCODE: All null reference guards should eventually be removed, as every playable character are expected to be animated.
-public class PlayerMovement : MonoBehaviour
+// FIXME: Adopt abstract movement then concrete KizunaMovement, TezuoMovement etc. to accomodate for character differences.
+public abstract class CharacterMovement : MonoBehaviour
 {
     // Whether player transition between scenes should be simulated as continuous. e.g. Eri chase Kizuna in castle scene
     public static bool inContinuousLocations;
-    public static bool PLAYER_FROZEN = false;
+    public static bool playerFrozen = false;
     public float moveSpeed = 1f;
     public Rigidbody2D rb;
     public Animator animator;
-    public bool characterFrozen;
+    [SerializeField]
+    protected bool characterFrozen;
+
 
     public static void AlterLocationType(bool isContinuousType) {
         inContinuousLocations = isContinuousType;
     }
 
-    private void Start()
-    {   
-        rb = rb == null ? GetComponent<Rigidbody2D>() : rb;
-        animator = animator == null ? GetComponent<Animator>() : animator;
-
-        UiStatus.onOpenUI += FreezeAllMovement;
-        UiStatus.onCloseUI += RestoreAllMovement;        
+    void OnEnable() {
+        UiStatus.onOpenUI += Freeze;
+        UiStatus.onCloseUI += TryRestore;
     }
 
-    private void FixedUpdate()
+    void OnDisable() {
+        UiStatus.onOpenUI -= Freeze;
+        UiStatus.onCloseUI -= TryRestore;
+    }
+
+    void Start()
+    {   
+        rb = rb == null ? GetComponent<Rigidbody2D>() : rb;
+        animator = animator == null ? GetComponent<Animator>() : animator;  
+    }
+
+    void FixedUpdate()
     {    
         // Logically, when playerFrozen characterFrozen == true, but
         // for convenience both might not evaluate to true simultaneously
         // hence the condition clause below.
-        if (characterFrozen || PLAYER_FROZEN) return;
+        if (playerFrozen || characterFrozen) return;
         
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
@@ -52,30 +62,15 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    private void TryMove(Vector2 direction)
-    {
+    private void TryMove(Vector2 direction) {
         rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
-    }   
-
-    // Called when all characters the user could have control of should be frozen.
-    // eg. Inventory, dialogue
-    public void FreezeAllMovement() {
-        PLAYER_FROZEN = true;
-        animator?.SetBool("moving", false);
     }
 
-    // Converse of FreezeMovement
-    public void RestoreAllMovement() {
-        PLAYER_FROZEN = false;
-    }
-
-    public void FreezeCharacterMovement() {
+    public void Freeze() {
         characterFrozen = true;
         animator?.SetBool("moving", false);
     }
 
-    public void RestoreCharacterMovement() {
-        characterFrozen = false;
-    }
+    // Re-evaluate whether movement should be frozen.
+    public abstract void TryRestore();
 }
-

@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+// FIXME: In spirit mode, the spirit and demihuman body are blocked by game interface.
+// Player will have difficulty returning to demihuman form without exiting the minigame resetting their progress.
+// Could occur in other games as well.
 public class TurnTable : Minigame
 {
     public GameObject table;
@@ -29,52 +32,60 @@ public class TurnTable : Minigame
     
     void Update()
     {
-        if (!lightGate.IsFixed && !rotationComplete
-                && !mistake && lightGate.IsResponsive) {
-            if (Math.Abs(table.transform.rotation.eulerAngles.z - targetAngleSeq[stage]) <= acceptedAngleMargin) {
-                if (!reachedWaypoint) {
-                    Debug.Log("Dest " + stage + " reached");
-                    reachedWaypoint = true;
-                    rotationComplete = stage == targetAngleSeq.Length - 1;
-                    return;
-                }
-            }
-
-            int rotateDir = (int) Input.GetAxisRaw("Vertical");
-            if (reachedWaypoint) {
-                if (rotateDir == directionSeq[stage + 1]) {
-                    Debug.Log("Start stage " + stage);
-                    // Only make player move to the next dest if they change towards the direction
-                    reachedWaypoint = false;
-                    stage++;
-                } else if (Math.Abs(table.transform.rotation.eulerAngles.z - targetAngleSeq[stage]) > acceptedAngleMargin) {
-                    Debug.Log("Overturn");
-                    // If player overturns the current dest region they are in
-                    mistake = true;
-                    StartCoroutine(LerpToStart());
-                    StartCoroutine(lightGate.Close());
-                }
-            } else {
-                if (rotateDir / directionSeq[stage] == -1) {
-                    Debug.Log("Wrong Direction");
-                    mistake = true;
-                    StartCoroutine(LerpToStart());
-                    StartCoroutine(lightGate.Close());
-                    return;
-                } 
-            }
-
-            float angleVelocity = angleSpeed * rotateDir * Time.deltaTime;
-            table.transform.rotation *= Quaternion.AngleAxis(angleVelocity, Vector3.forward);
-            lightGate.UpdatePosition(GetProgress());
+        // In spirit mode the physical table cannot be turned.
+        if (StateManager.instance.CurrPlayerState.Mode == ValidPlayerState.Form.SPIRIT
+                || lightGate.IsFixed || !lightGate.IsResponsive || rotationComplete || mistake ) {
+            return;
         }
+
+        if (Math.Abs(table.transform.rotation.eulerAngles.z - targetAngleSeq[stage]) <= acceptedAngleMargin) {
+            if (!reachedWaypoint) {
+                Debug.Log("Dest " + stage + " reached");
+                reachedWaypoint = true;
+                rotationComplete = stage == targetAngleSeq.Length - 1;
+                return;
+            }
+        }
+
+        int rotateDir = (int) Input.GetAxisRaw("Vertical");
+        if (reachedWaypoint) {
+            if (rotateDir == directionSeq[stage + 1]) {
+                Debug.Log("Start stage " + stage);
+                // Only make player move to the next dest if they change towards the direction
+                reachedWaypoint = false;
+                stage++;
+            } else if (Math.Abs(table.transform.rotation.eulerAngles.z - targetAngleSeq[stage]) > acceptedAngleMargin) {
+                Debug.Log("Overturn");
+                // If player overturns the current dest region they are in
+                mistake = true;
+                ResetTableAndGate();
+            }
+        } else {
+            if (rotateDir / directionSeq[stage] == -1) {
+                Debug.Log("Wrong Direction");
+                mistake = true;
+                ResetTableAndGate();
+                return;
+            } 
+        }
+
+        float angleVelocity = angleSpeed * rotateDir * Time.deltaTime;
+        table.transform.rotation *= Quaternion.AngleAxis(angleVelocity, Vector3.forward);
+        lightGate.UpdatePosition(GetProgress());
+    }
+
+    // NOTE: Cannot return bool hence dup code with OnKeyBoardExit()
+    public bool ResetTableAndGate(bool isExit = false) {
+        if (!lightGate.IsFixed) {
+            StartCoroutine(LerpToStart(isExit));
+            StartCoroutine(lightGate.Close());
+            return true;
+        }
+        return false;
     }
 
     public override void OnKeyboardExit() {
-        if (!lightGate.IsFixed) {
-            StartCoroutine(LerpToStart(true));
-            StartCoroutine(lightGate.Close());
-        } else {
+        if (!ResetTableAndGate(true)) {
             // Immediate exit since the turntable is fixed in place.
             MinigameManager.instance.ExitMinigame();
         }

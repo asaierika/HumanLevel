@@ -54,6 +54,14 @@ public class MinigameManager : MonoBehaviour
         }
     }
 
+    public bool KizunaInMinigame() {
+        return kizunaActiveMinigameId != MinigameID.NONE;
+    }
+
+    public bool PartnerInMinigame() {
+        return partnerActiveMinigameId != MinigameID.NONE;
+    }
+
     private void InitMinigameTable() {
         foreach (Pair<MinigameID, Minigame> gameIDToGame in gameIdsToGame) {
             minigameTable.Add(gameIDToGame.head, gameIDToGame.tail);
@@ -76,10 +84,10 @@ public class MinigameManager : MonoBehaviour
                     return;
                 }
 
-                EventManager.InvokeEvent(EventManager.Event.KIZUNA_MINIGAME_START);
-                EventManager.StartListening(EventManager.Event.SWITCH_TO_PARTNER_DEMI, TryPauseKizunaMinigame);
                 minigameTable[minigameID].gameObject.SetActive(true);
                 kizunaActiveMinigameId = minigameID;
+                EventManager.InvokeEvent(EventManager.Event.KIZUNA_MINIGAME_START);
+                EventManager.StartListening(EventManager.Event.SWITCH_TO_PARTNER_DEMI, TryPauseKizunaMinigame);
                 return;
             case ValidPlayerState.Who.PARTNER:
                 if (partnerActiveMinigameId != MinigameID.NONE) {
@@ -91,11 +99,11 @@ public class MinigameManager : MonoBehaviour
                     Debug.Log($"Kizuna is already engaged in {minigameID}");
                     return;
                 }
-                
-                EventManager.InvokeEvent(EventManager.Event.PARTNER_MINIGAME_START);
-                EventManager.StartListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, TryPausePartnerMinigame);
+
                 minigameTable[minigameID].gameObject.SetActive(true);
                 partnerActiveMinigameId = minigameID;
+                EventManager.InvokeEvent(EventManager.Event.PARTNER_MINIGAME_START);
+                EventManager.StartListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, TryPausePartnerMinigame);
                 return;
         }
 
@@ -108,6 +116,7 @@ public class MinigameManager : MonoBehaviour
             return;
         }
 
+        EventManager.InvokeEvent(EventManager.Event.KIZUNA_MINIGAME_PAUSE);
         EventManager.StopListening(EventManager.Event.SWITCH_TO_PARTNER_DEMI, TryPauseKizunaMinigame);
         EventManager.StartListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, TryResumeKizunaMinigame);
         minigameTable[kizunaActiveMinigameId].gameObject.SetActive(false);
@@ -121,6 +130,7 @@ public class MinigameManager : MonoBehaviour
             return;
         }
 
+        EventManager.InvokeEvent(EventManager.Event.PARTNER_MINIGAME_PAUSE);
         EventManager.StopListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, TryPausePartnerMinigame);
         EventManager.StartListening(EventManager.Event.SWITCH_TO_PARTNER_DEMI, TryResumePartnerMinigame);
         minigameTable[partnerActiveMinigameId].gameObject.SetActive(false);
@@ -134,6 +144,7 @@ public class MinigameManager : MonoBehaviour
             return;
         }
 
+        EventManager.InvokeEvent(EventManager.Event.KIZUNA_MINIGAME_RESUME);
         EventManager.StopListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, TryResumeKizunaMinigame);
         EventManager.StartListening(EventManager.Event.SWITCH_TO_PARTNER_DEMI, TryPauseKizunaMinigame);
         minigameTable[kizunaActiveMinigameId].gameObject.SetActive(true);
@@ -146,6 +157,7 @@ public class MinigameManager : MonoBehaviour
             return;
         }
 
+        EventManager.InvokeEvent(EventManager.Event.PARTNER_MINIGAME_RESUME);
         EventManager.StopListening(EventManager.Event.SWITCH_TO_PARTNER_DEMI, TryResumePartnerMinigame);
         EventManager.StartListening(EventManager.Event.SWITCH_TO_KIZUNA_DEMI, TryPausePartnerMinigame);
         minigameTable[partnerActiveMinigameId].gameObject.SetActive(true);
@@ -157,14 +169,15 @@ public class MinigameManager : MonoBehaviour
 
         switch (exitingCharacter) {
             case ValidPlayerState.Who.KIZUNA:
-                EventManager.InvokeEvent(EventManager.Event.KIZUNA_MINIGAME_END);
+                Debug.Log($"Exiting {kizunaActiveMinigameId}");
                 minigameTable[kizunaActiveMinigameId].gameObject.SetActive(false);
                 kizunaActiveMinigameId = MinigameID.NONE;
+                EventManager.InvokeEvent(EventManager.Event.KIZUNA_MINIGAME_END);
                 return;
             case ValidPlayerState.Who.PARTNER:
-                EventManager.InvokeEvent(EventManager.Event.PARTNER_MINIGAME_END);
                 minigameTable[partnerActiveMinigameId].gameObject.SetActive(false);
                 partnerActiveMinigameId = MinigameID.NONE;
+                EventManager.InvokeEvent(EventManager.Event.PARTNER_MINIGAME_END);
                 return;
         }
 

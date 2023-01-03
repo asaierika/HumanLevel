@@ -19,7 +19,7 @@ public class PlayerSpawner : MonoBehaviour
             Debug.Log("Spawning at default location.");
             player.transform.position = startLocationIndependentSpawnPoint;
             hasDefaultSpawnPosition = false;
-        } else if (PlayerMovement.inContinuousLocations) {
+        } else if (CharacterMovement.inContinuousLocations) {
             Debug.Log("Spawning to maintain continous movement");
             try {
                 player.transform.position = map.GetStartingPosition(GameManager.instance.lastScene, UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
