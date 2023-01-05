@@ -734,11 +734,11 @@ PrefabInstance:
     - target: {fileID: 8488101351404026668, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
       propertyPath: uiStatus
       value: 
-      objectReference: {fileID: 1711465234}
+      objectReference: {fileID: 0}
     - target: {fileID: 8867398082821932017, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
       propertyPath: uiStatus
       value: 
-      objectReference: {fileID: 1711465234}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
 --- !u!95 &731682541 stripped
@@ -1072,17 +1072,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe4da878960304b4f943a4eadd8c5bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1711465234 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9090316670615857145, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
-  m_PrefabInstance: {fileID: 1711465230}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83408fb4b1e834255aa9a10feafa861a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1711465235 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 551229312640529246, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
@@ -1094,6 +1083,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c519ebb4e0a2a40abb910502a1684fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1711465239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711465231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4d57a56d66f4d2cb9fda1d023f7468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvents:
+  - {fileID: 11400000, guid: a17b0d8088f3344bbace3f819081d0b2, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7063823953639533606}
+        m_TargetAssemblyTypeName: Eri_castle1st, Assembly-CSharp
+        m_MethodName: Choice2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1728097215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1552,9 +1570,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  dialogueManager: {fileID: 1711465235}
-  choiceManager: {fileID: 1711465233}
-  convo: {fileID: 11400000, guid: 9d095871c690344b6a39c0ab46cc1b6b, type: 2}
+  convo1: {fileID: 11400000, guid: 9d095871c690344b6a39c0ab46cc1b6b, type: 2}
+  convo2: {fileID: 11400000, guid: 9ff43afa9eff64475a051f1637fbc756, type: 2}
   choice1: {fileID: 11400000, guid: f2443bc255d294de2a1986921891be87, type: 2}
   choice2: {fileID: 11400000, guid: a17b0d8088f3344bbace3f819081d0b2, type: 2}
   hallPosition: {x: 1.2, y: -1}

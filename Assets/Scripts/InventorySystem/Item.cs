@@ -1,10 +1,6 @@
 using UnityEngine;
 
-/**
-* Non-perishable items e.g. map.
-*/
-[CreateAssetMenu(menuName = "Non-perishable item")]
-public class Item : ScriptableObject
+public abstract class Item : ScriptableObject
 {
     public string nameOfItem;
     public Sprite icon;
@@ -12,8 +8,12 @@ public class Item : ScriptableObject
     public Sprite itemImage;
     public string description;
 
-    // Item effects
-    public virtual bool Use() {
-        return false;
+    // The behaviour of the item when the player chooses
+    // the item in the inventory.
+    public virtual bool Use() 
+    {
+        InputManager.instance.itemUseButtonActivated = true;
+
+        return amount == 0;
     }
 }

@@ -26,7 +26,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.N) && inDialogue)
+        if (InputManager.instance.dialogButtonActivated && inDialogue)
         {
             ReadNext();
         }

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FishSeller
   m_EditorClassIdentifier: 
   speakerName: Fish Seller
-  speakerSprite: {fileID: 21300000, guid: 90956c022ecd347b693ab0a60ab69045, type: 3}
+  speakerSprite: {fileID: 21300000, guid: 2139241e8b5014aea9cfc49060efc110, type: 3}

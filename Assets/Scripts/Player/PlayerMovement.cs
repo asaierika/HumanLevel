@@ -61,7 +61,9 @@ public class PlayerMovement : MonoBehaviour
     // eg. Inventory, dialogue
     public void FreezeAllMovement() {
         PLAYER_FROZEN = true;
-        animator?.SetBool("moving", false);
+        if (animator != null) {
+            animator?.SetBool("moving", false);
+        }
     }
 
     // Converse of FreezeMovement
@@ -71,7 +73,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void FreezeCharacterMovement() {
         characterFrozen = true;
-        animator?.SetBool("moving", false);
+        if (animator != null) {
+            animator?.SetBool("moving", false);
+        }
     }
 
     public void RestoreCharacterMovement() {

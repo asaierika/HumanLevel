@@ -5,7 +5,11 @@ using System;
 
 public abstract class Follower : MonoBehaviour
 {
-    protected Transform player;
+    // Allows player to be modified in the inspector
+    // as the followed game object can be the spirit or partner.
+    // If not specified, the followed game object would be the one
+    // with a "Player" tag.
+    public Transform player;
     public float moveSpeed = 1f; 
     protected Vector2 movement;
     public bool playerInRange;
@@ -19,7 +23,7 @@ public abstract class Follower : MonoBehaviour
     protected BoxCollider2D boxCollider;
     protected Animator animator;
     protected float timer;
-    // To prevent follower from switching direction to frequently.
+    // To prevent follower from switching direction too frequently.
     public float minimumInterval = 0.1f;
    
 
@@ -54,7 +58,11 @@ public abstract class Follower : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
-        player = GameObject.FindWithTag("Player").transform;
+        
+        if (player == null)
+        {
+            player = GameObject.FindWithTag("Player").transform;
+        }
     }
 
     // TODO: Deal with concave obstacles.
@@ -150,7 +158,7 @@ public abstract class Follower : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag(player.tag))
         {
             playerInRange = true;
         }
@@ -158,7 +166,7 @@ public abstract class Follower : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag(player.tag))
         {
             playerInRange = false;
         } 

@@ -62,4 +62,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Human Realm/Mission 1/Castle/Room D.unity
     guid: c92295c3a7f694689840a97b6ac62cf4
+  - enabled: 1
+    path: Assets/Scenes/Human Realm/Mission 1/Castle/Corridor 2.unity
+    guid: 7bd28cc972c7641fca6664cfd349a9ea
+  - enabled: 1
+    path: Assets/Scenes/Human Realm/Mission 1/Castle/Room Spring.unity
+    guid: 1b9b94913348a4a08943865de599a5be
+  - enabled: 1
+    path: Assets/Scenes/Human Realm/Mission 1/Castle/Room Winter.unity
+    guid: c7adfa885d6ab44ecbb7a57dd274e694
+  - enabled: 1
+    path: Assets/Scenes/Human Realm/Mission 1/Castle/Room Summer.unity
+    guid: 453b7d2d66acf4ad4b6a2c64428d8eac
+  - enabled: 1
+    path: Assets/Scenes/Human Realm/Mission 1/Castle/Room Autumn.unity
+    guid: fe2fe70e57bf945c8b26f6a3051244fa
   m_configObjects: {}
