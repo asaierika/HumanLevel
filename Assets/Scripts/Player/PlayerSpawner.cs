@@ -13,8 +13,7 @@ public class PlayerSpawner : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         if (hasDefaultSpawnPosition) {
             Debug.Log("Spawning at default location.");
             player.transform.position = startLocationIndependentSpawnPoint;

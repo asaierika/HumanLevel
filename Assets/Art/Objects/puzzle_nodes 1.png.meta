@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 52e5587afa9584c57972413820b2cb4e
+guid: 07623419a55ce4cae8b59a204771a9fb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,7 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -102,6 +102,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -114,7 +126,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -129,55 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char-shapes_2
+      name: puzzle_nodes 1_0
       rect:
         serializedVersion: 2
-        x: 187
-        y: 1367
-        width: 74
-        height: 129
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 398f68c907b034c27839ce52f0617268
-      internalID: -726914781
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: char-shapes_3
-      rect:
-        serializedVersion: 2
-        x: 330
-        y: 1377
-        width: 81
-        height: 120
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 701747cd952a34d7d8a93e5dd3c3d9ac
-      internalID: 618721174
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: char-shapes_4
-      rect:
-        serializedVersion: 2
-        x: 495
-        y: 1383
+        x: 203
+        y: 1690
         width: 63
-        height: 120
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,50 +155,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ed58233666b840f78c51f5e8af292ed
-      internalID: 220145461
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: char-shapes_5
-      rect:
-        serializedVersion: 2
-        x: 635
-        y: 1389
-        width: 99
-        height: 109
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f5c52364b7b8429a99898f341e3f066
-      internalID: -1362417393
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: char-shapes_6
-      rect:
-        serializedVersion: 2
-        x: 792
-        y: 1389
-        width: 106
-        height: 111
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9baad25a971a5417da827ad720a09d5b
-      internalID: 1016752335
+      spriteID: f42b23881f23945f4a3583f075e62b39
+      internalID: 193768897
       vertices: []
       indices: 
       edges: []
@@ -244,15 +172,49 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      char-shapes_3: 618721174
-      char-shapes_4: 220145461
-      char-shapes_6: 1016752335
-      char-shapes_8: 1509002190
-      char-shapes_5: -1362417393
-      char-shapes_1: -39206224
-      char-shapes_2: -726914781
-      char-shapes_7: -453884958
-      char-shapes_0: -1030278868
+      puzzle_nodes 1_24: 67829197
+      puzzle_nodes 1_31: -1140025927
+      puzzle_nodes 1_3: -1359237
+      puzzle_nodes 1_34: 386094890
+      puzzle_nodes 1_32: -615700374
+      puzzle_nodes 1_14: -1853984752
+      puzzle_nodes 1_25: 1953691730
+      puzzle_nodes 1_15: -714747006
+      puzzle_nodes 1_5: -718785666
+      puzzle_nodes 1_41: 679569934
+      puzzle_nodes 1_28: -1024279781
+      puzzle_nodes 1_40: 1510119497
+      puzzle_nodes 1_13: 1587274683
+      puzzle_nodes 1_1: -594448350
+      puzzle_nodes 1_18: 741571784
+      puzzle_nodes 1_22: 1831671518
+      puzzle_nodes 1_17: -33764177
+      puzzle_nodes 1_33: 254790951
+      puzzle_nodes 1_23: 619713460
+      puzzle_nodes 1_42: -954726812
+      puzzle_nodes 1_4: -1282564464
+      puzzle_nodes 1_8: -285746053
+      puzzle_nodes 1_6: 669066008
+      puzzle_nodes 1_29: 1747738247
+      puzzle_nodes 1_12: 1985427211
+      puzzle_nodes 1_11: -103847373
+      puzzle_nodes 1_2: 952767249
+      puzzle_nodes 1_9: -1928908150
+      puzzle_nodes 1_10: 829105279
+      puzzle_nodes 1_38: 793059590
+      puzzle_nodes 1_30: 1434242618
+      puzzle_nodes 1_16: 400304586
+      puzzle_nodes 1_36: -1252792652
+      puzzle_nodes 1_37: -1373893500
+      puzzle_nodes 1_21: -1147042557
+      puzzle_nodes 1_20: -451569580
+      puzzle_nodes 1_35: -816709300
+      puzzle_nodes 1_39: 2025885913
+      puzzle_nodes 1_26: 1808455790
+      puzzle_nodes 1_0: 193768897
+      puzzle_nodes 1_27: 158758247
+      puzzle_nodes 1_19: -1925472517
+      puzzle_nodes 1_7: -1156617431
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

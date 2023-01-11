@@ -112,7 +112,7 @@ public class TurnTable : Minigame
 
     private void GetTotalMovement() {
         if (directionSeq[0] == 1) {
-            // Counterclockwise
+            // Anticlockwise
             totalMovement = targetAngleSeq[0];
         } else {
             // Clockwise
