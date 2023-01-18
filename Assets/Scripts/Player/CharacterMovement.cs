@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 // TESTCODE: All null reference guards should eventually be removed, as every playable character are expected to be animated.
 // FIXME: Adopt abstract movement then concrete KizunaMovement, TezuoMovement etc. to accomodate for character differences.
@@ -13,7 +14,6 @@ public abstract class CharacterMovement : MonoBehaviour
     [SerializeField]
     protected bool characterFrozen;
 
-
     public static void AlterLocationType(bool isContinuousType) {
         inContinuousLocations = isContinuousType;
     }
@@ -21,17 +21,25 @@ public abstract class CharacterMovement : MonoBehaviour
     void OnEnable() {
         UiStatus.onOpenUI += Freeze;
         UiStatus.onCloseUI += TryRestore;
+        if (CameraManager.main != null) {
+            // OnEnabled is called before awake of another gameobject
+            CameraManager.main.onCameraTransit += Freeze;
+            CameraManager.main.onCameraTransitComplete += TryRestore;
+        }
     }
 
     void OnDisable() {
         UiStatus.onOpenUI -= Freeze;
         UiStatus.onCloseUI -= TryRestore;
+        CameraManager.main.onCameraTransit -= Freeze;
+        CameraManager.main.onCameraTransitComplete -= TryRestore;
     }
 
-    void Start()
-    {   
+    void Start() {   
         rb = rb == null ? GetComponent<Rigidbody2D>() : rb;
         animator = animator == null ? GetComponent<Animator>() : animator;  
+        CameraManager.main.onCameraTransit += Freeze;
+        CameraManager.main.onCameraTransitComplete += TryRestore;
     }
 
     void FixedUpdate()
@@ -68,7 +76,7 @@ public abstract class CharacterMovement : MonoBehaviour
 
     public void Freeze() {
         characterFrozen = true;
-        animator?.SetBool("moving", false);
+        if (animator != null) animator.SetBool("moving", false);
     }
 
     // Re-evaluate whether movement should be frozen.

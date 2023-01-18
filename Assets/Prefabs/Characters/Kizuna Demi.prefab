@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 5802465523736228284}
   m_Layer: 0
   m_Name: Spirit
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
