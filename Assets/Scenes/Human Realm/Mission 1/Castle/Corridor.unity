@@ -137,8 +137,6 @@ GameObject:
   - component: {fileID: 111991785}
   - component: {fileID: 111991789}
   - component: {fileID: 111991790}
-  - component: {fileID: 111991792}
-  - component: {fileID: 111991791}
   m_Layer: 0
   m_Name: CastleServantA
   m_TagString: Untagged
@@ -227,7 +225,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1210394583
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1303965921, guid: 42651ee1fd3d9400d8193b17fe968f33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -292,66 +290,8 @@ MonoBehaviour:
   convo1: {fileID: 11400000, guid: e29622ab0037848db8810835a2ec672e, type: 2}
   convo2: {fileID: 11400000, guid: b41b0c2497e924805b823f8247a06f7c, type: 2}
   convo3: {fileID: 11400000, guid: ec07872741c824e24a478e21ea5d0201, type: 2}
-  choice1: {fileID: 11400000, guid: 8dd1afe55e59b4d7eba1eb73b0f2bb34, type: 2}
-  choice2: {fileID: 11400000, guid: 672a5ef8c0fa24b89b52b8dfcfc0e44d, type: 2}
---- !u!114 &111991791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111991784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa4d57a56d66f4d2cb9fda1d023f7468, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvents:
-  - {fileID: 11400000, guid: 8dd1afe55e59b4d7eba1eb73b0f2bb34, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 111991790}
-        m_TargetAssemblyTypeName: CastleServantA, Assembly-CSharp
-        m_MethodName: Choice2
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &111991792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111991784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa4d57a56d66f4d2cb9fda1d023f7468, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvents:
-  - {fileID: 11400000, guid: 672a5ef8c0fa24b89b52b8dfcfc0e44d, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 111991790}
-        m_TargetAssemblyTypeName: CastleServantA, Assembly-CSharp
-        m_MethodName: Choice1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  choice1: Where is the offering kept?
+  choice2: Can you tell me more about the castle?
 --- !u!1001 &147775405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2124,7 +2064,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1612533639
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e3856862e81384f278571598f5e0611b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
