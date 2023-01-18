@@ -205,11 +205,11 @@ PrefabInstance:
     - target: {fileID: 8488101351404026668, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
       propertyPath: uiStatus
       value: 
-      objectReference: {fileID: 852925580}
+      objectReference: {fileID: 0}
     - target: {fileID: 8867398082821932017, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
       propertyPath: uiStatus
       value: 
-      objectReference: {fileID: 852925580}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
 --- !u!50 &2748196 stripped
@@ -217,6 +217,17 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 4175073323694080008, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
   m_PrefabInstance: {fileID: 2748195}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2748197 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8867398082821932017, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
+  m_PrefabInstance: {fileID: 2748195}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0922348a6a069456bb946065417ccb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8763937
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314ed8e56051340118798e67a53aa895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Hall_Before_Chase
+  sceneName: Hall_Before_Chase Cutscene
   sceneStart: {fileID: 0}
 --- !u!1 &198247211
 GameObject:
@@ -631,17 +642,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
---- !u!114 &852925580 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9090316670615857145, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
-  m_PrefabInstance: {fileID: 852925579}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83408fb4b1e834255aa9a10feafa861a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &852925581 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 551229312640529246, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
@@ -730,7 +730,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1210394583
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1404719167, guid: 632408e7d3d22418fb1aa188d05746d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -880,6 +880,7 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: 65e6d0e8cf67a4143a05467e77c55598, type: 2}
     - {fileID: 11400000, guid: 511a9bf2324c24bd1996e618d5624b87, type: 2}
+    - {fileID: 11400000, guid: 48332bc26a242405ca9d3ba1d431d988, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -900,6 +901,20 @@ MonoBehaviour:
         - m_Target: {fileID: 143976168}
           m_TargetAssemblyTypeName: SceneTransition, Assembly-CSharp
           m_MethodName: SceneTransit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2748197}
+          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+          m_MethodName: FreezeAllMovement
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -980,7 +995,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1210394583
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1306299823, guid: 3a51618445bc441a391393a2fd9cdaf7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1165,7 +1180,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1210394583
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -1472739508, guid: 632408e7d3d22418fb1aa188d05746d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1249,7 +1264,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1210394583
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -189364979, guid: 42651ee1fd3d9400d8193b17fe968f33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -48,7 +48,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Human Realm/Mission 1/Castle/Corridor.unity
     guid: 3ebc5e1d9a80041cab2bd664b8a91c7b
   - enabled: 1
-    path: Assets/Scenes/Human Realm/Mission 1/Castle/Hall_Before_Chase.unity
+    path: Assets/Scenes/Human Realm/Mission 1/Castle/Hall_Before_Chase Cutscene.unity
     guid: 2fd482ce3dac04c69b7e5c608c551d10
   - enabled: 1
     path: Assets/Scenes/Human Realm/Mission 1/Castle/Room A.unity
@@ -80,4 +80,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Ryu's Shop Cutscene.unity
     guid: 80d491ada360546ec98b9638c80a2207
+  - enabled: 1
+    path: Assets/Hall_Before_Chase.unity
+    guid: 30a852ed31afe431c8ee2587a3841cce
   m_configObjects: {}

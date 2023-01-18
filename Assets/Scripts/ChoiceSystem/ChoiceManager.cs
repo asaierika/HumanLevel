@@ -49,6 +49,7 @@ public class ChoiceManager : MonoBehaviour
 
     public void SetChoice(int i)
     {
+        UiStatus.CloseUI();
         choiceIndex = i;
 
         if (choiceIndex == 0)

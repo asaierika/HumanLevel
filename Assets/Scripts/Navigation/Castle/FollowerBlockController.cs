@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowerBlockManager : MonoBehaviour
+public class FollowerBlockController : MonoBehaviour
 {
     public GameObject block;
 
