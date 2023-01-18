@@ -831,7 +831,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 38abfe3b0277f47209b704a0d0ab6e8f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1489,56 +1489,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8d432f1d932844f0a72b49cac29d490, type: 3}
---- !u!1 &7063823953639533605 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2094633635095205749, guid: e8d432f1d932844f0a72b49cac29d490, type: 3}
-  m_PrefabInstance: {fileID: 7063823953639533604}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7063823953639533606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7063823953639533605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebbbb1d23585c4d8aa40fd596a9fe6b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInRange: 0
-  convo1: {fileID: 11400000, guid: 9d095871c690344b6a39c0ab46cc1b6b, type: 2}
-  convo2: {fileID: 11400000, guid: 9ff43afa9eff64475a051f1637fbc756, type: 2}
-  choice1: Okay, let's play.
-  choice2: Can we play later?
-  hallPosition: {x: 1.2, y: -1}
-  chaseStarted: {fileID: 11400000, guid: c92ca0181c69f44a2a7137f347669da1, type: 2}
---- !u!114 &7063823953639533607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7063823953639533605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa4d57a56d66f4d2cb9fda1d023f7468, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvents:
-  - {fileID: 11400000, guid: f2443bc255d294de2a1986921891be87, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7063823953639533606}
-        m_TargetAssemblyTypeName: Eri_caslte1st, Assembly-CSharp
-        m_MethodName: Choice1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2

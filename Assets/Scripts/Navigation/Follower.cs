@@ -15,8 +15,6 @@ public abstract class Follower : MonoBehaviour
     public bool playerInRange;
     protected enum Direction { Horizontal, Vertical }
     protected Direction direction = Direction.Horizontal;
-    // public VectorValue startingPosition;
-
     protected Rigidbody2D rb;
     protected RaycastHit2D hitX;
     protected RaycastHit2D hitY;

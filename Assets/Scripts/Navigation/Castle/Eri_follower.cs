@@ -9,6 +9,10 @@ public class Eri_follower : Follower
     public GameEvent chaseEnded;
     public Vector2 hallPosition;
 
+    protected override void FixedUpdate() {
+        base.FixedUpdate();
+    }
+
     protected override void Found()
     {
         // Eri is dynamically generated at each room. Both managers cannot be assigned before hand.
@@ -22,7 +26,7 @@ public class Eri_follower : Follower
     public void Choice1(object o = null)
     {
         PlayerSpawner.AssignSpawnPoint(hallPosition);
-        FollowingManager.instance.StartFollowing();
+        Destroy(FollowingManager.instance);
         SceneTransition.SceneTransit("Hall");
     }
 
