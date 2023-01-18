@@ -179,7 +179,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1612533639
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7a10ac2dcb60a4e18bdfbc317c1c7474, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -269,7 +269,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1210394583
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 559734171, guid: 632408e7d3d22418fb1aa188d05746d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -373,8 +373,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  dialogueManager: {fileID: 333007192}
-  choiceManager: {fileID: 333007191}
   hairPin: {fileID: 11400000, guid: 79173c66968a042bfb9e0cd8d96e6345, type: 2}
   convo1: {fileID: 11400000, guid: 105c5c52ce1374e59b60ce6dd5fe99be, type: 2}
   convo2: {fileID: 11400000, guid: f9a0e4d1bf7614ed3a58fc5194747e24, type: 2}
@@ -438,17 +436,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
---- !u!114 &333007191 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3310133960076634330, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
-  m_PrefabInstance: {fileID: 333007190}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe4da878960304b4f943a4eadd8c5bf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &333007192 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 551229312640529246, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
@@ -458,17 +445,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c519ebb4e0a2a40abb910502a1684fcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &333007193 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9090316670615857145, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
-  m_PrefabInstance: {fileID: 333007190}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83408fb4b1e834255aa9a10feafa861a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &380252559
@@ -529,7 +505,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1210394583
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1303965921, guid: 42651ee1fd3d9400d8193b17fe968f33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -664,11 +640,11 @@ PrefabInstance:
     - target: {fileID: 8488101351404026668, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
       propertyPath: uiStatus
       value: 
-      objectReference: {fileID: 333007193}
+      objectReference: {fileID: 0}
     - target: {fileID: 8867398082821932017, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
       propertyPath: uiStatus
       value: 
-      objectReference: {fileID: 333007193}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8965069b7ec9457ca8f4215f403163e, type: 3}
 --- !u!1 &676300956
@@ -727,7 +703,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1210394583
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -1472739508, guid: 632408e7d3d22418fb1aa188d05746d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -914,8 +890,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  dialogueManager: {fileID: 333007192}
-  choiceManager: {fileID: 333007191}
   sawCat: 0
   givenFish: 0
   fish: {fileID: 11400000, guid: 9d54ef6ea0b1c4fc3bdda9f32bc3563c, type: 2}
@@ -1280,22 +1254,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8695959814670310359, guid: ffd616fa6992145b49cdfeef81c1932b, type: 3}
   m_PrefabInstance: {fileID: 5564909393137355908}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1535996123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535996119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94b605cbafded4250a54d1f786795f4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInRange: 0
-  dialogueManager: {fileID: 333007192}
-  choiceManager: {fileID: 333007191}
-  convo: {fileID: 11400000, guid: 67a7a9bbd676249bdaa81166e98339a6, type: 2}
 --- !u!61 &1535996124
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1322,6 +1280,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8171451, y: 3.8665555}
   m_EdgeRadius: 0
+--- !u!114 &1535996125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535996119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153523e8dc2924ae088338e55170e11c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  convo: {fileID: 11400000, guid: 67a7a9bbd676249bdaa81166e98339a6, type: 2}
 --- !u!1001 &1564464908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1696,8 +1668,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
-  dialogueManager: {fileID: 333007192}
-  choiceManager: {fileID: 333007191}
   convo1: {fileID: 11400000, guid: bba7de976769c44b4bf9507a730a18fc, type: 2}
   convo2: {fileID: 11400000, guid: 6e4cd60038dac49368c8e0cb9d40bf31, type: 2}
   convo3: {fileID: 11400000, guid: 5f2e942c201e24e188c3bb83283b22aa, type: 2}

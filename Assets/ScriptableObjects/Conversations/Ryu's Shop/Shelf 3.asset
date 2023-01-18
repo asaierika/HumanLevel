@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07fd9bf9ca7674ccf9fbb58cbe9468e4, type: 3}
-  m_Name: Cat1
+  m_Name: Shelf 3
   m_EditorClassIdentifier: 
   allLines:
   - speaker: {fileID: 11400000, guid: 86bf7fc2c5d21495db6e6e9227981823, type: 2}
-    dialogue: A black cat staring at a butterfly.
+    dialogue: There're some books on the shelf.
+  - speaker: {fileID: 11400000, guid: 86bf7fc2c5d21495db6e6e9227981823, type: 2}
+    dialogue: How To Train Your Broom, Quit Orange Grass in 10 Days, Guide to Keeping
+      a Sea Onion...

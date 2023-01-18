@@ -9,9 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07fd9bf9ca7674ccf9fbb58cbe9468e4, type: 3}
-  m_Name: Cat1
+  m_Script: {fileID: 11500000, guid: 9eda51a521e2541079dafb45f168f694, type: 3}
+  m_Name: Demi-human Home Map
   m_EditorClassIdentifier: 
-  allLines:
-  - speaker: {fileID: 11400000, guid: 86bf7fc2c5d21495db6e6e9227981823, type: 2}
-    dialogue: A black cat staring at a butterfly.
+  startLocations:
+  - Ryu's Shop
+  - Home
+  endLocations:
+  - Home
+  - Ryu's Shop
+  startingPositions:
+  - {x: 4.8, y: -5.85}
+  - {x: 0, y: -3.3}
