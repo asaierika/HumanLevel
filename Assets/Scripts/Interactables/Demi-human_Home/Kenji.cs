@@ -49,13 +49,8 @@ public class Kenji : Interactable
             return;
         }
 
-        if (!inventory.Contains(phoenixFish)) {
-            DialogueManager.instance.StartConversation(convo4);
-            return;
-        }
-        inventory.Remove(fishingRod);
-        inventory.Remove(phoenixFish);
-        DialogueManager.instance.StartConversation(convo5);
+        DialogueManager.instance.StartConversation(convo4);
+        return;
     }
 
     public void UsePhonexFish() {
@@ -63,5 +58,7 @@ public class Kenji : Interactable
         return;
 
         timeline.SetActive(true);
+        inventory.Remove(fishingRod);
+        inventory.Remove(phoenixFish);
     }
 }
