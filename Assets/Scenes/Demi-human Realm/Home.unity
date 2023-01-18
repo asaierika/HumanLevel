@@ -1634,7 +1634,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2188395965357405710, guid: 23aba5dec677648d382f19014a1c8152, type: 3}
       propertyPath: sceneName
-      value: Ryu's Shop
+      value: Ryu's Shop Cutscene
       objectReference: {fileID: 0}
     - target: {fileID: 2188395966050991260, guid: 23aba5dec677648d382f19014a1c8152, type: 3}
       propertyPath: m_Name
@@ -2345,6 +2345,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2593379341441806150, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2633835362094690908, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2392,14 +2396,6 @@ PrefabInstance:
     - target: {fileID: 2633835362094690909, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
       propertyPath: m_Name
       value: Kizuna
-      objectReference: {fileID: 0}
-    - target: {fileID: 2633835362687924688, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2633835362687924688, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
