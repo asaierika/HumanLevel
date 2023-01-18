@@ -6417,6 +6417,7 @@ MonoBehaviour:
     tail: {fileID: 1135464007}
   - head: {fileID: 1135464007}
     tail: {fileID: 617587412}
+  hintEdgeIndexes: 0300000009000000
   currSelectedNode: {fileID: 0}
   edges: {fileID: 1984708696}
   edgeRendererPrefab: {fileID: 1360671986614585480, guid: d8c1b694951e34a99ba35d821abececc, type: 3}
@@ -7016,7 +7017,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8348545197933377779}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.23, y: -2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

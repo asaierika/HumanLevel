@@ -5,8 +5,7 @@ using UnityEngine;
 public class StateManager : MonoBehaviour
 {
     public static StateManager instance;
-    [SerializeField]
-    private ValidPlayerState currPlayerState;
+    [SerializeField] private ValidPlayerState currPlayerState;
     public ValidPlayerState CurrPlayerState { 
         get { return currPlayerState; } 
         set { currPlayerState = value; }
