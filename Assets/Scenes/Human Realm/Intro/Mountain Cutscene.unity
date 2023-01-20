@@ -200,7 +200,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1612533639
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 1265467415, guid: 6e2a797c8e31842f98a429fb1cf201da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -387,22 +387,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39dbdb6108ff44751a77d2d13cf73534, type: 3}
---- !u!95 &535982993 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 535982993, guid: 9ffcc3751f3be485fa7b06264e352a1e, type: 3}
-  m_PrefabInstance: {fileID: 342848101}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &585825232 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 551229312640529246, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
-  m_PrefabInstance: {fileID: 4226371559048661940}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c519ebb4e0a2a40abb910502a1684fcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!320 &628526336
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -421,7 +405,7 @@ PlayableDirector:
   - key: {fileID: -3173801195871430398, guid: 9519b1aede42c4ea3a23165f492034e6, type: 2}
     value: {fileID: 482857839}
   - key: {fileID: -3199805768229178926, guid: 9519b1aede42c4ea3a23165f492034e6, type: 2}
-    value: {fileID: 535982993}
+    value: {fileID: 0}
   - key: {fileID: 8911211304508033870, guid: 9519b1aede42c4ea3a23165f492034e6, type: 2}
     value: {fileID: 482857839}
   - key: {fileID: 958073673040632055, guid: 9519b1aede42c4ea3a23165f492034e6, type: 2}
@@ -488,7 +472,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1612533639
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 65485b044d77047f1b3c1ae62fc3711d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -573,7 +557,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1210394583
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1189271236, guid: cdbbaf1bf6920464fa33dcd33d4514a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -895,7 +879,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314ed8e56051340118798e67a53aa895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: HikaruRoom_cutscene
+  sceneName: HikaruRoom Cutscene
+  sceneStart: {fileID: 0}
 --- !u!1 &2188395966283032228
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,17 +970,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
---- !u!114 &4226371559048661941 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9090316670615857145, guid: 84f7a3ee8d61f43128503612a4b1f81b, type: 3}
-  m_PrefabInstance: {fileID: 4226371559048661940}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83408fb4b1e834255aa9a10feafa861a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &5907726770339498656
 Transform:
   m_ObjectHideFlags: 0
@@ -1029,7 +1003,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 55afa6376da4e4077b95569e806bdecb, type: 2}
   - {fileID: 11400000, guid: 3c6f00f4c63d8471f822e51b548f4544, type: 2}
   finished: 0
-  dialogueManager: {fileID: 585825232}
 --- !u!1 &5907726770339498658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,7 +1030,7 @@ PrefabInstance:
     - target: {fileID: 5230202220673278077, guid: b3f64f6b239f7441383c3476c2ba81f3, type: 3}
       propertyPath: uiStatus
       value: 
-      objectReference: {fileID: 4226371559048661941}
+      objectReference: {fileID: 0}
     - target: {fileID: 9018735197294990348, guid: b3f64f6b239f7441383c3476c2ba81f3, type: 3}
       propertyPath: m_Name
       value: Fox

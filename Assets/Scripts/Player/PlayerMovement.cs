@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {    
+    {   
         // Logically, when playerFrozen characterFrozen == true, but
         // for convenience both might not evaluate to true simultaneously
         // hence the condition clause below.
@@ -60,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
     // Called when all characters the user could have control of should be frozen.
     // eg. Inventory, dialogue
     public void FreezeAllMovement() {
+        Debug.Log("freeze all movement");
         PLAYER_FROZEN = true;
         if (animator != null) {
             animator?.SetBool("moving", false);
@@ -68,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Converse of FreezeMovement
     public void RestoreAllMovement() {
+        Debug.Log("restore all movement");
         PLAYER_FROZEN = false;
     }
 

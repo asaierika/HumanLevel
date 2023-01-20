@@ -5,11 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Follower
-<<<<<<< HEAD
-  - Spirit
-=======
   - Partner
->>>>>>> master
   layers:
   - Default
   - TransparentFX
@@ -18,8 +14,8 @@ TagManager:
   - Water
   - UI
   - Blocking
-  - Water Blocking
-  - Game Object
+  - 
+  - 
   - 
   - 
   - 
@@ -46,19 +42,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 2682433657
-    locked: 0
-  - name: Static Architectures
-    uniqueID: 3491129963
-    locked: 0
-  - name: GameObject
-    uniqueID: 3084572713
-    locked: 0
-  - name: Mini Popup
-    uniqueID: 3045848003
-    locked: 0
-  - name: UI
-    uniqueID: 4251077933
     locked: 0

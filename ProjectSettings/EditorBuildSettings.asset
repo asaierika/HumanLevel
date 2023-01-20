@@ -18,13 +18,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Demi-human Realm/Holy Wood.unity
     guid: 526d60ff1c9954ce981e70d551df2083
   - enabled: 1
-    path: Assets/Scenes/Human Realm/Intro/Mountain_cutscene.unity
+    path: Assets/Scenes/Human Realm/Intro/Mountain Cutscene.unity
     guid: 1dac531ebc09548c596ced8cfb31dc15
   - enabled: 0
     path: Assets/Scenes/Test.unity
     guid: 121d86f3548974d2389ded15661dc571
   - enabled: 1
-    path: Assets/Scenes/Human Realm/Mission 1/Street_cutscene1.unity
+    path: Assets/Scenes/Human Realm/Mission 1/Street Cutscene.unity
     guid: 5bd6beaa8ab3543588affcef1562ca98
   - enabled: 1
     path: Assets/Scenes/Human Realm/Mission 1/Street.unity
@@ -42,13 +42,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Demi-human Realm/Chamber.unity
     guid: cde05d326cd354a1881f7f004e32b8f8
   - enabled: 1
-    path: Assets/Scenes/Human Realm/Intro/HikaruRoom_cutscene.unity
+    path: Assets/Scenes/Human Realm/Intro/HikaruRoom Cutscene.unity
     guid: 4c2e5df678e4d4d6498bf9d362b7d4e7
   - enabled: 1
     path: Assets/Scenes/Human Realm/Mission 1/Castle/Corridor.unity
     guid: 3ebc5e1d9a80041cab2bd664b8a91c7b
   - enabled: 1
-    path: Assets/Scenes/Human Realm/Mission 1/Castle/Hall_Before_Chase.unity
+    path: Assets/Scenes/Human Realm/Mission 1/Castle/Hall_Before_Chase Cutscene.unity
     guid: 2fd482ce3dac04c69b7e5c608c551d10
   - enabled: 1
     path: Assets/Scenes/Human Realm/Mission 1/Castle/Room A.unity
@@ -77,4 +77,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Human Realm/Mission 1/Castle/Room Autumn.unity
     guid: fe2fe70e57bf945c8b26f6a3051244fa
+  - enabled: 1
+    path: Assets/Ryu's Shop Cutscene.unity
+    guid: 80d491ada360546ec98b9638c80a2207
+  - enabled: 1
+    path: Assets/Hall_Before_Chase.unity
+    guid: 30a852ed31afe431c8ee2587a3841cce
   m_configObjects: {}

@@ -17,8 +17,7 @@ public class ChoiceManager : MonoBehaviour
         instance = this;
     }
 
-    private Choice choice1;
-    private Choice choice2;
+    private string choice1, choice2;
     public GameObject choiceHolder;
     private Button[] buttons;
     public GameObject firstButton;
@@ -34,14 +33,14 @@ public class ChoiceManager : MonoBehaviour
             UiStatus.OpenUI();
             choiceHolder.SetActive(true);
             buttons = choiceHolder.GetComponentsInChildren<Button>();
-            buttons[0].GetComponentInChildren<Text>().text = choice1.choice;
-            buttons[1].GetComponentInChildren<Text>().text = choice2.choice;
+            buttons[0].GetComponentInChildren<Text>().text = choice1;
+            buttons[1].GetComponentInChildren<Text>().text = choice2;
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(firstButton);
         }
     }
     
-    public void StartChoice(Choice choice1, Choice choice2)
+    public void StartChoice(string choice1, string choice2)
     {
         isActive = true;
         this.choice1 = choice1;
@@ -50,19 +49,23 @@ public class ChoiceManager : MonoBehaviour
 
     public void SetChoice(int i)
     {
+        UiStatus.CloseUI();
         choiceIndex = i;
 
         if (choiceIndex == 0)
         {
-            choice1.TriggerEvent();
+            //choice1.TriggerEvent();
+            EventManager.InvokeEvent(EventManager.Event.CHOICE_ONE);
         }
         else if (choiceIndex == 1)
         {
-            choice2.TriggerEvent();
-        }
+            EventManager.InvokeEvent(EventManager.Event.CHOICE_TWO);
 
+        }
         choiceIndex = -1;
         InputManager.instance.choiceButtonActivated = true;
         choiceHolder.SetActive(false);
+        EventManager.StopListeningAll(EventManager.Event.CHOICE_ONE);
+        EventManager.StopListeningAll(EventManager.Event.CHOICE_TWO);
     }
 }

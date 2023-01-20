@@ -9,6 +9,13 @@ public class Block : Interactable
 {
     public Conversation convo;
 
+    private void Update() {
+        if (playerInRange) {
+            playerInRange = false;
+            Interact();
+        }
+    }
+
     public override void Interact()
     {
         DialogueManager.instance.StartConversation(convo);

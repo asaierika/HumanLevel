@@ -17,6 +17,8 @@ public class EventManager
         PARTNER_MINIGAME_END,
         PARTNER_MINIGAME_PAUSE,
         PARTNER_MINIGAME_RESUME,
+        CHOICE_ONE,
+        CHOICE_TWO
     }
 
     private static Dictionary<Event, UnityEvent<object>> eventTable = new Dictionary<Event, UnityEvent<object>>();
@@ -42,6 +44,14 @@ public class EventManager
         UnityEvent<object> thisEvent = null;
         if (eventTable.TryGetValue(eventType, out thisEvent)) {
             thisEvent.RemoveListener(listener);
+        }
+    }
+
+    public static void StopListeningAll(EventManager.Event eventType)
+    {
+        UnityEvent<object> thisEvent = null;
+        if (eventTable.TryGetValue(eventType, out thisEvent)) {
+            thisEvent.RemoveAllListeners();
         }
     }
 

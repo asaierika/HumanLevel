@@ -12,6 +12,7 @@ public class Kenji : Interactable
     public Item phoenixFish;
     private Inventory inventory;
     private Animator animator;
+    public GameObject timeline;
 
     void Start() {
         spriteR = gameObject.GetComponent<SpriteRenderer>();
@@ -48,12 +49,16 @@ public class Kenji : Interactable
             return;
         }
 
-        if (!inventory.Contains(phoenixFish)) {
-            DialogueManager.instance.StartConversation(convo4);
-            return;
-        }
+        DialogueManager.instance.StartConversation(convo4);
+        return;
+    }
+
+    public void UsePhonexFish() {
+        if(!playerInRange)
+        return;
+
+        timeline.SetActive(true);
         inventory.Remove(fishingRod);
         inventory.Remove(phoenixFish);
-        DialogueManager.instance.StartConversation(convo5);
     }
 }
