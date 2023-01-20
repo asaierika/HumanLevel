@@ -44,7 +44,7 @@ public class ItemObtainedHint : MonoBehaviour
                         hintBoxTransform.position.y, hintBoxTransform.position.z);
                 yield return new WaitForEndOfFrame();
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
 
             for (float i = 0; i < 840; i += 40f)
             {

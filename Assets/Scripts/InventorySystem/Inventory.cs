@@ -5,14 +5,15 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public delegate void OnItemChanged();
+    public delegate void OnSpecialItemUsed();
     public delegate void OnNewItemAdded(Item item);
-    public delegate void OnItemUsed(Item item);
+    public delegate void onItemZoomedIn(Item item);
     public OnItemChanged onItemChangedCallback;
     public OnNewItemAdded onNewItemAddedCallback;
-    public OnItemUsed onItemUsedCallback;
+    public onItemZoomedIn onItemZoomedInCallback;
+    public OnSpecialItemUsed onSpecialItemUsedCallback;
 
-
-    public int capacity = 6;
+    public int capacity = 8;
 
     public List<Item> items = new List<Item>();
 
@@ -89,7 +90,6 @@ public class Inventory : MonoBehaviour
                     items.RemoveAt(i);
                 }
                 onItemChangedCallback?.Invoke();
-                onItemUsedCallback?.Invoke(item);
                 return;
             }
         }

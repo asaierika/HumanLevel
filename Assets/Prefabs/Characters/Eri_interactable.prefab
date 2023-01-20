@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 200646920701239173}
   - component: {fileID: 1387982436478993247}
   - component: {fileID: 6086927870791918043}
+  - component: {fileID: 7063823953639533606}
   m_Layer: 0
   m_Name: Eri_interactable
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1210394583
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 2098602337, guid: cace4c80e4bd243539c7cdc0dc6a9c4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -150,3 +151,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.46, y: 1.02}
   m_EdgeRadius: 0
+--- !u!114 &7063823953639533606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094633635095205749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbbb1d23585c4d8aa40fd596a9fe6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  convo1: {fileID: 11400000, guid: 9d095871c690344b6a39c0ab46cc1b6b, type: 2}
+  convo2: {fileID: 11400000, guid: 9ff43afa9eff64475a051f1637fbc756, type: 2}
+  choice1: Okay, let's play.
+  choice2: Can we play later?
+  hallPosition: {x: 1.2, y: -1}
+  chaseStarted: {fileID: 11400000, guid: c92ca0181c69f44a2a7137f347669da1, type: 2}

@@ -27,7 +27,6 @@ public class FollowingManager : MonoBehaviour
 
     void OnEnable()
     {
-        StartFollowing();
         SceneManager.sceneLoaded += delegate { Spawn(); };
     }
 

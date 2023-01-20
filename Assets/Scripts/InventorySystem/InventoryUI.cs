@@ -20,32 +20,11 @@ public class InventoryUI : MonoBehaviour
     {
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
         inventory = GameManager.instance.inventory;
-        // Debug.Log("Inventory reference obtained " + (inventory == GameManager.instance.inventory) + " at " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        if (slots.Length != inventory.capacity)
+        {
+            Debug.LogError("The number of inventory slots should match the capacity of inventory");
+        }
         inventory.onNewItemAddedCallback += ShowItemHint;
-        inventory.onItemUsedCallback += ZoomToShowItem;
-    }
-
-    void OnEnable() {
-        // Debug.Log("Inventory UI enabled at " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-        if (inventory != null) {
-            // Debug.Log("Inventory UI enabled and setting callbacks");
-            inventory.onNewItemAddedCallback += ShowItemHint;
-            inventory.onItemUsedCallback += ZoomToShowItem;
-        }
-    }
-
-    void OnDisable() {
-        if (panel.activeInHierarchy) {
-            // Ensure UpdateUI is unregistered when panel is inactive.
-            Disable();
-        }
-
-        // Debug.Log("Decommission inventory UI at " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-        // BUG: The check null is only required for the corridor scene. Why is OnDisable being called without Start(). 
-        if (inventory != null) {
-            inventory.onNewItemAddedCallback -= ShowItemHint;
-            inventory.onItemUsedCallback -= ZoomToShowItem;
-        }
     }
 
     // Update is called once per frame
@@ -83,6 +62,9 @@ public class InventoryUI : MonoBehaviour
     void Enable()
     {
         inventory.onItemChangedCallback += UpdateUI;
+        inventory.onItemZoomedInCallback += ZoomToShowItem;
+        // The inventory is closed every time a special item is used.
+        inventory.onSpecialItemUsedCallback += Disable;
         UpdateUI();
         panel.SetActive(true);
 
@@ -100,6 +82,8 @@ public class InventoryUI : MonoBehaviour
     public void Disable()
     {
         inventory.onItemChangedCallback -= UpdateUI;
+        inventory.onItemZoomedInCallback -= ZoomToShowItem;
+        inventory.onSpecialItemUsedCallback -= Disable;
         panel.SetActive(false);
         // Restore the movement of the player
         UiStatus.CloseUI();

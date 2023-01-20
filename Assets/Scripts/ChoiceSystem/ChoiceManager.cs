@@ -17,8 +17,7 @@ public class ChoiceManager : MonoBehaviour
         instance = this;
     }
 
-    private Choice choice1;
-    private Choice choice2;
+    private string choice1, choice2;
     public GameObject choiceHolder;
     private Button[] buttons;
     public GameObject firstButton;
@@ -30,53 +29,43 @@ public class ChoiceManager : MonoBehaviour
     {
         if (isActive && !DialogueManager.instance.inDialogue)
         {
-            StartCoroutine(Choose());
             isActive = false;
+            UiStatus.OpenUI();
+            choiceHolder.SetActive(true);
+            buttons = choiceHolder.GetComponentsInChildren<Button>();
+            buttons[0].GetComponentInChildren<Text>().text = choice1;
+            buttons[1].GetComponentInChildren<Text>().text = choice2;
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(firstButton);
         }
     }
     
-    public void StartChoice(Choice choice1, Choice choice2)
+    public void StartChoice(string choice1, string choice2)
     {
         isActive = true;
         this.choice1 = choice1;
         this.choice2 = choice2;
     }
 
-    IEnumerator Choose()
-    {
-        UiStatus.OpenUI();
-        yield return new WaitForSeconds(0.01f);
-        choiceHolder.SetActive(true);
-        buttons = choiceHolder.GetComponentsInChildren<Button>();
-        buttons[0].GetComponentInChildren<Text>().text = choice1.choice;
-        buttons[1].GetComponentInChildren<Text>().text = choice2.choice;
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(firstButton);
-    }
-
     public void SetChoice(int i)
     {
+        UiStatus.CloseUI();
         choiceIndex = i;
 
         if (choiceIndex == 0)
         {
-            choice1.TriggerEvent();
+            //choice1.TriggerEvent();
+            EventManager.InvokeEvent(EventManager.Event.CHOICE_ONE);
         }
         else if (choiceIndex == 1)
         {
-            choice2.TriggerEvent();
+            EventManager.InvokeEvent(EventManager.Event.CHOICE_TWO);
+
         }
-
         choiceIndex = -1;
-        closeUI();
-        return;
-    }
-
-    public void closeUI()
-    {
-        // yield return new WaitForSeconds(0.01f);
-        Debug.Log("Choice made closing UI.");
+        InputManager.instance.choiceButtonActivated = true;
         choiceHolder.SetActive(false);
-        UiStatus.CloseUI();
+        EventManager.StopListeningAll(EventManager.Event.CHOICE_ONE);
+        EventManager.StopListeningAll(EventManager.Event.CHOICE_TWO);
     }
 }

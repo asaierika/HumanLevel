@@ -72,7 +72,7 @@ public abstract class CharacterMovement : MonoBehaviour
 
     private void TryMove(Vector2 direction) {
         rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
-    }
+    }   
 
     public void Freeze() {
         characterFrozen = true;

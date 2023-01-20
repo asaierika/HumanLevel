@@ -7,10 +7,10 @@ public class FishingArea : Interactable
 {
     public Item phonenixFish;
     public Item fishingRod;
-    public Conversation convo1, convo2;
+    public Conversation convo1, convo2, convo3;
     public GameEvent startFishing;
     public GameEvent endFishing;
-    public Inventory inventory;
+    private Inventory inventory;
     private static bool isFished;
     private float fishingDuration = 1f;
 
@@ -29,8 +29,16 @@ public class FishingArea : Interactable
         TryInteract();
     }
 
-     public override void Interact()
+    public override void Interact()
     {
+        DialogueManager.instance.StartConversation(convo3);
+    }
+
+    public void UseFishingRod()
+    {
+        if (!playerInRange)
+        return;
+
         StartCoroutine(checkIfHaveFish());
     }
 
@@ -57,6 +65,7 @@ public class FishingArea : Interactable
         else
         {
             DialogueManager.instance.StartConversation(convo1);
+            Debug.Log("fishing rod used");
         } 
 
         yield return new WaitForSeconds(fishingDuration);
