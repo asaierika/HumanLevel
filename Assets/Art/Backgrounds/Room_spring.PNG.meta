@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a9a402a1fd3354139b3dd9d2f527ae91
+guid: 874b6e268468c4804bd581c796876364
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -63,11 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-<<<<<<<< HEAD:Assets/Art/Backgrounds/Castle1stCorridor.PNG.meta
-  cookieLightType: 1
-========
   cookieLightType: 0
->>>>>>>> master:Assets/Art/Backgrounds/Room_spring.PNG.meta
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -105,33 +101,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<<< HEAD:Assets/Art/Backgrounds/Castle1stCorridor.PNG.meta
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-========
->>>>>>>> master:Assets/Art/Backgrounds/Room_spring.PNG.meta
   spriteSheet:
     serializedVersion: 2
     sprites: []

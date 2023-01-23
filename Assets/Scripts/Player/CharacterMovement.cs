@@ -14,7 +14,7 @@ public abstract class CharacterMovement : MonoBehaviour
     [SerializeField]
     protected bool characterFrozen;
 
-    public static void AlterLocationType(bool isContinuousType) {
+    public void AlterLocationType(bool isContinuousType) {
         inContinuousLocations = isContinuousType;
     }
 

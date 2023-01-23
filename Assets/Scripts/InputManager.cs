@@ -35,7 +35,7 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
-            if (!itemUseButtonActivated && PlayerMovement.PLAYER_FROZEN)
+            if (!itemUseButtonActivated && CharacterMovement.playerFrozen)
             {
                 dialogButtonActivated = true;
             } 

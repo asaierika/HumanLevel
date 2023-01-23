@@ -575,7 +575,7 @@ PrefabInstance:
     - target: {fileID: 2188395964923986966, guid: 23aba5dec677648d382f19014a1c8152, type: 3}
       propertyPath: m_Events.m_Events.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1858980249}
+      objectReference: {fileID: 0}
     - target: {fileID: 2188395964923986966, guid: 23aba5dec677648d382f19014a1c8152, type: 3}
       propertyPath: m_Events.m_Events.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -848,7 +848,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1210394583
-  m_SortingLayer: 0
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: ec904cc15700f4bbd86abdc8ab077407, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1042,17 +1042,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1858980249 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6162807334807042878, guid: 1098387d998d144d492a6b923746a1dc, type: 3}
-  m_PrefabInstance: {fileID: 1613780570}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0922348a6a069456bb946065417ccb0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2033519420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,11 +1074,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceeae8c1be8184879b16204bcd3ad97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  label: main
   player: {fileID: 0}
   minX: -0.1
   maxX: 0.1
   minY: -0.84
   maxY: 2.47
+  transitSpeed: 0
 --- !u!114 &2033519422
 MonoBehaviour:
   m_ObjectHideFlags: 0

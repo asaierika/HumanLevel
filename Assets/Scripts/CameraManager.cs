@@ -7,7 +7,7 @@ public class CameraManager : MonoBehaviour
 {
     // main camera is the cam that will follow player around
     public static CameraManager main;
-    [SerializeField] private string label;
+    [SerializeField] private string label = "main";
     public Transform player;
     private Vector3 pos;
     public float minX = -2f;
@@ -30,7 +30,7 @@ public class CameraManager : MonoBehaviour
 
     void Start() {
         // Default follows Kizuna Body
-        player = GameObject.FindWithTag("Player").transform.GetChild(0);
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     void OnEnable() {
@@ -64,11 +64,11 @@ public class CameraManager : MonoBehaviour
     }
 
     void TrackDemi(object input = null) {
-        StartCoroutine(TransitToFollowNextCharacter(GameObject.FindWithTag("Player").transform.GetChild(0)));
+        StartCoroutine(TransitToFollowNextCharacter(GameObject.FindWithTag("Player").transform));
     }
 
     void TrackSpirit(object input = null) {
-        StartCoroutine(TransitToFollowNextCharacter(GameObject.FindWithTag("Player").transform.GetChild(1)));
+        StartCoroutine(TransitToFollowNextCharacter(GameObject.FindWithTag("Spirit").transform));
     }
 
     void TrackPartner(object input = null) {
